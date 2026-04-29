@@ -468,6 +468,154 @@
       color: #8a8d97;
       margin-left: 8px;
     }
+
+
+    /* INTERACTIVE GUIDED HELP */
+    .interactive-panel {
+      background: #ffffff;
+      border: 1px solid #ece7dc;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 40px;
+    }
+    .interactive-panel h3 { margin: 0 0 8px 0; font-size: 22px; color: #1c2433; }
+    .interactive-panel p { margin: 0 0 18px 0; color: #5b6271; font-size: 16px; }
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .quiz-option {
+      border: 1.5px solid #ece7dc;
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      color: #1c2433;
+      transition: border-color 0.15s, background 0.15s, transform 0.15s;
+    }
+    .quiz-option:hover, .quiz-option.active {
+      border-color: #0e7490;
+      background: #ecfeff;
+      transform: translateY(-1px);
+    }
+    .quiz-option strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .quiz-option span { display: block; font-size: 13px; color: #5b6271; line-height: 1.45; }
+    .recommendation {
+      display: none;
+      background: #f9fbfb;
+      border: 1px solid #bae6fd;
+      border-left: 4px solid #0e7490;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+    .recommendation.show { display: block; }
+    .recommendation h4 { margin: 0 0 8px 0; color: #0e7490; font-size: 18px; }
+    .recommendation p { margin: 6px 0; color: #1c2433; font-size: 15px; }
+    .recommendation .rec-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .mini-btn {
+      border: 1px solid #0e7490;
+      color: #0e7490;
+      background: #fff;
+      padding: 9px 13px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .mini-btn:hover { background: #ecfeff; color: #155e75; }
+
+    .toolbox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 64px;
+    }
+    @media (max-width: 850px) { .toolbox { grid-template-columns: 1fr; } }
+    .tool-card {
+      background: #ffffff;
+      border: 1px solid #ece7dc;
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .tool-card h3 { margin: 0 0 8px 0; font-size: 20px; color: #1c2433; }
+    .tool-card p { margin: 0 0 14px 0; color: #5b6271; font-size: 15px; }
+    .check-list { display: grid; gap: 10px; }
+    .check-list label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 15px;
+      color: #1c2433;
+      cursor: pointer;
+    }
+    .check-list input { margin-top: 4px; accent-color: #0e7490; }
+    .progress-track {
+      height: 10px;
+      background: #f1eee8;
+      border-radius: 999px;
+      overflow: hidden;
+      margin: 16px 0 8px 0;
+    }
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: #0e7490;
+      transition: width 0.2s ease;
+    }
+    .progress-text { font-size: 13px; color: #5b6271; margin: 0; }
+    .report-notes textarea {
+      width: 100%;
+      min-height: 190px;
+      border: 1px solid #ece7dc;
+      border-radius: 12px;
+      padding: 14px;
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.5;
+      resize: vertical;
+      color: #1c2433;
+      background: #fffdfb;
+    }
+    .copy-status { margin-top: 10px; font-size: 13px; color: #0e7490; min-height: 18px; }
+
+    .mobile-help-bar {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      background: #ffffff;
+      border: 1px solid #ece7dc;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(28, 36, 51, 0.14);
+      padding: 10px;
+      display: none;
+      gap: 8px;
+      z-index: 100;
+    }
+    .mobile-help-bar a, .mobile-help-bar button {
+      flex: 1;
+      text-align: center;
+      border-radius: 10px;
+      padding: 10px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: inherit;
+      cursor: pointer;
+    }
+    .mobile-help-bar a { background: #0e7490; color: #fff; border: 1px solid #0e7490; }
+    .mobile-help-bar button { background: #fff; color: #b91c1c; border: 1px solid #b91c1c; }
+    @media (max-width: 720px) {
+      body { padding-bottom: 76px; }
+      .mobile-help-bar { display: flex; }
+    }
     @media (max-width: 600px) {
       .qe-hint { display: none; }
     }
@@ -505,8 +653,9 @@
             Start Here
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://rexxfield.com" target="_blank" class="btn-text">
-            Advanced Help → Rexxfield
+          <a href="sms:+13215216790" class="btn-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text us privately
           </a>
         </div>
       </div>
@@ -553,6 +702,20 @@
     <div id="guided-flow" class="section-head">
       <h2>What kind of situation are you in?</h2>
       <p>Pick the option closest to what&rsquo;s happening. You&rsquo;ll jump straight to the most relevant reporting and support resources.</p>
+    </div>
+
+    <div class="interactive-panel" aria-label="Guided help tool">
+      <h3>Quick guidance tool</h3>
+      <p>Choose what best matches the situation. This does not submit anything or store your answers; it only shows a recommended starting point on this page.</p>
+      <div class="quiz-grid">
+        <button class="quiz-option" type="button" data-result="harassment"><strong>Threats, stalking, or doxxing</strong><span>Someone is targeting, exposing, or threatening you online.</span></button>
+        <button class="quiz-option" type="button" data-result="impersonation"><strong>Fake profile or impersonation</strong><span>Someone is pretending to be you or misusing your identity.</span></button>
+        <button class="quiz-option" type="button" data-result="crypto"><strong>Money, crypto, or scam loss</strong><span>You sent funds or were pulled into a fraudulent scheme.</span></button>
+        <button class="quiz-option" type="button" data-result="identity"><strong>Account takeover or identity theft</strong><span>An account or personal information may be compromised.</span></button>
+        <button class="quiz-option" type="button" data-result="sextortion"><strong>Sextortion or intimate images</strong><span>Someone is threatening or sharing private intimate content.</span></button>
+        <button class="quiz-option" type="button" data-result="unsure"><strong>I&rsquo;m not sure</strong><span>Several things are happening, or the situation is unclear.</span></button>
+      </div>
+      <div id="quiz-result" class="recommendation" aria-live="polite"></div>
     </div>
 
     <div class="cat-grid">
@@ -703,6 +866,48 @@
       If you are in immediate danger, contact local law enforcement immediately.
     </div>
 
+    <div class="toolbox">
+      <div class="tool-card">
+        <h3>Evidence checklist</h3>
+        <p>Check off what you have saved. Keep originals when possible.</p>
+        <div class="check-list" id="evidence-checklist">
+          <label><input type="checkbox"> Screenshots or screen recordings</label>
+          <label><input type="checkbox"> Profile URLs, post URLs, or message links</label>
+          <label><input type="checkbox"> Usernames, display names, phone numbers, or email addresses</label>
+          <label><input type="checkbox"> Dates, times, and time zone notes</label>
+          <label><input type="checkbox"> Payment details, wallet addresses, receipts, or transaction IDs</label>
+          <label><input type="checkbox"> A short timeline of what happened</label>
+        </div>
+        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="evidence-progress"></div></div>
+        <p class="progress-text" id="evidence-progress-text">0 of 6 evidence items checked.</p>
+      </div>
+
+      <div class="tool-card report-notes">
+        <h3>Copyable report notes</h3>
+        <p>Use this as a starting point when filing a platform, IC3, FTC, or other report.</p>
+        <textarea id="report-template">Incident type:
+
+What happened:
+
+When it started:
+
+Where it happened (platform/site/app):
+
+Accounts, usernames, URLs, phone numbers, emails, or wallet addresses involved:
+
+Evidence saved:
+
+Financial loss, if any:
+
+Immediate safety concern? Yes / No
+
+What I have already done:
+</textarea>
+        <button class="mini-btn" type="button" onclick="copyReportTemplate()">Copy report notes</button>
+        <div class="copy-status" id="copy-status" aria-live="polite"></div>
+      </div>
+    </div>
+
     <!-- PLATFORMS -->
     <div class="section-head">
       <h2>Platform Reporting Links</h2>
@@ -748,6 +953,12 @@
 
   </div>
 
+  <div class="mobile-help-bar" aria-label="Quick help actions">
+    <a href="#guided-flow">Start Here</a>
+    <a href="sms:+13215216790">Text GCCI</a>
+    <button type="button" onclick="quickExit()">Quick Exit</button>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <p>If you&rsquo;re unsure where to start, you&rsquo;re welcome to reach out: <a href="mailto:Gus@gcci.io">Gus@gcci.io</a> or text <a href="sms:+13215216790">(321) 521-6790</a></p>
@@ -773,6 +984,56 @@
         }
       }
     });
+
+
+    const guidance = {
+      harassment: { title: 'Recommended start: Harassment, doxxing, or threats', body: 'Preserve evidence first, avoid engaging, report on the platform, and use IC3 for a formal cybercrime report. If there is immediate danger, contact local law enforcement.', target: '#harassment' },
+      impersonation: { title: 'Recommended start: Impersonation or fake accounts', body: 'Save the fake profile URL and screenshots, then report the account on the platform and consider filing with IC3 if it involves harm, fraud, or threats.', target: '#impersonation' },
+      crypto: { title: 'Recommended start: Crypto scam or financial fraud', body: 'Save wallet addresses, transaction IDs, receipts, screenshots, and chats. Start with Chainabuse, IC3, FTC, SEC, or CFTC depending on the facts.', target: '#crypto' },
+      identity: { title: 'Recommended start: Identity theft or account takeover', body: 'Secure your email and financial accounts, change passwords, enable 2FA, and start with IdentityTheft.gov.', target: '#identity' },
+      sextortion: { title: 'Recommended start: Sextortion or intimate images', body: 'Do not pay or engage if you can avoid it. Preserve evidence. Use NCMEC if a minor is involved, StopNCII for adults, and consider CCRI for support.', target: '#sextortion' },
+      unsure: { title: 'Recommended start: Multiple or unclear issues', body: 'Start broad: preserve everything, secure your accounts, and use IC3 as the general official reporting channel while you decide what else applies.', target: '#unsure' }
+    };
+
+    document.querySelectorAll('.quiz-option').forEach(function(button) {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.quiz-option').forEach(function(option) { option.classList.remove('active'); });
+        button.classList.add('active');
+        const item = guidance[button.dataset.result];
+        const result = document.getElementById('quiz-result');
+        result.innerHTML = '<h4>' + item.title + '</h4><p>' + item.body + '</p><div class="rec-actions"><a class="mini-btn" href="' + item.target + '">Jump to this section</a><a class="mini-btn" href="sms:+13215216790">Text GCCI</a></div>';
+        result.classList.add('show');
+      });
+    });
+
+    const checklist = document.getElementById('evidence-checklist');
+    const progress = document.getElementById('evidence-progress');
+    const progressText = document.getElementById('evidence-progress-text');
+    if (checklist) {
+      checklist.addEventListener('change', function() {
+        const boxes = checklist.querySelectorAll('input[type="checkbox"]');
+        const checked = checklist.querySelectorAll('input[type="checkbox"]:checked').length;
+        const pct = Math.round((checked / boxes.length) * 100);
+        progress.style.width = pct + '%';
+        progressText.textContent = checked + ' of ' + boxes.length + ' evidence items checked.';
+      });
+    }
+
+    function copyReportTemplate() {
+      const field = document.getElementById('report-template');
+      const status = document.getElementById('copy-status');
+      field.select();
+      field.setSelectionRange(0, 99999);
+      try {
+        navigator.clipboard.writeText(field.value).then(function() { status.textContent = 'Copied. You can paste this into a report or notes app.'; }).catch(function() {
+          document.execCommand('copy');
+          status.textContent = 'Copied. You can paste this into a report or notes app.';
+        });
+      } catch (e) {
+        document.execCommand('copy');
+        status.textContent = 'Copied. You can paste this into a report or notes app.';
+      }
+    }
   </script>
 
 </body>
