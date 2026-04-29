@@ -1,136 +1,41 @@
-<!doctype html>
-<!-- GCCI CLEAN SINGLE COPY - polished layout with blog nav - 2026-04-29 -->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GCCI | Cyber Crime Help</title>
-  <meta name="description" content="Private cybercrime resources, reporting guidance, and support for harassment, impersonation, fraud, sextortion, and digital abuse." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCCI Site</title>
   <style>
-    :root {
-      --bg: #111315;
-      --panel: #181b1f;
-      --panel-soft: #1f2328;
-      --text: #f4f1eb;
-      --muted: #c9c2b8;
-      --quiet: #948b81;
-      --line: rgba(255,255,255,.11);
-      --accent: #d6a14a;
-      --accent-dark: #b9812f;
-      --danger-soft: rgba(214,161,74,.12);
-      --shadow: 0 24px 70px rgba(0,0,0,.32);
-      --radius-lg: 28px;
-      --radius-md: 18px;
-      --radius-sm: 12px;
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--bg);
-    }
-
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(214,161,74,.10), transparent 32rem),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,.04), transparent 24rem),
-        var(--bg);
-      line-height: 1.6;
-      font-size: 17px;
-      padding-bottom: 96px;
+      padding: 40px;
+      background: #0f172a;
+      color: #e2e8f0;
     }
-
-    a { color: inherit; }
-
+    h1 {
+      color: #38bdf8;
+    }
     .container {
-      width: min(var(--max), calc(100% - 40px));
-      margin: 0 auto;
+      max-width: 800px;
+      margin: auto;
     }
-
-    .skip-link {
-      position: absolute;
-      top: -120px;
-      left: 16px;
-      background: var(--accent);
-      color: #17130c;
-      padding: 10px 14px;
-      border-radius: 10px;
-      z-index: 1000;
-    }
-
-    .skip-link:focus { top: 16px; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(17,19,21,.78);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
+    a {
+      color: #22c55e;
       text-decoration: none;
-      font-weight: 750;
-      letter-spacing: .02em;
     }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to GCCI</h1>
+    <p>Your site is live.</p>
 
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45));
-      color: #18120b;
-      box-shadow: 0 12px 30px rgba(214,161,74,.17);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-link,
-    .quick-exit {
-      appearance: none;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      padding: 10px 14px;
-      text-decoration: none;
-      font: inherit;
-      font-size: 14px;
-      cursor: pointer;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease;
-    }
-
-    .nav-link:hover,
-    .quick-exit:hover {
-      color: var(--text);
-      border-color: rgba(214,161,74,.45);
-      background: rgba(214,161,74,.09);
-    }
-
-    .quick-exit:active,
-    .btn:active { transform: translateY(1px); }
-
-    
+    <h2>Sections</h2>
+    <ul>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/preserve-evidence/">Preserve Evidence</a></li>
+      <li><a href="/welcome/">Welcome</a></li>
+    </ul>
+  </div>
+</body>
+</html>
