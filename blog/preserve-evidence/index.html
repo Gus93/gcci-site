@@ -1,105 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>How to Preserve Evidence in the First 24 Hours | GCCI</title>
-  <meta name="description" content="A short, practical guide for cybercrime victims: what to capture, how to capture it, and what not to do in the critical first day after realizing you've been targeted.">
+  <meta name="description" content="A short, practical guide for cybercrime victims: what to capture, how to capture it, and what not to do in the critical first day after realizing you've been targeted." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
 </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<body style="margin:0;font-family:Arial,sans-serif;background:#070b12;color:#e5e7eb;line-height:1.7;">
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
 
-  <!-- TOP NAV -->
-  <nav style="border-bottom:1px solid #1f2937;background:#0b1220;">
-    <div style="max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <a href="/" style="color:white;text-decoration:none;font-weight:bold;font-size:18px;letter-spacing:0.5px;">GCCI</a>
-      <div style="display:flex;gap:20px;align-items:center;">
-        <a href="/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Home</a>
-        <a href="/blog/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Blog</a>
-        <a href="mailto:Gus@gcci.io" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Contact</a>
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">← All posts</a>
+        <div class="post-meta">May 1, 2026 &middot; How-to guide</div>
+        <h1>How to Preserve Evidence in the First 24 Hours</h1>
+
+        <p>The instinct, when you realize something is wrong, is to make it stop. Block the account. Delete the messages. Close the tab. That instinct is wrong, and acting on it will make every reporting and recovery option harder.</p>
+
+        <p>Before you do anything else, capture what you have. Investigators, banks, platforms, and law enforcement all need evidence to act, and most of that evidence lives in places that disappear quickly&mdash;profiles get deleted, messages get pulled, transactions roll off the screen.</p>
+
+        <h2>What to capture</h2>
+
+        <p>Aim for screenshots, not summaries. A screenshot of a scammer&rsquo;s message is worth more than your description of what they said. For each interaction, try to get:</p>
+
+        <ul>
+          <li>The full conversation, scrolled from top to bottom</li>
+          <li>The other person&rsquo;s profile page, including their handle, display name, and profile URL</li>
+          <li>Any phone numbers, email addresses, or external links they sent you</li>
+          <li>Wallet addresses, transaction IDs, and exchange names if money or crypto moved</li>
+          <li>Timestamps&mdash;most apps show these if you tap or hover on a message</li>
+          <li>Receipts, confirmation emails, or wire transfer details</li>
+        </ul>
+
+        <h2>How to capture it</h2>
+
+        <p>Phone screenshots are fine. So is using the snipping tool on a computer. If a chat is long, scroll and screenshot in segments rather than trying to fit it all on one screen. Save URLs as text&mdash;copy and paste them into a notes app&mdash;because the link itself is part of the evidence, not just the page it points to.</p>
+
+        <p>Save everything to one folder, named with the date. Don&rsquo;t edit, crop, or annotate the originals. If you want to mark something up, make a copy first.</p>
+
+        <h2>What not to do</h2>
+
+        <p>Don&rsquo;t engage with the person to &ldquo;get more information.&rdquo; That tells them you&rsquo;re onto them and gives them a reason to disappear or escalate. Don&rsquo;t delete messages, even if they&rsquo;re upsetting. Don&rsquo;t reset the device. Don&rsquo;t pay anything new in hopes of recovering what was lost&mdash;that&rsquo;s a known follow-up scam.</p>
+
+        <h2>If it&rsquo;s already too late</h2>
+
+        <p>If you already deleted things or blocked someone before reading this, it&rsquo;s not over. Many platforms retain data for a window after deletion and will provide it in response to a law enforcement request. Banks keep transaction records for years. The fact that you can&rsquo;t see it doesn&rsquo;t mean it&rsquo;s gone.</p>
+
+        <p>Capture whatever you have left, then move on to reporting. The <a href="/">resource page</a> walks you through which channel to use depending on what happened.</p>
+
+        <p class="signature">&mdash; GCCI</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">← All posts</a>
+          <a href="/">Home →</a>
+        </div>
       </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
     </div>
-  </nav>
+  </footer>
 
-  <article style="max-width:760px;margin:auto;padding:50px 20px;">
-
-    <a href="/blog/" style="color:#7dd3fc;text-decoration:none;font-size:14px;">&larr; Back to all posts</a>
-
-    <div style="margin-top:24px;margin-bottom:32px;">
-      <div style="color:#7dd3fc;font-size:13px;margin-bottom:8px;">May 1, 2026 &middot; How-to guide</div>
-      <h1 style="font-size:40px;margin:0;color:white;line-height:1.15;">How to Preserve Evidence in the First 24 Hours</h1>
-    </div>
-
-    <div style="color:#e5e7eb;font-size:18px;">
-
-      <p>
-        The instinct, when you realize something is wrong, is to make it stop. Block the account. Delete the messages. Close the tab. That instinct is wrong, and acting on it will make every reporting and recovery option harder.
-      </p>
-
-      <p>
-        Before you do anything else, capture what you have. Investigators, banks, platforms, and law enforcement all need evidence to act, and most of that evidence lives in places that disappear quickly&mdash;profiles get deleted, messages get pulled, transactions roll off the screen.
-      </p>
-
-      <h2 style="color:white;margin-top:36px;">What to capture</h2>
-
-      <p>
-        Aim for screenshots, not summaries. A screenshot of a scammer&rsquo;s message is worth more than your description of what they said. For each interaction, try to get:
-      </p>
-
-      <ul style="color:#e5e7eb;">
-        <li>The full conversation, scrolled from top to bottom</li>
-        <li>The other person&rsquo;s profile page, including their handle, display name, and profile URL</li>
-        <li>Any phone numbers, email addresses, or external links they sent you</li>
-        <li>Wallet addresses, transaction IDs, and exchange names if money or crypto moved</li>
-        <li>Timestamps&mdash;most apps show these if you tap or hover on a message</li>
-        <li>Receipts, confirmation emails, or wire transfer details</li>
-      </ul>
-
-      <h2 style="color:white;margin-top:36px;">How to capture it</h2>
-
-      <p>
-        Phone screenshots are fine. So is using the snipping tool on a computer. If a chat is long, scroll and screenshot in segments rather than trying to fit it all on one screen. Save URLs as text&mdash;copy and paste them into a notes app&mdash;because the link itself is part of the evidence, not just the page it points to.
-      </p>
-
-      <p>
-        Save everything to one folder, named with the date. Don&rsquo;t edit, crop, or annotate the originals. If you want to mark something up, make a copy first.
-      </p>
-
-      <h2 style="color:white;margin-top:36px;">What not to do</h2>
-
-      <p>
-        Don&rsquo;t engage with the person to &ldquo;get more information.&rdquo; That tells them you&rsquo;re onto them and gives them a reason to disappear or escalate. Don&rsquo;t delete messages, even if they&rsquo;re upsetting. Don&rsquo;t reset the device. Don&rsquo;t pay anything new in hopes of recovering what was lost&mdash;that&rsquo;s a known follow-up scam.
-      </p>
-
-      <h2 style="color:white;margin-top:36px;">If it&rsquo;s already too late</h2>
-
-      <p>
-        If you already deleted things or blocked someone before reading this, it&rsquo;s not over. Many platforms retain data for a window after deletion and will provide it in response to a law enforcement request. Banks keep transaction records for years. The fact that you can&rsquo;t see it doesn&rsquo;t mean it&rsquo;s gone.
-      </p>
-
-      <p>
-        Capture whatever you have left, then move on to reporting. The <a href="/" style="color:#60a5fa;">resource page</a> walks you through which channel to use depending on what happened.
-      </p>
-
-      <p style="color:#cbd5e1;margin-top:40px;">
-        &mdash; GCCI
-      </p>
-
-    </div>
-
-    <!-- FOOTER -->
-    <div style="text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #1f2937;">
-      <p style="font-size:14px;color:#cbd5e1;margin-bottom:8px;">
-        <a href="/blog/" style="color:#60a5fa;text-decoration:none;">&larr; All posts</a> &middot;
-        <a href="/" style="color:#60a5fa;text-decoration:none;">Home</a> &middot;
-        <a href="mailto:Gus@gcci.io" style="color:#60a5fa;text-decoration:none;">Contact</a>
-      </p>
-      <p style="font-size:12px;color:#94a3b8;max-width:700px;margin:0 auto;">
-        Gus &amp; Co Cyber Investigations &middot; Independent initiative supporting victims of cybercrime.
-      </p>
-    </div>
-
-  </article>
-
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
 </body>
 </html>
