@@ -1,97 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome to the GCCI Blog | GCCI</title>
-  <meta name="description" content="An introduction to the GCCI blog: who it's for, what it will cover, and how it can help cybercrime victims.">
+  <meta name="description" content="An introduction to the GCCI blog: who it's for, what it will cover, and how it can help cybercrime victims." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    p.muted { color:var(--muted); }
+    .signature { color:var(--quiet); margin-top:36px; font-style: italic; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
 </head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<body style="margin:0;font-family:Arial,sans-serif;background:#070b12;color:#e5e7eb;line-height:1.7;">
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
 
-  <!-- TOP NAV -->
-  <nav style="border-bottom:1px solid #1f2937;background:#0b1220;">
-    <div style="max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <a href="/" style="color:white;text-decoration:none;font-weight:bold;font-size:18px;letter-spacing:0.5px;">GCCI</a>
-      <div style="display:flex;gap:20px;align-items:center;">
-        <a href="/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Home</a>
-        <a href="/blog/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Blog</a>
-        <a href="mailto:Gus@gcci.io" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Contact</a>
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">← All posts</a>
+        <div class="post-meta">April 28, 2026 &middot; Announcement</div>
+        <h1>Welcome to the GCCI Blog</h1>
+
+        <p>If you&rsquo;ve landed here, there&rsquo;s a reasonable chance something is wrong. Maybe you&rsquo;ve been scammed. Maybe someone is impersonating you online. Maybe you&rsquo;re being threatened, harassed, or coerced. Maybe you&rsquo;re trying to help someone else through one of those situations. Whatever brought you here, the first thing worth saying is the same thing the home page says: you&rsquo;re not alone, and there are concrete steps you can take.</p>
+
+        <p>This blog exists to make those steps clearer. Cybercrime is messy. The advice online is contradictory, the official channels are bureaucratic, and the scams keep evolving. Most people only learn how this works after they&rsquo;ve already been hurt. That&rsquo;s the gap this blog is trying to close.</p>
+
+        <h2>What you&rsquo;ll find here</h2>
+
+        <p>Posts will land every few days and cover the things people actually ask about: how scams really work, what to do in the first 24 hours after you realize something has happened, which reporting channel matters for which kind of incident, and how to preserve evidence in a way that&rsquo;s actually useful later. From time to time, we&rsquo;ll also share alerts on new scam patterns and updates to the official resources we link from the home page.</p>
+
+        <p>Posts will be plain-spoken. There&rsquo;s no need to translate from technical jargon if we don&rsquo;t use it in the first place.</p>
+
+        <h2>Who this is for</h2>
+
+        <p>Mostly, victims and the people supporting them: friends, family, advocates, and anyone in the position of helping someone who is overwhelmed and scared. The information is also useful for people who haven&rsquo;t been targeted yet but want to be prepared&mdash;because the time to learn how to lock down an account is before the breach, not after.</p>
+
+        <h2>A few honest disclaimers</h2>
+
+        <p>Nothing here is legal advice. Nothing here is a substitute for law enforcement or a qualified investigator. We try to keep links and recommendations current, but agencies change reporting forms, hotlines move, and laws update&mdash;always double-check the official source before you act on something.</p>
+
+        <p>If your situation is urgent, the resource page is structured for exactly that. <a href="/">Start there.</a> If your case needs deeper investigation than public reporting can offer, <a href="https://rexxfield.com" target="_blank" rel="noopener">Rexxfield</a> is who we work alongside.</p>
+
+        <h2>What&rsquo;s next</h2>
+
+        <p>New posts every three to five days. If there&rsquo;s a topic you wish were covered&mdash;or a resource that&rsquo;s missing from our home page&mdash;text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>. We read everything that comes in.</p>
+
+        <p class="signature">Take care of yourself.<br>&mdash; GCCI</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">← All posts</a>
+          <a href="/">Home →</a>
+        </div>
       </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
     </div>
-  </nav>
+  </footer>
 
-  <article style="max-width:760px;margin:auto;padding:50px 20px;">
-
-    <a href="/blog/" style="color:#7dd3fc;text-decoration:none;font-size:14px;">&larr; Back to all posts</a>
-
-    <div style="margin-top:24px;margin-bottom:32px;">
-      <div style="color:#7dd3fc;font-size:13px;margin-bottom:8px;">April 28, 2026 &middot; Announcement</div>
-      <h1 style="font-size:40px;margin:0 0 0 0;color:white;line-height:1.15;">Welcome to the GCCI Blog</h1>
-    </div>
-
-    <div style="color:#e5e7eb;font-size:18px;">
-
-      <p>
-        If you&rsquo;ve landed here, there&rsquo;s a reasonable chance something is wrong. Maybe you&rsquo;ve been scammed. Maybe someone is impersonating you online. Maybe you&rsquo;re being threatened, harassed, or coerced. Maybe you&rsquo;re trying to help someone else through one of those situations. Whatever brought you here, the first thing worth saying is the same thing the home page says: you&rsquo;re not alone, and there are concrete steps you can take.
-      </p>
-
-      <p>
-        This blog exists to make those steps clearer. Cybercrime is messy. The advice online is contradictory, the official channels are bureaucratic, and the scams keep evolving. Most people only learn how this works after they&rsquo;ve already been hurt. That&rsquo;s the gap this blog is trying to close.
-      </p>
-
-      <h2 style="color:white;margin-top:40px;">What you&rsquo;ll find here</h2>
-
-      <p>
-        Posts will land every few days and cover the things people actually ask about: how scams really work, what to do in the first 24 hours after you realize something has happened, which reporting channel matters for which kind of incident, and how to preserve evidence in a way that&rsquo;s actually useful later. From time to time, we&rsquo;ll also share alerts on new scam patterns and updates to the official resources we link from the home page.
-      </p>
-
-      <p>
-        Posts will be plain-spoken. There&rsquo;s no need to translate from technical jargon if we don&rsquo;t use it in the first place.
-      </p>
-
-      <h2 style="color:white;margin-top:40px;">Who this is for</h2>
-
-      <p>
-        Mostly, victims and the people supporting them: friends, family, advocates, and anyone in the position of helping someone who is overwhelmed and scared. The information is also useful for people who haven&rsquo;t been targeted yet but want to be prepared&mdash;because the time to learn how to lock down an account is before the breach, not after.
-      </p>
-
-      <h2 style="color:white;margin-top:40px;">A few honest disclaimers</h2>
-
-      <p>
-        Nothing here is legal advice. Nothing here is a substitute for law enforcement or a qualified investigator. We try to keep links and recommendations current, but agencies change reporting forms, hotlines move, and laws update&mdash;always double-check the official source before you act on something.
-      </p>
-
-      <p>
-        If your situation is urgent, the resource page is structured for exactly that. <a href="/" style="color:#60a5fa;">Start there.</a> If your case needs deeper investigation than public reporting can offer, <a href="https://rexxfield.com" target="_blank" style="color:#60a5fa;">Rexxfield</a> is who we work alongside.
-      </p>
-
-      <h2 style="color:white;margin-top:40px;">What&rsquo;s next</h2>
-
-      <p>
-        New posts every three to five days. If there&rsquo;s a topic you wish were covered&mdash;or a resource that&rsquo;s missing from our home page&mdash;email <a href="mailto:Gus@gcci.io" style="color:#60a5fa;">Gus@gcci.io</a>. We read everything that comes in.
-      </p>
-
-      <p style="color:#cbd5e1;margin-top:40px;">
-        Take care of yourself.<br>
-        &mdash; Gus
-      </p>
-
-    </div>
-
-    <!-- FOOTER -->
-    <div style="text-align:center;margin-top:60px;padding-top:30px;border-top:1px solid #1f2937;">
-      <p style="font-size:14px;color:#cbd5e1;margin-bottom:8px;">
-        <a href="/blog/" style="color:#60a5fa;text-decoration:none;">&larr; All posts</a> &middot;
-        <a href="/" style="color:#60a5fa;text-decoration:none;">Home</a> &middot;
-        <a href="mailto:Gus@gcci.io" style="color:#60a5fa;text-decoration:none;">Contact</a>
-      </p>
-      <p style="font-size:12px;color:#94a3b8;max-width:700px;margin:0 auto;">
-        Gus &amp; Co Cyber Investigations &middot; Independent initiative supporting victims of cybercrime.
-      </p>
-    </div>
-
-  </article>
-
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
 </body>
 </html>
