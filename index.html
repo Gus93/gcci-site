@@ -1,237 +1,780 @@
-<!D<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GCCI | Cyber Crime Help</title>
   <meta name="description" content="Cybercrime victim resources and reporting guidance. Help for harassment, fraud, sextortion, identity theft, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #faf8f5;
+      color: #1c2433;
+      line-height: 1.7;
+      font-size: 18px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: #0e7490; }
+    a:hover { color: #155e75; }
+    h1, h2, h3 { color: #1c2433; letter-spacing: -0.01em; }
+    h1 { letter-spacing: -0.025em; }
+
+    /* NAV */
+    nav.top {
+      background: #ffffff;
+      border-bottom: 1px solid #ece7dc;
+    }
+    nav.top .wrap {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    nav.top .brand {
+      color: #1c2433;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+    }
+    nav.top .brand .dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #d97706;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    nav.top .links { display: flex; gap: 22px; align-items: center; }
+    nav.top .links a {
+      color: #5b6271;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    nav.top .links a:hover { color: #1c2433; }
+    .quick-exit {
+      background: #fff;
+      border: 1.5px solid #b91c1c;
+      color: #b91c1c;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .quick-exit:hover { background: #fef2f2; }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 56px 24px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; }
+      .hero h1 { font-size: 42px !important; }
+    }
+    .pill {
+      display: inline-block;
+      padding: 7px 14px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #9a3412;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.05;
+      margin: 0 0 18px 0;
+      font-weight: 800;
+    }
+    .hero h1 .accent { color: #0e7490; }
+    .hero .lede {
+      font-size: 19px;
+      color: #3b4252;
+      max-width: 620px;
+      margin: 0 0 14px 0;
+    }
+    .hero .sub {
+      color: #5b6271;
+      font-size: 17px;
+      max-width: 620px;
+      margin: 0;
+    }
+    .hero-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn-primary {
+      background: #0e7490;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover { background: #155e75; color: #fff; }
+    .btn-text {
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fdba74;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+    .btn-text:hover { background: #ffedd5; color: #9a3412; }
+
+    .priority-card {
+      background: #fff;
+      padding: 28px;
+      border-radius: 16px;
+      border: 1px solid #ece7dc;
+    }
+    .priority-card h3 {
+      margin: 0 0 14px 0;
+      font-size: 17px;
+      color: #0e7490;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .priority-card ul {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .priority-card li {
+      padding: 10px 0;
+      border-bottom: 1px dashed #ece7dc;
+      color: #1c2433;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+    }
+    .priority-card li:last-child { border-bottom: none; }
+    .priority-card li svg { flex-shrink: 0; color: #0e7490; }
+
+    /* TRUST LINE */
+    .trust {
+      background: #ffffff;
+      border: 1px solid #ece7dc;
+      border-radius: 14px;
+      padding: 18px 24px;
+      margin-bottom: 56px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 15px;
+      color: #3b4252;
+    }
+    .trust svg { color: #0e7490; flex-shrink: 0; }
+
+    /* TEXT-FIRST CONTACT BANNER */
+    .contact-banner {
+      background: linear-gradient(135deg, #fff7ed 0%, #fef3c7 100%);
+      border: 1px solid #fed7aa;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    .contact-banner .text { flex: 1; min-width: 240px; }
+    .contact-banner h3 {
+      margin: 0 0 6px 0;
+      font-size: 20px;
+      color: #1c2433;
+    }
+    .contact-banner p {
+      margin: 0;
+      color: #3b4252;
+      font-size: 15px;
+    }
+    .contact-banner .phone-cta {
+      background: #0e7490;
+      color: white;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .contact-banner .phone-cta:hover { background: #155e75; color: #fff; }
+
+    /* URGENT BANNER (amber, not red) */
+    .urgent-banner {
+      background: #fff7ed;
+      border-left: 4px solid #d97706;
+      padding: 18px 24px;
+      border-radius: 10px;
+      margin-bottom: 56px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 16px;
+    }
+    .urgent-banner svg { color: #d97706; flex-shrink: 0; margin-top: 2px; }
+    .urgent-banner p { margin: 0; color: #1c2433; }
+    .urgent-banner strong { color: #9a3412; }
+
+    /* SECTION HEADERS */
+    .section-head { margin-bottom: 28px; }
+    .section-head h2 {
+      font-size: 32px;
+      margin: 0 0 8px 0;
+      font-weight: 700;
+    }
+    .section-head p {
+      color: #5b6271;
+      font-size: 17px;
+      max-width: 720px;
+      margin: 0;
+    }
+
+    /* CATEGORY GRID - all uniform teal */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .cat-card {
+      background: #fff;
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid #ece7dc;
+      text-decoration: none;
+      color: #1c2433;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: border-color 0.18s, background 0.18s;
+    }
+    .cat-card:hover {
+      border-color: #0e7490;
+      background: #f9fbfb;
+      color: #1c2433;
+    }
+    .cat-card .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: #ecfeff;
+      color: #0e7490;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cat-card .body { flex: 1; }
+    .cat-card h3 {
+      margin: 0 0 4px 0;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .cat-card p {
+      margin: 0;
+      font-size: 14px;
+      color: #5b6271;
+      line-height: 1.5;
+    }
+
+    /* SITUATION SECTIONS */
+    .situation {
+      background: #fff;
+      padding: 32px;
+      border-radius: 14px;
+      border: 1px solid #ece7dc;
+      margin-bottom: 18px;
+    }
+    .situation h3 {
+      margin: 0 0 14px 0;
+      font-size: 22px;
+      color: #0e7490;
+      font-weight: 700;
+    }
+    .situation p { margin: 8px 0; color: #1c2433; font-size: 17px; }
+    .situation .sub-label {
+      font-weight: 700;
+      color: #1c2433;
+      margin-top: 14px;
+    }
+    .situation a { color: #0e7490; font-weight: 500; }
+    .resource-note {
+      color: #5b6271;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* STEP FLOW */
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .step-card {
+      background: #fff;
+      padding: 24px;
+      border-radius: 14px;
+      border: 1px solid #ece7dc;
+    }
+    .step-card .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ecfeff;
+      color: #0e7490;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+    .step-card h3 { margin: 0 0 8px 0; font-size: 17px; font-weight: 700; }
+    .step-card p { margin: 0; font-size: 15px; color: #5b6271; line-height: 1.6; }
+
+    .danger-note {
+      background: #fff7ed;
+      border: 1px solid #fdba74;
+      padding: 16px 20px;
+      border-radius: 10px;
+      color: #9a3412;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+    }
+
+    /* PLATFORMS */
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .platform-card {
+      background: #fff;
+      border: 1px solid #ece7dc;
+      padding: 16px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1c2433;
+      font-weight: 500;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: border-color 0.15s;
+    }
+    .platform-card:hover {
+      border-color: #0e7490;
+      color: #1c2433;
+    }
+
+    /* CTA */
+    .cta {
+      background: #ffffff;
+      border: 1px solid #ece7dc;
+      border-radius: 18px;
+      padding: 40px 32px;
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .cta h2 { margin: 0 0 12px 0; font-size: 28px; color: #1c2433; }
+    .cta p {
+      max-width: 640px;
+      margin: 0 auto 24px auto;
+      color: #5b6271;
+      font-size: 16px;
+    }
+    .cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #d97706;
+      color: white;
+      padding: 14px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.15s;
+    }
+    .cta a:hover { background: #b45309; color: #fff; }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 24px 56px 24px;
+      max-width: 760px;
+      margin: 0 auto;
+      border-top: 1px solid #ece7dc;
+    }
+    footer p { margin: 6px 0; color: #5b6271; font-size: 15px; }
+    footer .small { font-size: 13px; color: #8a8d97; max-width: 660px; margin: 8px auto; }
+
+    /* Quick exit notice */
+    .qe-hint {
+      font-size: 12px;
+      color: #8a8d97;
+      margin-left: 8px;
+    }
+    @media (max-width: 600px) {
+      .qe-hint { display: none; }
+    }
+  </style>
 </head>
 
-<body style="margin:0;font-family:Arial,sans-serif;background:#070b12;color:#e5e7eb;line-height:1.6;scroll-behavior:smooth;">
+<body>
 
-  <!-- TOP NAV -->
-  <nav style="border-bottom:1px solid #1f2937;background:#0b1220;">
-    <div style="max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <a href="/" style="color:white;text-decoration:none;font-weight:bold;font-size:18px;letter-spacing:0.5px;">GCCI</a>
-      <div style="display:flex;gap:20px;align-items:center;">
-        <a href="/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Home</a>
-        <a href="/blog/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Blog</a>
-        <a href="mailto:Gus@gcci.io" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Contact</a>
+  <!-- NAV -->
+  <nav class="top">
+    <div class="wrap">
+      <a class="brand" href="/"><span class="dot"></span>GCCI</a>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <button class="quick-exit" onclick="quickExit()" title="Press ESC twice to exit">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Quick Exit
+        </button>
       </div>
     </div>
   </nav>
 
-  <div style="max-width:1100px;margin:auto;padding:40px 20px;">
+  <div class="container">
 
     <!-- HERO -->
-    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:40px;margin-bottom:60px;">
-
-      <div style="flex:1;min-width:300px;">
-        <div style="display:inline-block;padding:8px 14px;border:1px solid #1f3a5f;border-radius:999px;color:#7dd3fc;font-size:13px;background:#0f172a;margin-bottom:18px;">
-          Cybercrime resources and reporting guidance
-        </div>
-
-        <h1 style="font-size:52px;margin:0 0 15px 0;color:white;line-height:1.05;">
-          You&rsquo;re Not Alone.
-        </h1>
-
-        <p style="font-size:20px;color:#cbd5e1;max-width:620px;margin:0 0 12px 0;">
-          If you're dealing with online harassment, threats, impersonation, fraud, sextortion, or digital abuse, you're not the only one&mdash;and there are steps you can take right now.
-        </p>
-
-        <p style="color:#9ca3af;font-size:17px;max-width:620px;">
-          This page is designed to help you understand your situation, protect yourself, preserve evidence, and connect with the right reporting resources.
-        </p>
-
-        <div style="margin-top:28px;">
-          <a href="#guided-flow"
-             style="background:#2563eb;color:white;padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:bold;margin-right:10px;display:inline-block;margin-bottom:10px;">
+    <div class="hero">
+      <div>
+        <div class="pill">Cybercrime resources &amp; reporting guidance</div>
+        <h1>You&rsquo;re Not <span class="accent">Alone.</span></h1>
+        <p class="lede">If you're dealing with online harassment, threats, impersonation, fraud, sextortion, or digital abuse, you're not the only one&mdash;and there are steps you can take right now.</p>
+        <p class="sub">This page helps you understand your situation, protect yourself, preserve evidence, and connect with the right reporting resources.</p>
+        <div class="hero-actions">
+          <a href="#guided-flow" class="btn-primary">
             Start Here
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
           </a>
-
-          <a href="https://rexxfield.com" target="_blank"
-             style="border:1px solid #f97316;color:#f97316;padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;margin-bottom:10px;">
-            Advanced Help &rarr; Rexxfield
+          <a href="sms:+13215216790" class="btn-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text us privately
           </a>
         </div>
       </div>
 
-      <div style="flex:1;min-width:300px;">
-        <div style="background:#0b1220;padding:30px;border-radius:14px;border:1px solid #1f2937;box-shadow:0 10px 30px rgba(0,0,0,0.25);">
-          <h3 style="margin-top:0;color:#60a5fa;">Immediate Priority</h3>
-          <p>&bull; Save evidence immediately</p>
-          <p>&bull; Do not engage attackers or scammers</p>
-          <p>&bull; Lock down your accounts</p>
-          <p>&bull; Report the incident</p>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- REASSURANCE -->
-    <div style="background:#111827;border-left:4px solid #60a5fa;padding:18px 20px;margin-bottom:40px;border-radius:8px;">
-      <p style="margin:0;color:#e5e7eb;">
-        Many people facing cyber harassment, sextortion, scams, or online threats feel isolated or overwhelmed. These situations are more common than many people realize&mdash;and they can be addressed.
-      </p>
-    </div>
-
-    <!-- GUIDED FLOW -->
-    <div id="guided-flow" style="margin-bottom:60px;">
-      <h2 style="color:white;margin-bottom:10px;">What Type of Situation Are You In?</h2>
-      <p style="color:#9ca3af;max-width:760px;margin-top:0;">
-        Choose the option that best matches what is happening. You&rsquo;ll jump directly to the most relevant reporting and support resources.
-      </p>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px;">
-
-        <a href="#harassment" style="display:block;background:#0b1220;padding:20px;border-radius:14px;border:1px solid #1f2937;text-decoration:none;color:#60a5fa;font-weight:bold;">
-          Harassment, Doxxing, or Threats
-        </a>
-
-        <a href="#impersonation" style="display:block;background:#0b1220;padding:20px;border-radius:14px;border:1px solid #1f2937;text-decoration:none;color:#60a5fa;font-weight:bold;">
-          Impersonation or Fake Accounts
-        </a>
-
-        <a href="#crypto" style="display:block;background:#0b1220;padding:20px;border-radius:14px;border:1px solid #1f2937;text-decoration:none;color:#60a5fa;font-weight:bold;">
-          Cryptocurrency Scam or Financial Fraud
-        </a>
-
-        <a href="#identity" style="display:block;background:#0b1220;padding:20px;border-radius:14px;border:1px solid #1f2937;text-decoration:none;color:#60a5fa;font-weight:bold;">
-          Identity Theft or Account Takeover
-        </a>
-
-        <a href="#sextortion" style="display:block;background:#0b1220;padding:20px;border-radius:14px;border:1px solid #1f2937;text-decoration:none;color:#60a5fa;font-weight:bold;">
-          Sextortion or Non-Consensual Images
-        </a>
-
-        <a href="#unsure" style="display:block;background:#0b1220;padding:20px;border-radius:14px;border:1px solid #1f2937;text-decoration:none;color:#60a5fa;font-weight:bold;">
-          I&rsquo;m Not Sure / Multiple Things Are Happening
-        </a>
-
+      <div class="priority-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Immediate Priority
+        </h3>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Save evidence immediately</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Don&rsquo;t engage attackers or scammers</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Lock down your accounts</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Report the incident</li>
+        </ul>
       </div>
     </div>
 
-    <!-- SITUATION SECTIONS -->
-    <div style="margin-bottom:60px;">
-
-      <div id="harassment" style="background:#0b1220;padding:26px;border-radius:14px;border:1px solid #1f2937;margin-bottom:22px;">
-        <h3 style="margin-top:0;color:#60a5fa;">Harassment, Doxxing, or Threats</h3>
-        <p>If someone is targeting you, exposing personal information, stalking you, or making threats online:</p>
-        <p><b>Start with:</b></p>
-        <p><a href="https://www.ic3.gov" target="_blank" style="color:#60a5fa;">FBI Internet Crime Complaint Center (IC3)</a></p>
-        <p>Also report the abuse on the platform where it is happening. If you feel unsafe or believe there is immediate danger, contact local law enforcement.</p>
-      </div>
-
-      <div id="impersonation" style="background:#0b1220;padding:26px;border-radius:14px;border:1px solid #1f2937;margin-bottom:22px;">
-        <h3 style="margin-top:0;color:#60a5fa;">Impersonation or Fake Accounts</h3>
-        <p>If someone is pretending to be you or using fake profiles to mislead, harass, or damage your reputation:</p>
-        <p><b>Start with:</b></p>
-        <p><a href="https://www.ic3.gov" target="_blank" style="color:#60a5fa;">FBI Internet Crime Complaint Center (IC3)</a></p>
-        <p>Then report the fake account directly on the platform where it appears.</p>
-      </div>
-
-      <div id="crypto" style="background:#0b1220;padding:26px;border-radius:14px;border:1px solid #1f2937;margin-bottom:22px;">
-        <h3 style="margin-top:0;color:#60a5fa;">Cryptocurrency Scam or Financial Fraud</h3>
-        <p>If you sent money or cryptocurrency, were lured into a fake investment, or interacted with a fraudulent wallet or exchange:</p>
-        <p><b>Start with:</b></p>
-        <p><a href="https://www.chainabuse.com" target="_blank" style="color:#60a5fa;">Chainabuse</a></p>
-        <p><a href="https://www.ic3.gov" target="_blank" style="color:#60a5fa;">FBI Internet Crime Complaint Center (IC3)</a></p>
-        <p><a href="https://reportfraud.ftc.gov" target="_blank" style="color:#60a5fa;">FTC Fraud Reporting</a></p>
-        <p><a href="https://www.sec.gov/tcr" target="_blank" style="color:#60a5fa;">SEC Complaint Center</a></p>
-        <p><a href="https://www.cftc.gov/complaint" target="_blank" style="color:#60a5fa;">CFTC Complaint Portal</a></p>
-      </div>
-
-      <div id="identity" style="background:#0b1220;padding:26px;border-radius:14px;border:1px solid #1f2937;margin-bottom:22px;">
-        <h3 style="margin-top:0;color:#60a5fa;">Identity Theft or Account Takeover</h3>
-        <p>If someone has compromised your personal information, taken over an account, or used your identity without permission:</p>
-        <p><b>Start with:</b></p>
-        <p><a href="https://www.identitytheft.gov" target="_blank" style="color:#60a5fa;">IdentityTheft.gov</a></p>
-        <p>Secure your email, financial accounts, and any connected services immediately.</p>
-      </div>
-
-      <div id="sextortion" style="background:#0b1220;padding:26px;border-radius:14px;border:1px solid #1f2937;margin-bottom:22px;">
-        <h3 style="margin-top:0;color:#60a5fa;">Sextortion or Non-Consensual Images</h3>
-        <p>If someone is threatening to release intimate content, coercing you, or sharing private images without consent:</p>
-        <p><b>Start with:</b></p>
-        <p><a href="https://report.cybertip.org" target="_blank" style="color:#60a5fa;">NCMEC CyberTipline</a></p>
-        <p><a href="https://stopncii.org" target="_blank" style="color:#60a5fa;">StopNCII.org</a></p>
-        <p><a href="https://cybercivilrights.org" target="_blank" style="color:#60a5fa;">Cyber Civil Rights Initiative</a></p>
-      </div>
-
-      <div id="unsure" style="background:#0b1220;padding:26px;border-radius:14px;border:1px solid #1f2937;margin-bottom:22px;">
-        <h3 style="margin-top:0;color:#60a5fa;">I&rsquo;m Not Sure / Multiple Things Are Happening</h3>
-        <p>If your situation overlaps several categories, start with the broadest official reporting channel while preserving all evidence.</p>
-        <p><b>Start with:</b></p>
-        <p><a href="https://www.ic3.gov" target="_blank" style="color:#60a5fa;">FBI Internet Crime Complaint Center (IC3)</a></p>
-      </div>
-
+    <!-- TRUST LINE -->
+    <div class="trust">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span><strong>Reaching out is private.</strong> We only use information you share to understand your situation and respond. We do not sell or share your information. GCCI is an independent initiative working alongside <a href="https://rexxfield.com" target="_blank">Rexxfield Technologies</a>.</span>
     </div>
 
-    <!-- STEP FLOW -->
-    <div style="margin-bottom:60px;">
-      <h2 style="color:white;margin-bottom:20px;">What To Do Next</h2>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
-
-        <div style="background:#0b1220;padding:20px;border-radius:12px;border:1px solid #1f2937;">
-          <h3>1. Preserve Evidence</h3>
-          <p>Screenshots, URLs, usernames, timestamps, emails, wallet addresses, and phone numbers.</p>
-        </div>
-
-        <div style="background:#0b1220;padding:20px;border-radius:12px;border:1px solid #1f2937;">
-          <h3>2. Secure Yourself</h3>
-          <p>Change passwords, enable 2FA, review recovery options, and check connected devices.</p>
-        </div>
-
-        <div style="background:#0b1220;padding:20px;border-radius:12px;border:1px solid #1f2937;">
-          <h3>3. Report It</h3>
-          <p>Use official reporting channels and platform abuse tools as soon as possible.</p>
-        </div>
-
-        <div style="background:#0b1220;padding:20px;border-radius:12px;border:1px solid #1f2937;">
-          <h3>4. Escalate If Needed</h3>
-          <p>If the situation continues, worsens, or causes harm, professional help may be needed.</p>
-        </div>
-
+    <!-- TEXT-FIRST CONTACT -->
+    <div class="contact-banner">
+      <div class="text">
+        <h3>Need to talk to a person?</h3>
+        <p>Text us anytime. We&rsquo;ll respond as soon as we can. Texts are confidential.</p>
       </div>
-
-      <p style="color:#f87171;margin-top:20px;font-weight:bold;">
-        If you are in immediate danger, contact local law enforcement immediately.
-      </p>
-    </div>
-
-    <!-- PLATFORM LINKS -->
-    <div style="margin-bottom:60px;">
-      <h2 style="color:#60a5fa;">Platform Reporting Links</h2>
-      <p style="color:#9ca3af;max-width:700px;">
-        If the abuse, impersonation, or harmful content is happening on a specific platform, report it there as well.
-      </p>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:20px;">
-        <a href="https://help.twitter.com/en/forms/safety-and-sensitive-content/report-abuse" target="_blank" style="display:block;background:#0b1220;color:#60a5fa;text-decoration:none;padding:16px;border-radius:12px;border:1px solid #1f2937;">Report Abuse on X</a>
-        <a href="https://www.facebook.com/help/263149623790594" target="_blank" style="display:block;background:#0b1220;color:#60a5fa;text-decoration:none;padding:16px;border-radius:12px;border:1px solid #1f2937;">Report Abuse on Facebook</a>
-        <a href="https://help.instagram.com/165828726894770" target="_blank" style="display:block;background:#0b1220;color:#60a5fa;text-decoration:none;padding:16px;border-radius:12px;border:1px solid #1f2937;">Report Abuse on Instagram</a>
-        <a href="https://support.google.com/youtube/answer/2802027" target="_blank" style="display:block;background:#0b1220;color:#60a5fa;text-decoration:none;padding:16px;border-radius:12px;border:1px solid #1f2937;">Report Abuse on YouTube</a>
-        <a href="https://www.tiktok.com/safety/en/report-a-problem/" target="_blank" style="display:block;background:#0b1220;color:#60a5fa;text-decoration:none;padding:16px;border-radius:12px;border:1px solid #1f2937;">Report Abuse on TikTok</a>
-        <a href="https://support.google.com/websearch/troubleshooter/3111061" target="_blank" style="display:block;background:#0b1220;color:#60a5fa;text-decoration:none;padding:16px;border-radius:12px;border:1px solid #1f2937;">Request Removal from Google Search</a>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div style="background:linear-gradient(135deg,#0f172a 0%,#111827 100%);border:1px solid #1f3a5f;border-radius:18px;padding:34px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.25);margin-bottom:40px;">
-      <h2 style="margin-top:0;color:#7dd3fc;">When Public Reporting Isn&rsquo;t Enough</h2>
-      <p style="max-width:700px;margin:0 auto 20px auto;color:#cbd5e1;">
-        Some cases require deeper investigation, attribution, and escalation beyond standard reporting channels. If you need advanced professional support, Rexxfield handles complex cyber incidents.
-      </p>
-      <a href="https://rexxfield.com" target="_blank" style="display:inline-block;background:#f97316;color:white;padding:14px 26px;border-radius:10px;text-decoration:none;font-weight:bold;">
-        Visit Rexxfield &rarr;
+      <a href="sms:+13215216790" class="phone-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Text (321) 521-6790
       </a>
     </div>
 
-    <!-- FOOTER -->
-    <div style="text-align:center;margin-top:35px;padding-top:30px;border-top:1px solid #1f2937;">
-      <p style="font-size:14px;color:#cbd5e1;margin-bottom:8px;">
-        If you're unsure where to start, you're welcome to reach out: <a href="mailto:Gus@gcci.io" style="color:#60a5fa;text-decoration:none;">Gus@gcci.io</a>
-      </p>
-      <p style="font-size:12px;color:#94a3b8;max-width:700px;margin:0 auto;">
-        Gus &amp; Co Cyber Investigations &middot; Independent initiative supporting vict
+    <!-- URGENT BANNER (amber) -->
+    <div class="urgent-banner">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <p><strong>If you are in immediate danger, contact local law enforcement.</strong> Many people facing harassment, sextortion, scams, or online threats feel isolated&mdash;these situations are more common than people realize, and they can be addressed.</p>
+    </div>
+
+    <!-- GUIDED FLOW -->
+    <div id="guided-flow" class="section-head">
+      <h2>What kind of situation are you in?</h2>
+      <p>Pick the option closest to what&rsquo;s happening. You&rsquo;ll jump straight to the most relevant reporting and support resources.</p>
+    </div>
+
+    <div class="cat-grid">
+      <a href="#harassment" class="cat-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="body">
+          <h3>Harassment, Doxxing, or Threats</h3>
+          <p>Targeted, stalked, or threatened online.</p>
+        </div>
+      </a>
+
+      <a href="#impersonation" class="cat-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="body">
+          <h3>Impersonation or Fake Accounts</h3>
+          <p>Someone pretending to be you online.</p>
+        </div>
+      </a>
+
+      <a href="#crypto" class="cat-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="body">
+          <h3>Crypto Scam or Financial Fraud</h3>
+          <p>Money or crypto sent to a scammer.</p>
+        </div>
+      </a>
+
+      <a href="#identity" class="cat-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 8h2M15 12h2M7 16h10"/></svg>
+        </div>
+        <div class="body">
+          <h3>Identity Theft or Account Takeover</h3>
+          <p>Your information or accounts compromised.</p>
+        </div>
+      </a>
+
+      <a href="#sextortion" class="cat-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <div class="body">
+          <h3>Sextortion or Non-Consensual Images</h3>
+          <p>Threats or sharing of intimate content.</p>
+        </div>
+      </a>
+
+      <a href="#unsure" class="cat-card">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="body">
+          <h3>I&rsquo;m Not Sure / Multiple Things</h3>
+          <p>Your situation overlaps several categories.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- SITUATION SECTIONS -->
+    <div id="harassment" class="situation">
+      <h3>Harassment, Doxxing, or Threats</h3>
+      <p>If someone is targeting you, exposing personal information, stalking you, or making threats online:</p>
+      <p class="sub-label">Start with:</p>
+      <p><a href="https://www.ic3.gov" target="_blank">FBI Internet Crime Complaint Center (IC3)</a></p>
+      <p>Also report the abuse on the platform where it is happening. If you feel unsafe or believe there is immediate danger, contact local law enforcement.</p>
+    </div>
+
+    <div id="impersonation" class="situation">
+      <h3>Impersonation or Fake Accounts</h3>
+      <p>If someone is pretending to be you or using fake profiles to mislead, harass, or damage your reputation:</p>
+      <p class="sub-label">Start with:</p>
+      <p><a href="https://www.ic3.gov" target="_blank">FBI Internet Crime Complaint Center (IC3)</a></p>
+      <p>Then report the fake account directly on the platform where it appears.</p>
+    </div>
+
+    <div id="crypto" class="situation">
+      <h3>Cryptocurrency Scam or Financial Fraud</h3>
+      <p>If you sent money or cryptocurrency, were lured into a fake investment, or interacted with a fraudulent wallet or exchange:</p>
+      <p class="sub-label">Start with:</p>
+      <p><a href="https://www.chainabuse.com" target="_blank">Chainabuse</a></p>
+      <p><a href="https://www.ic3.gov" target="_blank">FBI Internet Crime Complaint Center (IC3)</a></p>
+      <p><a href="https://reportfraud.ftc.gov" target="_blank">FTC Fraud Reporting</a></p>
+      <p><a href="https://www.sec.gov/tcr" target="_blank">SEC Complaint Center</a></p>
+      <p><a href="https://www.cftc.gov/complaint" target="_blank">CFTC Complaint Portal</a></p>
+    </div>
+
+    <div id="identity" class="situation">
+      <h3>Identity Theft or Account Takeover</h3>
+      <p>If someone has compromised your personal information, taken over an account, or used your identity without permission:</p>
+      <p class="sub-label">Start with:</p>
+      <p><a href="https://www.identitytheft.gov" target="_blank">IdentityTheft.gov</a></p>
+      <p>Secure your email, financial accounts, and any connected services immediately.</p>
+    </div>
+
+    <div id="sextortion" class="situation">
+      <h3>Sextortion or Non-Consensual Images</h3>
+      <p>If someone is threatening to release intimate content, coercing you, or sharing private images without consent:</p>
+      <p class="sub-label">Start with:</p>
+      <p><a href="https://report.cybertip.org" target="_blank">NCMEC CyberTipline</a> <span class="resource-note">if this involves a minor</span></p>
+      <p><a href="https://stopncii.org" target="_blank">StopNCII.org</a> <span class="resource-note">for adults concerned about non-consensual intimate images</span></p>
+      <p><a href="https://cybercivilrights.org" target="_blank">Cyber Civil Rights Initiative</a></p>
+    </div>
+
+    <div id="unsure" class="situation" style="margin-bottom: 64px;">
+      <h3>I&rsquo;m Not Sure / Multiple Things Are Happening</h3>
+      <p>If your situation overlaps several categories, start with the broadest official reporting channel while preserving all evidence.</p>
+      <p class="sub-label">Start with:</p>
+      <p><a href="https://www.ic3.gov" target="_blank">FBI Internet Crime Complaint Center (IC3)</a></p>
+    </div>
+
+    <!-- STEP FLOW -->
+    <div class="section-head">
+      <h2>What to do next</h2>
+      <p>Four steps that apply no matter which kind of incident you&rsquo;re dealing with.</p>
+    </div>
+
+    <div class="step-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Preserve Evidence</h3>
+        <p>Screenshots, URLs, usernames, timestamps, emails, wallet addresses, phone numbers.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Secure Yourself</h3>
+        <p>Change passwords, enable 2FA, review recovery options, check connected devices.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Report It</h3>
+        <p>Use official reporting channels and platform abuse tools as soon as possible.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Escalate If Needed</h3>
+        <p>If the situation continues, worsens, or causes harm, professional help may be needed.</p>
+      </div>
+    </div>
+
+    <div class="danger-note" style="margin-bottom: 64px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      If you are in immediate danger, contact local law enforcement immediately.
+    </div>
+
+    <!-- PLATFORMS -->
+    <div class="section-head">
+      <h2>Platform Reporting Links</h2>
+      <p>If the abuse, impersonation, or harmful content is happening on a specific platform, report it there as well.</p>
+    </div>
+
+    <div class="platform-grid" style="margin-bottom: 64px;">
+      <a href="https://help.twitter.com/en/forms/safety-and-sensitive-content/report-abuse" target="_blank" class="platform-card">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.6 10.5L20.6 2H19l-6.1 7.4L8 2H2l7.4 10.7L2 22h1.6l6.5-7.9L15.5 22H21l-7.4-11.5z"/></svg>
+        Report Abuse on X
+      </a>
+      <a href="https://www.facebook.com/help/263149623790594" target="_blank" class="platform-card">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg>
+        Report Abuse on Facebook
+      </a>
+      <a href="https://help.instagram.com/165828726894770" target="_blank" class="platform-card">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.4a4 4 0 1 1-7.9 1 4 4 0 0 1 7.9-1z"/></svg>
+        Report Abuse on Instagram
+      </a>
+      <a href="https://support.google.com/youtube/answer/2802027" target="_blank" class="platform-card">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 12s0-3.7-.5-5.4c-.3-1-1-1.7-2-2C18.7 4 12 4 12 4s-6.7 0-8.5.6c-1 .3-1.7 1-2 2C1 8.3 1 12 1 12s0 3.7.5 5.4c.3 1 1 1.7 2 2 1.8.6 8.5.6 8.5.6s6.7 0 8.5-.6c1-.3 1.7-1 2-2 .5-1.7.5-5.4.5-5.4zM10 15.5v-7l6 3.5-6 3.5z"/></svg>
+        Report Abuse on YouTube
+      </a>
+      <a href="https://www.tiktok.com/safety/en/report-a-problem/" target="_blank" class="platform-card">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 6.6c-1.5 0-2.8-1-3.3-2.4V4h-3v12.6c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5 1.1-2.5 2.5-2.5c.3 0 .5 0 .8.1V11c-.3 0-.5-.1-.8-.1-3 0-5.5 2.5-5.5 5.5S7.7 22 10.7 22s5.5-2.5 5.5-5.5V9.7c1.2.7 2.6 1.1 4 1.1V7.7c-.2 0-.5 0-.7-.1z"/></svg>
+        Report Abuse on TikTok
+      </a>
+      <a href="https://support.google.com/websearch/troubleshooter/3111061" target="_blank" class="platform-card">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Request Removal from Google
+      </a>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>When public reporting isn&rsquo;t enough</h2>
+      <p>Some cases need deeper investigation, attribution, and escalation beyond standard reporting channels. If you need advanced professional support, Rexxfield handles complex cyber incidents.</p>
+      <a href="https://rexxfield.com" target="_blank">
+        Visit Rexxfield
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>If you&rsquo;re unsure where to start, you&rsquo;re welcome to reach out: <a href="mailto:Gus@gcci.io">Gus@gcci.io</a> or text <a href="sms:+13215216790">(321) 521-6790</a></p>
+    <p class="small">Gus &amp; Co Cyber Investigations is an independent initiative supporting victims and working alongside Rexxfield Technologies. We only use information you share to understand your situation and respond. We do not sell or share your information.</p>
+  </footer>
+
+  <script>
+    // Quick Exit: immediately hide page content, then replace current page with Google.
+    function quickExit() {
+      document.documentElement.innerHTML = '<head><title>Loading...</title></head><body style="margin:0;background:#fff;"></body>';
+      window.location.replace('https://www.google.com');
+    }
+    // ESC pressed twice within 1 second triggers Quick Exit
+    let escTimer = null;
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (escTimer) {
+          clearTimeout(escTimer);
+          escTimer = null;
+          quickExit();
+        } else {
+          escTimer = setTimeout(function() { escTimer = null; }, 1000);
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
