@@ -1,10 +1,14 @@
 <!doctype html>
+<!-- GCCI homepage v4 - dark warm gold + guided wizard with localStorage -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GCCI | Cyber Crime Help</title>
   <meta name="description" content="Private cybercrime resources, reporting guidance, and support for harassment, impersonation, fraud, sextortion, and digital abuse." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #111315;
@@ -16,21 +20,17 @@
       --line: rgba(255,255,255,.11);
       --accent: #d6a14a;
       --accent-dark: #b9812f;
+      --danger: #e26464;
       --danger-soft: rgba(214,161,74,.12);
+      --warn: rgba(226,100,100,.12);
       --shadow: 0 24px 70px rgba(0,0,0,.32);
       --radius-lg: 28px;
       --radius-md: 18px;
       --radius-sm: 12px;
       --max: 1120px;
     }
-
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      background: var(--bg);
-    }
-
+    html { scroll-behavior: smooth; background: var(--bg); }
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -43,547 +43,189 @@
       font-size: 17px;
       padding-bottom: 96px;
     }
-
     a { color: inherit; }
-
     .container {
       width: min(var(--max), calc(100% - 40px));
       margin: 0 auto;
     }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
 
-    .skip-link {
-      position: absolute;
-      top: -120px;
-      left: 16px;
-      background: var(--accent);
-      color: #17130c;
-      padding: 10px 14px;
-      border-radius: 10px;
-      z-index: 1000;
-    }
-
-    .skip-link:focus { top: 16px; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(17,19,21,.78);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      font-weight: 750;
-      letter-spacing: .02em;
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45));
-      color: #18120b;
-      box-shadow: 0 12px 30px rgba(214,161,74,.17);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .nav-link,
-    .quick-exit {
-      appearance: none;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.04);
-      color: var(--muted);
-      padding: 10px 14px;
-      text-decoration: none;
-      font: inherit;
-      font-size: 14px;
-      cursor: pointer;
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
       transition: transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease;
     }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color: #f3b8b8; border-color: rgba(226,100,100,.4); }
+    .quick-exit:hover { color: #fff; border-color: rgba(226,100,100,.7); background: rgba(226,100,100,.12); }
+    .quick-exit:active, .btn:active { transform: translateY(1px); }
 
-    .nav-link:hover,
-    .quick-exit:hover {
-      color: var(--text);
-      border-color: rgba(214,161,74,.45);
-      background: rgba(214,161,74,.09);
+    .hero { padding: 72px 0 34px; }
+    .hero-card { border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)); border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:clamp(28px,6vw,72px); text-align:center; position:relative; overflow:hidden; }
+    .hero-card::before { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 50% 0%, rgba(214,161,74,.16), transparent 32rem); }
+    .hero-inner { position:relative; max-width:770px; margin:0 auto; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:800; margin:0 0 14px; }
+    h1 { margin:0; font-size:clamp(42px,8vw,78px); line-height:.96; letter-spacing:-.055em; font-weight:760; }
+    .hero-subhead { margin:18px auto 0; color:var(--muted); font-size:clamp(18px,2.2vw,23px); max-width:660px; line-height:1.45; }
+    .hero-actions { margin:28px auto 0; display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:13px 20px; border-radius:999px; border:1px solid transparent; font-weight:760; text-decoration:none; transition:transform .12s ease, background .12s ease, border-color .12s ease; cursor:pointer; }
+    .btn-primary { color:#17120b; background:var(--accent); box-shadow:0 16px 34px rgba(214,161,74,.18); }
+    .btn-primary:hover { background:#e0ae5c; }
+    .btn-secondary { color:var(--text); background:rgba(255,255,255,.045); border-color:var(--line); }
+    .btn-secondary:hover { border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .btn-ghost { color:var(--quiet); background:transparent; border-color:var(--line); }
+    .btn-ghost:hover { color:var(--text); border-color:rgba(214,161,74,.4); }
+    .under-cta { margin:10px 0 0; color:var(--quiet); font-size:14px; }
+
+    .urgent { margin:22px auto 0; max-width:680px; color:var(--muted); font-size:15px; background:rgba(255,255,255,.035); border:1px solid var(--line); border-radius:var(--radius-md); padding:14px 16px; }
+
+    section { padding:34px 0; }
+    .section-head { max-width:720px; margin:0 auto 24px; text-align:center; }
+    h2 { margin:0; font-size:clamp(28px,4vw,46px); line-height:1.05; letter-spacing:-.035em; }
+    .section-head p { color:var(--muted); margin:12px 0 0; }
+
+    .trust-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .trust-item, .card, .step, .report-card { border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:var(--radius-md); }
+    .trust-item { padding:20px 14px; text-align:center; font-weight:740; color:var(--text); }
+    .control-strip { margin-top:16px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .control-strip .card { padding:22px; color:var(--muted); }
+    .control-strip strong { display:block; color:var(--text); margin-bottom:4px; }
+
+    .priority { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .priority .step { padding:20px; }
+    .step-num { width:34px; height:34px; border-radius:999px; display:grid; place-items:center; background:var(--danger-soft); color:var(--accent); font-weight:850; margin-bottom:12px; }
+    .step h3, .card h3, .report-card h3 { margin:0 0 8px; font-size:18px; line-height:1.25; }
+    .step p, .card p, .report-card p { margin:0; color:var(--muted); font-size:15px; }
+
+    /* WIZARD */
+    .wizard {
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(214,161,74,.05), rgba(255,255,255,.02));
+      border-radius:var(--radius-lg);
+      padding:clamp(24px,4vw,40px);
+      box-shadow:var(--shadow);
+    }
+    .wizard-progress {
+      display:flex; align-items:center; gap:10px;
+      color:var(--quiet); font-size:13px; font-weight:600;
+      margin-bottom:18px;
+      text-transform:uppercase; letter-spacing:.08em;
+    }
+    .wizard-progress .dots { display:flex; gap:6px; margin-left:auto; }
+    .wizard-progress .dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.12); }
+    .wizard-progress .dot.active { background:var(--accent); }
+    .wizard-step h3 { margin:0 0 8px; font-size:clamp(22px,3vw,30px); letter-spacing:-.02em; }
+    .wizard-step .lede { color:var(--muted); margin:0 0 22px; }
+    .wizard-options { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:10px; }
+    .wizard-option {
+      appearance:none; cursor:pointer; text-align:left;
+      border:1px solid var(--line); background:rgba(255,255,255,.035);
+      color:var(--text); border-radius:var(--radius-md);
+      padding:16px 18px; font:inherit; font-size:15px; font-weight:600;
+      transition: transform .14s, border-color .14s, background .14s;
+      display:flex; justify-content:space-between; align-items:center; gap:10px;
+    }
+    .wizard-option:hover { border-color:rgba(214,161,74,.5); background:rgba(214,161,74,.08); transform:translateY(-1px); }
+    .wizard-option .arrow { color:var(--accent); font-weight:700; }
+    .wizard-actions { display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; }
+    .wizard-actions .spacer { flex:1; }
+    .wizard-step.hidden, .wizard-result.hidden { display:none; }
+    .wizard-resume {
+      background:rgba(214,161,74,.10); border:1px solid rgba(214,161,74,.3);
+      border-radius:var(--radius-sm); padding:10px 14px;
+      color:var(--muted); font-size:14px; margin-bottom:18px;
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    }
+    .wizard-resume button {
+      appearance:none; background:transparent; border:none; color:var(--accent); cursor:pointer;
+      font:inherit; font-weight:700; text-decoration:underline;
     }
 
-    .quick-exit:active,
-    .btn:active { transform: translateY(1px); }
+    /* WIZARD RESULT */
+    .wizard-result h3 { margin:0 0 6px; font-size:clamp(22px,3vw,30px); letter-spacing:-.02em; }
+    .wizard-result .summary { color:var(--muted); margin:0 0 18px; }
+    .result-block { border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:var(--radius-md); padding:20px; margin-bottom:14px; }
+    .result-block.primary { border-color:rgba(214,161,74,.4); background:rgba(214,161,74,.08); }
+    .result-block.danger { border-color:rgba(226,100,100,.45); background:var(--warn); }
+    .result-label { font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+    .result-block.danger .result-label { color:var(--danger); }
+    .result-block h4 { margin:0 0 8px; font-size:18px; }
+    .result-block ul { margin:8px 0 0; padding-left:18px; color:var(--muted); }
+    .result-block li { margin-bottom:6px; }
+    .result-block a { color:var(--accent); text-decoration:none; font-weight:600; }
+    .result-block a:hover { text-decoration:underline; }
+    .result-actions { display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; }
 
-    .hero {
-      padding: 72px 0 34px;
-    }
+    .browse-all { text-align:center; margin-top:18px; }
+    .browse-all a { color:var(--quiet); font-size:14px; text-decoration:none; border-bottom:1px dashed var(--line); padding-bottom:2px; }
+    .browse-all a:hover { color:var(--accent); border-color:var(--accent); }
 
-    .hero-card {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      padding: clamp(28px, 6vw, 72px);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+    .all-situations { display:none; margin-top:24px; }
+    .all-situations.open { display:block; }
+    .all-situations .guidance-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .all-situations .card { padding:22px; transition:transform .14s, border-color .14s, background .14s; display:flex; flex-direction:column; }
+    .all-situations .card:hover { transform:translateY(-2px); border-color:rgba(214,161,74,.42); background:rgba(214,161,74,.055); }
+    .all-situations .card a { display:inline-flex; margin-top:14px; color:var(--accent); text-decoration:none; font-weight:760; }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(circle at 50% 0%, rgba(214,161,74,.16), transparent 32rem);
-    }
+    .tools-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; align-items:stretch; }
+    .report-card { padding:24px; }
+    .checklist { display:grid; gap:10px; margin-top:16px; }
+    .checklist label { display:flex; align-items:flex-start; gap:10px; color:var(--muted); cursor:pointer; }
+    input[type="checkbox"] { margin-top:5px; accent-color:var(--accent); }
+    .progress { margin-top:14px; color:var(--quiet); font-size:14px; }
+    textarea { width:100%; min-height:250px; resize:vertical; border-radius:var(--radius-sm); border:1px solid var(--line); background:rgba(0,0,0,.18); color:var(--text); padding:14px; font:inherit; font-size:14px; line-height:1.5; margin-top:14px; }
 
-    .hero-inner {
-      position: relative;
-      max-width: 770px;
-      margin: 0 auto;
-    }
+    .link-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .resource-link { border:1px solid var(--line); border-radius:var(--radius-md); background:rgba(255,255,255,.035); padding:16px; text-decoration:none; color:var(--text); font-weight:710; transition:border-color .14s, background .14s, transform .14s; }
+    .resource-link span { display:block; color:var(--muted); font-weight:500; margin-top:4px; font-size:14px; }
+    .resource-link:hover { transform:translateY(-2px); border-color:rgba(214,161,74,.42); background:rgba(214,161,74,.055); }
 
-    .eyebrow {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-size: 12px;
-      font-weight: 800;
-      margin: 0 0 14px;
-    }
+    .escalation { border:1px solid rgba(214,161,74,.25); background:linear-gradient(180deg, rgba(214,161,74,.10), rgba(255,255,255,.03)); border-radius:var(--radius-lg); padding:clamp(24px,5vw,44px); display:grid; grid-template-columns:1.2fr .8fr; gap:20px; align-items:center; }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(42px, 8vw, 78px);
-      line-height: .96;
-      letter-spacing: -.055em;
-      font-weight: 760;
-    }
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); }
+    footer a:hover { color:var(--accent); }
 
-    .hero-subhead {
-      margin: 18px auto 0;
-      color: var(--muted);
-      font-size: clamp(18px, 2.2vw, 23px);
-      max-width: 660px;
-      line-height: 1.45;
-    }
+    .sticky-mobile { position:fixed; left:0; right:0; bottom:0; z-index:30; display:none; background:rgba(17,19,21,.92); border-top:1px solid var(--line); backdrop-filter:blur(16px); padding:10px 14px calc(10px + env(safe-area-inset-bottom)); }
+    .sticky-mobile-inner { display:grid; gap:5px; text-align:center; }
+    .sticky-mobile .btn { width:100%; }
+    .sticky-mobile small { color:var(--quiet); }
 
-    .hero-actions {
-      margin: 28px auto 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
+    .toast { position:fixed; right:18px; bottom:92px; z-index:50; background:var(--panel-soft); border:1px solid var(--line); border-radius:14px; padding:12px 14px; color:var(--text); box-shadow:var(--shadow); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .15s, transform .15s; font-size:14px; }
+    .toast.show { opacity:1; transform:translateY(0); }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 13px 20px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 760;
-      text-decoration: none;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      color: #17120b;
-      background: var(--accent);
-      box-shadow: 0 16px 34px rgba(214,161,74,.18);
-    }
-
-    .btn-primary:hover { background: #e0ae5c; }
-
-    .btn-secondary {
-      color: var(--text);
-      background: rgba(255,255,255,.045);
-      border-color: var(--line);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(214,161,74,.45);
-      background: rgba(214,161,74,.09);
-    }
-
-    .under-cta {
-      margin: 10px 0 0;
-      color: var(--quiet);
-      font-size: 14px;
-    }
-
-    .urgent {
-      margin: 22px auto 0;
-      max-width: 680px;
-      color: var(--muted);
-      font-size: 15px;
-      background: rgba(255,255,255,.035);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      padding: 14px 16px;
-    }
-
-    section { padding: 34px 0; }
-
-    .section-head {
-      max-width: 720px;
-      margin: 0 auto 24px;
-      text-align: center;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1.05;
-      letter-spacing: -.035em;
-    }
-
-    .section-head p {
-      color: var(--muted);
-      margin: 12px 0 0;
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .trust-item,
-    .card,
-    .step,
-    .report-card {
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.035);
-      border-radius: var(--radius-md);
-    }
-
-    .trust-item {
-      padding: 20px 14px;
-      text-align: center;
-      font-weight: 740;
-      color: var(--text);
-    }
-
-    .control-strip {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .control-strip .card {
-      padding: 22px;
-      color: var(--muted);
-    }
-
-    .control-strip strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .priority {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .priority .step {
-      padding: 20px;
-    }
-
-    .step-num {
-      width: 34px;
-      height: 34px;
-      border-radius: 999px;
-      display: grid;
-      place-items: center;
-      background: var(--danger-soft);
-      color: var(--accent);
-      font-weight: 850;
-      margin-bottom: 12px;
-    }
-
-    .step h3,
-    .card h3,
-    .report-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      line-height: 1.25;
-    }
-
-    .step p,
-    .card p,
-    .report-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .guidance-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .card {
-      padding: 22px;
-      transition: transform .14s ease, border-color .14s ease, background .14s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(214,161,74,.42);
-      background: rgba(214,161,74,.055);
-    }
-
-    .card a {
-      display: inline-flex;
-      margin-top: 14px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 760;
-    }
-
-    .tools-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      align-items: stretch;
-    }
-
-    .report-card {
-      padding: 24px;
-    }
-
-    .checklist {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .checklist label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      color: var(--muted);
-      cursor: pointer;
-    }
-
-    input[type="checkbox"] {
-      margin-top: 5px;
-      accent-color: var(--accent);
-    }
-
-    .progress {
-      margin-top: 14px;
-      color: var(--quiet);
-      font-size: 14px;
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 250px;
-      resize: vertical;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--line);
-      background: rgba(0,0,0,.18);
-      color: var(--text);
-      padding: 14px;
-      font: inherit;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-top: 14px;
-    }
-
-    .link-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .resource-link {
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,.035);
-      padding: 16px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 710;
-      transition: border-color .14s ease, background .14s ease, transform .14s ease;
-    }
-
-    .resource-link span {
-      display: block;
-      color: var(--muted);
-      font-weight: 500;
-      margin-top: 4px;
-      font-size: 14px;
-    }
-
-    .resource-link:hover {
-      transform: translateY(-2px);
-      border-color: rgba(214,161,74,.42);
-      background: rgba(214,161,74,.055);
-    }
-
-    .escalation {
-      border: 1px solid rgba(214,161,74,.25);
-      background: linear-gradient(180deg, rgba(214,161,74,.10), rgba(255,255,255,.03));
-      border-radius: var(--radius-lg);
-      padding: clamp(24px, 5vw, 44px);
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 0 40px;
-      color: var(--quiet);
-      font-size: 14px;
-    }
-
-    .footer-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .sticky-mobile {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 30;
-      display: none;
-      background: rgba(17,19,21,.92);
-      border-top: 1px solid var(--line);
-      backdrop-filter: blur(16px);
-      padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
-    }
-
-    .sticky-mobile-inner {
-      display: grid;
-      gap: 5px;
-      text-align: center;
-    }
-
-    .sticky-mobile .btn { width: 100%; }
-    .sticky-mobile small { color: var(--quiet); }
-
-    .toast {
-      position: fixed;
-      right: 18px;
-      bottom: 92px;
-      z-index: 50;
-      background: var(--panel-soft);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
-      color: var(--text);
-      box-shadow: var(--shadow);
-      opacity: 0;
-      transform: translateY(8px);
-      pointer-events: none;
-      transition: opacity .15s ease, transform .15s ease;
-      font-size: 14px;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .first-visit-hint {
-      position: fixed;
-      right: 18px;
-      top: 82px;
-      z-index: 40;
-      border: 1px solid rgba(214,161,74,.32);
-      background: rgba(31,35,40,.96);
-      color: var(--muted);
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-size: 14px;
-      box-shadow: var(--shadow);
-      animation: hintFade 6s ease forwards;
-    }
-
-    @keyframes hintFade {
-      0%, 72% { opacity: 1; transform: translateY(0); }
-      100% { opacity: 0; transform: translateY(-6px); pointer-events: none; }
-    }
+    .first-visit-hint { position:fixed; right:18px; top:82px; z-index:40; border:1px solid rgba(214,161,74,.32); background:rgba(31,35,40,.96); color:var(--muted); border-radius:999px; padding:10px 14px; font-size:14px; box-shadow:var(--shadow); animation:hintFade 6s ease forwards; }
+    @keyframes hintFade { 0%,72% { opacity:1; transform:translateY(0); } 100% { opacity:0; transform:translateY(-6px); pointer-events:none; } }
 
     @media (max-width: 900px) {
-      .trust-grid,
-      .priority,
-      .guidance-grid,
-      .link-grid,
-      .control-strip,
-      .tools-grid,
-      .escalation {
-        grid-template-columns: 1fr 1fr;
-      }
+      .trust-grid, .priority, .link-grid, .control-strip, .tools-grid, .escalation,
+      .all-situations .guidance-grid { grid-template-columns: 1fr 1fr; }
     }
-
     @media (max-width: 680px) {
-      body { font-size: 16px; }
-      .container { width: min(100% - 28px, var(--max)); }
-      .nav { min-height: 64px; }
-      .nav-link { display: none; }
-      .quick-exit { padding: 10px 12px; }
-      .hero { padding-top: 42px; }
-      .hero-card { padding: 28px 18px; border-radius: 22px; }
-      h1 { font-size: clamp(40px, 14vw, 58px); }
-      .hero-actions { align-items: stretch; flex-direction: column; }
-      .btn { width: 100%; min-height: 50px; }
-      .trust-grid,
-      .priority,
-      .guidance-grid,
-      .link-grid,
-      .control-strip,
-      .tools-grid,
-      .escalation {
-        grid-template-columns: 1fr;
-      }
-      section { padding: 26px 0; }
-      .sticky-mobile { display: block; }
-      .first-visit-hint { left: 14px; right: 14px; top: 76px; text-align: center; }
+      body { font-size:16px; }
+      .container { width:min(100% - 28px, var(--max)); }
+      .nav { min-height:64px; }
+      .nav-link { display:none; }
+      .quick-exit { padding:10px 12px; }
+      .hero { padding-top:42px; }
+      .hero-card { padding:28px 18px; border-radius:22px; }
+      h1 { font-size:clamp(40px,14vw,58px); }
+      .hero-actions { align-items:stretch; flex-direction:column; }
+      .btn { width:100%; min-height:50px; }
+      .trust-grid, .priority, .link-grid, .control-strip, .tools-grid, .escalation,
+      .all-situations .guidance-grid, .wizard-options { grid-template-columns: 1fr; }
+      section { padding:26px 0; }
+      .sticky-mobile { display:block; }
+      .first-visit-hint { left:14px; right:14px; top:76px; text-align:center; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .001ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: .001ms !important;
-      }
+      *, *::before, *::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }
     }
   </style>
 </head>
@@ -597,7 +239,7 @@
         <span>GCCI</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a class="nav-link" href="#situations">Guidance</a>
+        <a class="nav-link" href="#wizard">Find help</a>
         <a class="nav-link" href="#tools">Evidence Tools</a>
         <a class="nav-link" href="/blog/">Blog</a>
         <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit: instantly hides this page">Quick Exit</button>
@@ -612,14 +254,14 @@
       <div class="container">
         <div class="hero-card">
           <div class="hero-inner">
-            <p class="eyebrow">Cybercrime resources & reporting guidance</p>
+            <p class="eyebrow">Cybercrime resources &amp; reporting guidance</p>
             <h1>Get help privately. Right now.</h1>
-            <p class="hero-subhead">No tracking. No logs. No saved conversations. No one sees this but you.</p>
+            <p class="hero-subhead">Private. No third-party trackers. Nothing you do here is shared or sold.</p>
             <div class="hero-actions" aria-label="Primary actions">
               <a class="btn btn-primary" href="sms:+13215216790">Text us now</a>
-              <a class="btn btn-secondary" href="#situations">View steps</a>
+              <a class="btn btn-secondary" href="#wizard">Find your next step</a>
             </div>
-            <p class="under-cta">No signup • No records • Just a private conversation</p>
+            <p class="under-cta">No signup • No third-party trackers • Just a private conversation</p>
             <p class="urgent">If you are in immediate physical danger, contact local law enforcement or emergency services now.</p>
           </div>
         </div>
@@ -629,14 +271,14 @@
     <section aria-labelledby="privacy-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="privacy-title">You’re not being watched.</h2>
+          <h2 id="privacy-title">You're not being watched.</h2>
           <p>GCCI is designed to help you understand what happened, preserve evidence, and reach the right reporting resources without adding pressure.</p>
         </div>
         <div class="trust-grid" aria-label="Privacy promises">
-          <div class="trust-item">No tracking</div>
-          <div class="trust-item">No logs</div>
+          <div class="trust-item">No third-party trackers</div>
+          <div class="trust-item">Nothing shared or sold</div>
           <div class="trust-item">No saved conversations</div>
-          <div class="trust-item">No follow-up contact</div>
+          <div class="trust-item">No follow-up emails</div>
         </div>
         <div class="control-strip">
           <div class="card"><strong>Leave instantly</strong>Use Quick Exit or press ESC twice to hide this page.</div>
@@ -653,67 +295,89 @@
           <p>These steps apply to most online harassment, impersonation, fraud, sextortion, and digital abuse situations.</p>
         </div>
         <div class="priority">
-          <article class="step">
-            <div class="step-num">1</div>
-            <h3>Save evidence</h3>
-            <p>Capture screenshots, URLs, usernames, timestamps, emails, numbers, wallet addresses, and payment details.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">2</div>
-            <h3>Do not engage</h3>
-            <p>Avoid arguing, threatening, paying more, or warning the person that you are reporting them.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">3</div>
-            <h3>Secure accounts</h3>
-            <p>Change passwords, enable two-factor authentication, review recovery options, and check connected devices.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">4</div>
-            <h3>Report it</h3>
-            <p>Use official reporting channels and platform abuse tools as soon as possible.</p>
-          </article>
+          <article class="step"><div class="step-num">1</div><h3>Save evidence</h3><p>Capture screenshots, URLs, usernames, timestamps, emails, numbers, wallet addresses, and payment details.</p></article>
+          <article class="step"><div class="step-num">2</div><h3>Do not engage</h3><p>Avoid arguing, threatening, paying more, or warning the person that you are reporting them.</p></article>
+          <article class="step"><div class="step-num">3</div><h3>Secure accounts</h3><p>Change passwords, enable two-factor authentication, review recovery options, and check connected devices.</p></article>
+          <article class="step"><div class="step-num">4</div><h3>Report it</h3><p>Use official reporting channels and platform abuse tools as soon as possible.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="situations" aria-labelledby="situations-title">
+    <section id="wizard" aria-labelledby="wizard-title">
       <div class="container">
         <div class="section-head">
-          <h2 id="situations-title">What kind of situation are you in?</h2>
-          <p>Pick the closest option. Nothing is submitted or stored; these links only move you to the right starting point.</p>
+          <h2 id="wizard-title">Find your next step</h2>
+          <p>Answer a couple of quick questions and we'll point you at the right reporting channels and immediate actions for your specific situation. Nothing is sent anywhere &mdash; this runs on your device.</p>
         </div>
-        <div class="guidance-grid">
-          <article class="card" id="harassment">
-            <h3>Harassment, doxxing, or threats</h3>
-            <p>Someone is targeting, exposing, stalking, or threatening you online.</p>
-            <a href="https://www.ic3.gov/" target="_blank" rel="noopener">Start with IC3 →</a>
-          </article>
-          <article class="card" id="impersonation">
-            <h3>Impersonation or fake accounts</h3>
-            <p>Someone is pretending to be you or using fake profiles to mislead or harm you.</p>
-            <a href="https://www.ic3.gov/" target="_blank" rel="noopener">Start with IC3 →</a>
-          </article>
-          <article class="card" id="fraud">
-            <h3>Crypto scam or financial fraud</h3>
-            <p>You sent money or crypto, or were pulled into a fraudulent scheme.</p>
-            <a href="https://www.chainabuse.com/" target="_blank" rel="noopener">Start with Chainabuse →</a>
-          </article>
-          <article class="card" id="identity">
-            <h3>Identity theft or account takeover</h3>
-            <p>Your information or accounts may be compromised or misused.</p>
-            <a href="https://www.identitytheft.gov/" target="_blank" rel="noopener">Start with IdentityTheft.gov →</a>
-          </article>
-          <article class="card" id="sextortion">
-            <h3>Sextortion or intimate images</h3>
-            <p>Someone is threatening to release or share private intimate content.</p>
-            <a href="https://stopncii.org/" target="_blank" rel="noopener">Start with StopNCII →</a>
-          </article>
-          <article class="card" id="unsure">
-            <h3>I’m not sure</h3>
-            <p>The situation overlaps categories, or you are not sure where to begin.</p>
-            <a href="sms:+13215216790">Text GCCI privately →</a>
-          </article>
+
+        <div class="wizard" role="region" aria-label="Guided situation wizard">
+
+          <div class="wizard-resume hidden" id="wizardResume">
+            <span>You started this earlier. Pick up where you left off?</span>
+            <button type="button" id="resumeYes">Resume</button>
+            <button type="button" id="resumeNo" style="color:var(--quiet);">Start over</button>
+          </div>
+
+          <div class="wizard-progress">
+            <span id="progressLabel">Step 1 of 2</span>
+            <div class="dots" aria-hidden="true">
+              <span class="dot active" id="dot1"></span>
+              <span class="dot" id="dot2"></span>
+            </div>
+          </div>
+
+          <!-- STEP 1 -->
+          <div class="wizard-step" id="step1">
+            <h3>What's happening?</h3>
+            <p class="lede">Pick the option closest to your situation.</p>
+            <div class="wizard-options" id="step1Options">
+              <button class="wizard-option" data-cat="harassment">Harassment, doxxing, or threats <span class="arrow">→</span></button>
+              <button class="wizard-option" data-cat="impersonation">Impersonation or fake accounts <span class="arrow">→</span></button>
+              <button class="wizard-option" data-cat="fraud">Crypto scam or financial fraud <span class="arrow">→</span></button>
+              <button class="wizard-option" data-cat="identity">Identity theft or account takeover <span class="arrow">→</span></button>
+              <button class="wizard-option" data-cat="sextortion">Sextortion or intimate images <span class="arrow">→</span></button>
+              <button class="wizard-option" data-cat="unsure">I'm not sure <span class="arrow">→</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="wizard-step hidden" id="step2">
+            <h3 id="step2Question">&nbsp;</h3>
+            <p class="lede" id="step2Help">&nbsp;</p>
+            <div class="wizard-options">
+              <button class="wizard-option" data-detail="yes">Yes <span class="arrow">→</span></button>
+              <button class="wizard-option" data-detail="no">No / not sure <span class="arrow">→</span></button>
+            </div>
+            <div class="wizard-actions">
+              <button class="btn btn-ghost" type="button" id="backTo1">← Back</button>
+            </div>
+          </div>
+
+          <!-- RESULT -->
+          <div class="wizard-result hidden" id="result">
+            <h3 id="resultTitle">&nbsp;</h3>
+            <p class="summary" id="resultSummary">&nbsp;</p>
+            <div id="resultBlocks"></div>
+            <div class="result-actions">
+              <a class="btn btn-secondary" href="sms:+13215216790">Text GCCI privately</a>
+              <button class="btn btn-ghost" type="button" id="restart">Start over</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="browse-all">
+          <a href="#" id="toggleAll">Or browse all situations and reporting channels →</a>
+        </div>
+
+        <div class="all-situations" id="allSituations">
+          <div class="guidance-grid">
+            <article class="card"><h3>Harassment, doxxing, or threats</h3><p>Someone is targeting, exposing, stalking, or threatening you online.</p><a href="https://www.ic3.gov/" target="_blank" rel="noopener">Start with IC3 →</a></article>
+            <article class="card"><h3>Impersonation or fake accounts</h3><p>Someone is pretending to be you or using fake profiles to mislead or harm.</p><a href="https://www.ic3.gov/" target="_blank" rel="noopener">Start with IC3 →</a></article>
+            <article class="card"><h3>Crypto scam or financial fraud</h3><p>You sent money or crypto, or were pulled into a fraudulent scheme.</p><a href="https://www.chainabuse.com/" target="_blank" rel="noopener">Start with Chainabuse →</a></article>
+            <article class="card"><h3>Identity theft or account takeover</h3><p>Your information or accounts may be compromised or misused.</p><a href="https://www.identitytheft.gov/" target="_blank" rel="noopener">Start with IdentityTheft.gov →</a></article>
+            <article class="card"><h3>Sextortion or intimate images</h3><p>Someone is threatening to release or share private intimate content.</p><a href="https://stopncii.org/" target="_blank" rel="noopener">Start with StopNCII →</a></article>
+            <article class="card"><h3>I'm not sure</h3><p>The situation overlaps categories, or you are not sure where to begin.</p><a href="https://www.ic3.gov/" target="_blank" rel="noopener">Start with IC3 →</a></article>
+          </div>
         </div>
       </div>
     </section>
@@ -722,19 +386,19 @@
       <div class="container">
         <div class="section-head">
           <h2 id="tools-title">Evidence tools</h2>
-          <p>Use these privately on your device. They are not submitted to GCCI.</p>
+          <p>Use these privately on your device. They are not submitted to GCCI. Your progress saves on this device only.</p>
         </div>
         <div class="tools-grid">
           <div class="report-card">
             <h3>Evidence checklist</h3>
             <p>Check off what you have saved. Keep originals when possible.</p>
             <div class="checklist" id="evidenceChecklist">
-              <label><input type="checkbox" /> Screenshots or screen recordings</label>
-              <label><input type="checkbox" /> Profile URLs, post URLs, or message links</label>
-              <label><input type="checkbox" /> Usernames, display names, phone numbers, or emails</label>
-              <label><input type="checkbox" /> Dates, times, and time zone notes</label>
-              <label><input type="checkbox" /> Payment details, wallet addresses, receipts, or transaction IDs</label>
-              <label><input type="checkbox" /> A short timeline of what happened</label>
+              <label><input type="checkbox" data-key="screenshots" /> Screenshots or screen recordings</label>
+              <label><input type="checkbox" data-key="urls" /> Profile URLs, post URLs, or message links</label>
+              <label><input type="checkbox" data-key="identifiers" /> Usernames, display names, phone numbers, or emails</label>
+              <label><input type="checkbox" data-key="timing" /> Dates, times, and time zone notes</label>
+              <label><input type="checkbox" data-key="financial" /> Payment details, wallet addresses, receipts, or transaction IDs</label>
+              <label><input type="checkbox" data-key="timeline" /> A short timeline of what happened</label>
             </div>
             <div class="progress" id="progressText">0 of 6 evidence items checked.</div>
           </div>
@@ -756,7 +420,7 @@ What I have already done:</textarea>
       </div>
     </section>
 
-    <section aria-labelledby="platforms-title">
+    <section id="platforms" aria-labelledby="platforms-title">
       <div class="container">
         <div class="section-head">
           <h2 id="platforms-title">Platform reporting links</h2>
@@ -773,30 +437,11 @@ What I have already done:</textarea>
       </div>
     </section>
 
-    <section id="blog" aria-labelledby="blog-title">
-      <div class="container">
-        <div class="section-head">
-          <h2 id="blog-title">Cybercrime articles & updates</h2>
-          <p>Read GCCI guidance, victim safety notes, and practical reporting information in the blog.</p>
-        </div>
-        <div class="escalation" style="grid-template-columns: 1.2fr .8fr;">
-          <div>
-            <h2>Visit the GCCI blog</h2>
-            <p>Use the blog for deeper explanations, prevention tips, and updates that do not need to crowd this main help page.</p>
-          </div>
-          <div>
-            <a class="btn btn-primary" href="/blog/">Open Blog</a>
-            <p class="under-cta">Articles, guidance, and updates</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section aria-labelledby="escalation-title">
       <div class="container">
         <div class="escalation">
           <div>
-            <h2 id="escalation-title">When public reporting isn’t enough</h2>
+            <h2 id="escalation-title">When public reporting isn't enough</h2>
             <p>Some cases need deeper investigation, attribution, and escalation beyond standard reporting channels. If the situation continues, worsens, or causes harm, professional support may be needed.</p>
           </div>
           <div>
@@ -811,7 +456,7 @@ What I have already done:</textarea>
   <footer>
     <div class="container footer-row">
       <div>GCCI | Cyber Crime Help</div>
-      <div>If you’re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:help@gcci.io">help@gcci.io</a>.</div>
+      <div>If you're unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
       <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
     </div>
   </footer>
@@ -819,57 +464,403 @@ What I have already done:</textarea>
   <div class="sticky-mobile" aria-label="Mobile quick action">
     <div class="sticky-mobile-inner">
       <a class="btn btn-primary" href="sms:+13215216790">Text us now</a>
-      <small>No signup • No records</small>
+      <small>No signup • Private</small>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status" aria-live="polite">Copied.</div>
 
   <script>
-    const QUICK_EXIT_URL = "https://www.weather.com/";
-    const quickExitButtons = document.querySelectorAll(".quick-exit");
-    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
-    quickExitButtons.forEach(button => button.addEventListener("click", exitNow));
+  (function() {
+    'use strict';
 
-    let escPresses = 0;
-    let escTimer;
-    document.addEventListener("keydown", event => {
-      if (event.key !== "Escape") return;
+    // ------ Quick Exit ------
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
       escPresses += 1;
       clearTimeout(escTimer);
       if (escPresses >= 2) exitNow();
       escTimer = setTimeout(() => { escPresses = 0; }, 900);
     });
+    setTimeout(() => { const h = document.getElementById("exitHint"); if (h) h.remove(); }, 6500);
 
+    // ------ Toast ------
+    const toast = document.getElementById("toast");
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    // ------ State + storage ------
+    const STORAGE_KEY = "gcci-state-v1";
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : {};
+      } catch (e) { return {}; }
+    }
+    function saveState(state) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (e) {}
+    }
+    let state = loadState();
+
+    // ------ Wizard data ------
+    const SITUATIONS = {
+      harassment: {
+        title: "Harassment, doxxing, or threats",
+        question: "Has this person met you in real life, or do they know your physical location, workplace, or family?",
+        helpText: "Real-world contact changes how urgent the safety steps become."
+      },
+      impersonation: {
+        title: "Impersonation or fake accounts",
+        question: "Is the fake account using your real name, photos, or identifying details?",
+        helpText: "If yes, it's higher priority to get the account taken down."
+      },
+      fraud: {
+        title: "Crypto scam or financial fraud",
+        question: "Did money or cryptocurrency actually move from your account or wallet?",
+        helpText: "If money moved, the first call is to your bank or exchange before any reporting."
+      },
+      identity: {
+        title: "Identity theft or account takeover",
+        question: "Has anyone accessed your bank, credit card, or financial accounts without your permission?",
+        helpText: "Active financial access is more urgent than name/email exposure alone."
+      },
+      sextortion: {
+        title: "Sextortion or intimate images",
+        question: "Is the person involved (you or anyone in the images) under 18?",
+        helpText: "If anyone in the images is under 18, NCMEC is the first call instead of any other channel."
+      },
+      unsure: {
+        title: "I'm not sure",
+        question: null,
+        helpText: null
+      }
+    };
+
+    function buildResult(category, detail) {
+      const blocks = [];
+      const cat = SITUATIONS[category];
+
+      // Danger / urgency block (top)
+      if (category === "harassment" && detail === "yes") {
+        blocks.push({
+          variant: "danger",
+          label: "Safety first",
+          title: "If you feel physically unsafe right now",
+          body: "Real-world contact escalates this. Call 911 or local law enforcement before any online reporting. Tell someone you trust where you are."
+        });
+      }
+      if (category === "fraud" && detail === "yes") {
+        blocks.push({
+          variant: "danger",
+          label: "Do this first",
+          title: "Call your bank or exchange now",
+          body: "If money or crypto moved, your bank or exchange may be able to freeze, dispute, or reverse the transaction — but the window is short. Call them before filing reports."
+        });
+      }
+      if (category === "identity" && detail === "yes") {
+        blocks.push({
+          variant: "danger",
+          label: "Do this first",
+          title: "Call your bank and freeze cards now",
+          body: "If accounts are being accessed, call the financial institution to freeze the accounts and dispute any transactions. Then move to the reporting steps below."
+        });
+      }
+      if (category === "sextortion" && detail === "yes") {
+        blocks.push({
+          variant: "danger",
+          label: "Priority channel",
+          title: "Contact NCMEC immediately",
+          body: "Because someone in the images is under 18, this goes to the National Center for Missing & Exploited Children before anything else. They have a dedicated CyberTipline.",
+          links: [
+            { url: "https://report.cybertip.org/", label: "Report to NCMEC CyberTipline" }
+          ]
+        });
+      }
+
+      // Primary report block
+      const primaryReports = {
+        harassment: { title: "FBI Internet Crime Complaint Center (IC3)", body: "File a report with IC3. They route serious cyber harassment cases to the right field office.", links: [{ url: "https://www.ic3.gov/", label: "File at IC3.gov" }] },
+        impersonation: { title: "FBI Internet Crime Complaint Center (IC3)", body: "File a report with IC3, then report the fake account on the platform itself.", links: [{ url: "https://www.ic3.gov/", label: "File at IC3.gov" }] },
+        fraud: { title: "Chainabuse + IC3", body: "Chainabuse maps crypto fraud across exchanges. IC3 handles the law-enforcement side. File both.", links: [{ url: "https://www.chainabuse.com/", label: "Report at Chainabuse" }, { url: "https://www.ic3.gov/", label: "File at IC3.gov" }] },
+        identity: { title: "IdentityTheft.gov", body: "FTC's IdentityTheft.gov walks you through the full recovery plan including affidavits.", links: [{ url: "https://www.identitytheft.gov/", label: "Start at IdentityTheft.gov" }] },
+        sextortion: { title: "StopNCII.org", body: "StopNCII can hash images so they can be detected and removed across major platforms before they spread.", links: [{ url: "https://stopncii.org/", label: "Start at StopNCII.org" }, { url: "https://cybercivilrights.org/", label: "Cyber Civil Rights Initiative" }] },
+        unsure: { title: "FBI Internet Crime Complaint Center (IC3)", body: "When in doubt, IC3 is the broadest official cybercrime reporting channel. They route to the right place.", links: [{ url: "https://www.ic3.gov/", label: "File at IC3.gov" }] }
+      };
+      const primary = primaryReports[category];
+      blocks.push({
+        variant: "primary",
+        label: "Primary report",
+        title: primary.title,
+        body: primary.body,
+        links: primary.links
+      });
+
+      // Backup reports
+      const backupReports = {
+        harassment: [
+          { url: "https://www.fbi.gov/contact-us/field-offices", label: "Local FBI field office" },
+          { url: "#platforms", label: "Platform reporting (X, Meta, Google, etc.)" }
+        ],
+        impersonation: [
+          { url: "#platforms", label: "Platform reporting" },
+          { url: "https://reportfraud.ftc.gov/", label: "FTC Fraud Reporting" }
+        ],
+        fraud: [
+          { url: "https://reportfraud.ftc.gov/", label: "FTC Fraud Reporting" },
+          { url: "https://www.sec.gov/tcr", label: "SEC Complaint Center" },
+          { url: "https://www.cftc.gov/complaint", label: "CFTC Complaint Portal" }
+        ],
+        identity: [
+          { url: "https://www.experian.com/fraud/center.html", label: "Experian fraud alert" },
+          { url: "https://www.equifax.com/personal/credit-report-services/credit-fraud-alerts/", label: "Equifax fraud alert" },
+          { url: "https://www.transunion.com/fraud-alerts", label: "TransUnion fraud alert" },
+          { url: "https://www.ic3.gov/", label: "FBI IC3" }
+        ],
+        sextortion: [
+          { url: "https://report.cybertip.org/", label: "NCMEC CyberTipline" },
+          { url: "https://www.fbi.gov/how-we-can-help-you/scams-and-safety/common-frauds-and-scams/sextortion", label: "FBI sextortion guidance" }
+        ],
+        unsure: [
+          { url: "mailto:Gus@gcci.io", label: "Email Gus@gcci.io" },
+          { url: "sms:+13215216790", label: "Text (321) 521-6790" }
+        ]
+      };
+      blocks.push({
+        variant: "default",
+        label: "Backup channels",
+        title: "Other reports worth filing",
+        body: "Multiple reports increase the chance of action. Pick what applies.",
+        links: backupReports[category]
+      });
+
+      // Immediate steps
+      const stepsByCategory = {
+        harassment: [
+          "Save evidence: screenshots, URLs, usernames, timestamps",
+          "Don't engage with the person",
+          "Lock down accounts: change passwords, enable 2FA",
+          "Report on the platform where it's happening"
+        ],
+        impersonation: [
+          "Screenshot the fake account profile and any posts",
+          "Report the account to the platform (link in Platforms section)",
+          "Tell people in your circle so they don't engage with the impostor",
+          "Set up 2FA on your real accounts"
+        ],
+        fraud: [
+          "Save all transaction details, wallet addresses, and counterparty info",
+          "Don't pay anything more (recovery scams are common follow-ups)",
+          "Save scammer's profile, messages, and any \"investment\" portal screenshots",
+          "Document the timeline from first contact to the loss"
+        ],
+        identity: [
+          "Freeze your credit with all three bureaus",
+          "Change passwords on email, banking, and any account that uses them elsewhere",
+          "Enable 2FA everywhere, especially email",
+          "Get a copy of your credit report and look for unauthorized accounts"
+        ],
+        sextortion: [
+          "Don't pay. Paying does not stop them and tends to escalate demands",
+          "Don't delete anything yet — you may need it as evidence",
+          "Block the person on every platform after capturing evidence",
+          "Tell one trusted person. Isolation is what predators rely on"
+        ],
+        unsure: [
+          "Save evidence first, before anything else",
+          "Don't engage with whoever is doing this",
+          "Lock down accounts and enable 2FA",
+          "Use the Evidence Tools below to organize what you have"
+        ]
+      };
+      blocks.push({
+        variant: "default",
+        label: "Right now",
+        title: "Steps to take in the next hour",
+        body: null,
+        list: stepsByCategory[category]
+      });
+
+      return blocks;
+    }
+
+    // ------ Wizard rendering ------
+    const step1El = document.getElementById("step1");
+    const step2El = document.getElementById("step2");
+    const resultEl = document.getElementById("result");
+    const dot1 = document.getElementById("dot1");
+    const dot2 = document.getElementById("dot2");
+    const progressLabel = document.getElementById("progressLabel");
+    const resumeEl = document.getElementById("wizardResume");
+
+    function showStep(step) {
+      step1El.classList.toggle("hidden", step !== 1);
+      step2El.classList.toggle("hidden", step !== 2);
+      resultEl.classList.toggle("hidden", step !== "result");
+      dot1.classList.toggle("active", step === 1 || step === 2 || step === "result");
+      dot2.classList.toggle("active", step === 2 || step === "result");
+      if (step === "result") progressLabel.textContent = "Your guidance";
+      else if (step === 2) progressLabel.textContent = "Step 2 of 2";
+      else progressLabel.textContent = "Step 1 of 2";
+    }
+
+    function renderStep2(category) {
+      const cat = SITUATIONS[category];
+      if (!cat.question) {
+        renderResult(category, "no");
+        return;
+      }
+      document.getElementById("step2Question").textContent = cat.question;
+      document.getElementById("step2Help").textContent = cat.helpText || "";
+      showStep(2);
+    }
+
+    function renderResult(category, detail) {
+      const cat = SITUATIONS[category];
+      document.getElementById("resultTitle").textContent = "Guidance for: " + cat.title;
+      document.getElementById("resultSummary").textContent = "Based on what you told us. Take steps in the order shown. Use the evidence tools below to organize what you have.";
+
+      const blocks = buildResult(category, detail);
+      const container = document.getElementById("resultBlocks");
+      container.innerHTML = "";
+      blocks.forEach(block => {
+        const div = document.createElement("div");
+        div.className = "result-block " + (block.variant === "primary" ? "primary" : block.variant === "danger" ? "danger" : "");
+        const html = [];
+        html.push('<div class="result-label">' + block.label + '</div>');
+        html.push('<h4>' + block.title + '</h4>');
+        if (block.body) html.push('<p style="margin:6px 0 0;color:var(--muted);font-size:15px;">' + block.body + '</p>');
+        if (block.list) {
+          html.push('<ul>');
+          block.list.forEach(item => html.push('<li>' + item + '</li>'));
+          html.push('</ul>');
+        }
+        if (block.links) {
+          html.push('<ul>');
+          block.links.forEach(l => {
+            const target = l.url && l.url.startsWith('http') ? ' target="_blank" rel="noopener"' : '';
+            html.push('<li><a href="' + l.url + '"' + target + '>' + l.label + ' →</a></li>');
+          });
+          html.push('</ul>');
+        }
+        div.innerHTML = html.join('');
+        container.appendChild(div);
+      });
+
+      state.wizard = { category, detail, completed: true };
+      saveState(state);
+      showStep("result");
+    }
+
+    // Step 1 buttons
+    document.querySelectorAll('#step1Options .wizard-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.cat;
+        state.wizard = { category: cat, detail: null, completed: false };
+        saveState(state);
+        if (cat === "unsure") {
+          renderResult(cat, "no");
+        } else {
+          renderStep2(cat);
+        }
+      });
+    });
+
+    // Step 2 buttons
+    document.querySelectorAll('#step2 .wizard-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const detail = btn.dataset.detail;
+        const cat = state.wizard && state.wizard.category;
+        if (!cat) return;
+        renderResult(cat, detail);
+      });
+    });
+
+    // Back button
+    document.getElementById("backTo1").addEventListener("click", () => {
+      showStep(1);
+    });
+
+    // Restart
+    document.getElementById("restart").addEventListener("click", () => {
+      state.wizard = null;
+      saveState(state);
+      showStep(1);
+    });
+
+    // Resume on load
+    if (state.wizard && state.wizard.category) {
+      resumeEl.classList.remove("hidden");
+      document.getElementById("resumeYes").addEventListener("click", () => {
+        resumeEl.classList.add("hidden");
+        if (state.wizard.completed) {
+          renderResult(state.wizard.category, state.wizard.detail);
+        } else if (state.wizard.category) {
+          renderStep2(state.wizard.category);
+        }
+      });
+      document.getElementById("resumeNo").addEventListener("click", () => {
+        state.wizard = null;
+        saveState(state);
+        resumeEl.classList.add("hidden");
+      });
+    }
+
+    // Browse all toggle
+    document.getElementById("toggleAll").addEventListener("click", e => {
+      e.preventDefault();
+      const all = document.getElementById("allSituations");
+      all.classList.toggle("open");
+      e.target.textContent = all.classList.contains("open") ? "Hide all situations ↑" : "Or browse all situations and reporting channels →";
+    });
+
+    // ------ Checklist with persistence ------
+    state.checklist = state.checklist || {};
     const checklist = document.getElementById("evidenceChecklist");
     const progressText = document.getElementById("progressText");
-    const updateProgress = () => {
+    function updateProgress() {
       const boxes = checklist.querySelectorAll("input[type='checkbox']");
       const checked = checklist.querySelectorAll("input[type='checkbox']:checked").length;
       progressText.textContent = `${checked} of ${boxes.length} evidence items checked.`;
-    };
-    checklist.addEventListener("change", updateProgress);
+    }
+    // Restore checklist
+    checklist.querySelectorAll("input[type='checkbox']").forEach(box => {
+      const k = box.dataset.key;
+      if (state.checklist[k]) box.checked = true;
+      box.addEventListener("change", () => {
+        state.checklist[k] = box.checked;
+        saveState(state);
+        updateProgress();
+      });
+    });
+    updateProgress();
 
-    const toast = document.getElementById("toast");
-    const showToast = message => {
-      toast.textContent = message;
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 1800);
-    };
+    // ------ Notes with persistence ------
+    const notes = document.getElementById("reportNotes");
+    if (state.reportNotes) notes.value = state.reportNotes;
+    notes.addEventListener("input", () => {
+      state.reportNotes = notes.value;
+      saveState(state);
+    });
 
+    // Copy notes
     document.getElementById("copyNotes").addEventListener("click", async () => {
-      const notes = document.getElementById("reportNotes").value;
       try {
-        await navigator.clipboard.writeText(notes);
+        await navigator.clipboard.writeText(notes.value);
         showToast("Report notes copied.");
-      } catch (error) {
-        document.getElementById("reportNotes").select();
+      } catch (e) {
+        notes.select();
         showToast("Select and copy the notes.");
       }
     });
 
-    const hint = document.getElementById("exitHint");
-    setTimeout(() => { if (hint) hint.remove(); }, 6500);
+  })();
   </script>
 </body>
 </html>
