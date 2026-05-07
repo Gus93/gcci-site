@@ -1,0 +1,694 @@
+<!doctype html>
+<!-- GCCI investigation-help v1 - small-case paid tier matching homepage styling -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investigation Help | GCCI</title>
+  <meta name="description" content="Private, flat-fee first-touch investigation help — catfisher tracing, fake-account attribution, basic OSINT lookups, and case triage. Personal use only." />
+  <meta name="robots" content="index,follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --panel: #181b1f;
+      --panel-soft: #1f2328;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --accent-dark: #b9812f;
+      --danger: #e26464;
+      --danger-soft: rgba(214,161,74,.12);
+      --warn: rgba(226,100,100,.12);
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.10), transparent 32rem),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.04), transparent 24rem),
+        var(--bg);
+      line-height: 1.6;
+      font-size: 17px;
+      padding-bottom: 96px;
+    }
+    a { color: inherit; }
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color: #f3b8b8; border-color: rgba(226,100,100,.4); }
+    .quick-exit:hover { color: #fff; border-color: rgba(226,100,100,.7); background: rgba(226,100,100,.12); }
+    .quick-exit:active, .btn:active { transform: translateY(1px); }
+
+    /* HERO */
+    .hero { padding: 72px 0 34px; }
+    .hero-card { border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02)); border-radius:var(--radius-lg); box-shadow:var(--shadow); padding:clamp(28px,6vw,72px); text-align:center; position:relative; overflow:hidden; }
+    .hero-card::before { content:""; position:absolute; inset:0; pointer-events:none; background:radial-gradient(circle at 50% 0%, rgba(214,161,74,.16), transparent 32rem); }
+    .hero-inner { position:relative; max-width:770px; margin:0 auto; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:800; margin:0 0 14px; }
+    h1 { margin:0; font-size:clamp(40px,7vw,68px); line-height:.98; letter-spacing:-.045em; font-weight:760; }
+    .hero-subhead { margin:18px auto 0; color:var(--muted); font-size:clamp(18px,2.2vw,22px); max-width:660px; line-height:1.45; }
+    .hero-actions { margin:28px auto 0; display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:13px 20px; border-radius:999px; border:1px solid transparent; font-weight:760; text-decoration:none; transition:transform .12s ease, background .12s ease, border-color .12s ease; cursor:pointer; font:inherit; }
+    .btn-primary { color:#17120b; background:var(--accent); box-shadow:0 16px 34px rgba(214,161,74,.18); }
+    .btn-primary:hover { background:#e0ae5c; }
+    .btn-secondary { color:var(--text); background:rgba(255,255,255,.045); border-color:var(--line); }
+    .btn-secondary:hover { border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .btn-ghost { color:var(--quiet); background:transparent; border-color:var(--line); }
+    .btn-ghost:hover { color:var(--text); border-color:rgba(214,161,74,.4); }
+    .under-cta { margin:10px 0 0; color:var(--quiet); font-size:14px; }
+
+    .hero-meta { display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-top:22px; color:var(--quiet); font-size:14px; }
+    .hero-meta span { display:inline-flex; align-items:center; gap:6px; }
+    .hero-meta span::before { content:"·"; color:var(--accent); font-weight:900; }
+    .hero-meta span:first-child::before { content:""; }
+
+    section { padding:34px 0; }
+    .section-head { max-width:760px; margin:0 auto 24px; text-align:center; }
+    h2 { margin:0; font-size:clamp(28px,4vw,44px); line-height:1.05; letter-spacing:-.035em; }
+    .section-head p { color:var(--muted); margin:12px 0 0; }
+
+    /* HOW IT WORKS */
+    .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .step { border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:var(--radius-md); padding:22px; }
+    .step-num { width:34px; height:34px; border-radius:999px; display:grid; place-items:center; background:var(--danger-soft); color:var(--accent); font-weight:850; margin-bottom:12px; }
+    .step h3 { margin:0 0 8px; font-size:17px; line-height:1.25; }
+    .step p { margin:0; color:var(--muted); font-size:15px; }
+
+    /* TIERS */
+    .tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .tier {
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+      border-radius:var(--radius-md);
+      padding:26px;
+      display:flex; flex-direction:column;
+      transition:border-color .14s, transform .14s, background .14s;
+    }
+    .tier:hover { border-color:rgba(214,161,74,.42); transform:translateY(-2px); background:rgba(214,161,74,.05); }
+    .tier.featured { border-color:rgba(214,161,74,.5); background:linear-gradient(180deg, rgba(214,161,74,.10), rgba(255,255,255,.02)); }
+    .tier-eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.12em; font-size:11px; font-weight:800; }
+    .tier-name { margin:8px 0 4px; font-size:22px; letter-spacing:-.02em; }
+    .tier-best-for { color:var(--quiet); font-size:14px; margin:0 0 18px; }
+    .tier-price { display:flex; align-items:baseline; gap:8px; margin-bottom:6px; }
+    .tier-price .amount { font-size:38px; font-weight:800; letter-spacing:-.03em; color:var(--text); }
+    .tier-price .currency { font-size:18px; color:var(--muted); font-weight:700; }
+    .tier-price .frequency { color:var(--quiet); font-size:13px; }
+    .tier-turn { color:var(--muted); font-size:14px; margin-bottom:16px; }
+    .tier-turn strong { color:var(--text); }
+    .tier ul { list-style:none; padding:0; margin:0 0 22px; flex:1; display:flex; flex-direction:column; gap:9px; }
+    .tier li { color:var(--muted); font-size:15px; padding-left:22px; position:relative; line-height:1.5; }
+    .tier li::before { content:""; position:absolute; left:0; top:8px; width:12px; height:12px; border-radius:3px; background:rgba(214,161,74,.18); border:1px solid rgba(214,161,74,.45); }
+    .tier .btn { width:100%; }
+
+    .tier-aside {
+      margin-top:18px;
+      border:1px dashed var(--line);
+      border-radius:var(--radius-md);
+      padding:18px 20px;
+      color:var(--muted);
+      font-size:15px;
+      text-align:center;
+    }
+    .tier-aside strong { color:var(--text); }
+    .tier-aside a { color:var(--accent); text-decoration:none; font-weight:700; }
+    .tier-aside a:hover { text-decoration:underline; }
+
+    /* IMPORTANT TO KNOW */
+    .important {
+      border:1px solid rgba(214,161,74,.32);
+      background:linear-gradient(180deg, rgba(214,161,74,.08), rgba(255,255,255,.02));
+      border-radius:var(--radius-lg);
+      padding:clamp(24px,4vw,40px);
+      box-shadow:var(--shadow);
+    }
+    .important h2 { text-align:center; margin-bottom:8px; }
+    .important .lede { color:var(--muted); text-align:center; max-width:640px; margin:0 auto 24px; }
+    .know-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .know-item { border:1px solid var(--line); background:rgba(0,0,0,.18); border-radius:var(--radius-md); padding:20px; }
+    .know-item h4 { margin:0 0 6px; font-size:16px; color:var(--text); }
+    .know-item p { margin:0; color:var(--muted); font-size:15px; }
+    .know-item.warn { border-color:rgba(226,100,100,.35); background:var(--warn); }
+    .know-item.warn h4 { color:#f3b8b8; }
+
+    /* OUT OF SCOPE */
+    .scope-split { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:18px; }
+    .scope-card { border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:var(--radius-md); padding:24px; }
+    .scope-card h3 { margin:0 0 12px; font-size:18px; }
+    .scope-card ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+    .scope-card li { color:var(--muted); padding-left:22px; position:relative; font-size:15px; line-height:1.45; }
+    .scope-card.in li::before { content:"✓"; position:absolute; left:0; top:0; color:var(--accent); font-weight:800; }
+    .scope-card.out li::before { content:"→"; position:absolute; left:0; top:0; color:var(--danger); font-weight:800; }
+    .scope-card.out { border-color:rgba(226,100,100,.32); }
+    .scope-foot { color:var(--muted); margin:16px 0 0; font-size:14px; }
+    .scope-foot a { color:var(--accent); font-weight:700; text-decoration:none; }
+    .scope-foot a:hover { text-decoration:underline; }
+
+    /* INTAKE FORM */
+    .intake {
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(214,161,74,.05), rgba(255,255,255,.02));
+      border-radius:var(--radius-lg);
+      padding:clamp(24px,4vw,40px);
+      box-shadow:var(--shadow);
+    }
+    .intake h2 { text-align:center; margin-bottom:8px; }
+    .intake .lede { color:var(--muted); text-align:center; max-width:640px; margin:0 auto 26px; }
+    .intake form { max-width:680px; margin:0 auto; display:flex; flex-direction:column; gap:16px; }
+    .field { display:flex; flex-direction:column; gap:6px; }
+    .field label { font-weight:600; color:var(--text); font-size:15px; }
+    .field .hint { color:var(--quiet); font-size:13px; }
+    .field input[type="text"], .field input[type="email"], .field input[type="tel"], .field select, .field textarea {
+      width:100%; padding:13px 15px; border-radius:var(--radius-sm); border:1px solid var(--line); background:rgba(0,0,0,.22); color:var(--text); font:inherit; font-size:15px; line-height:1.4;
+      transition:border-color .14s, background .14s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline:none; border-color:rgba(214,161,74,.55); background:rgba(0,0,0,.32);
+    }
+    .field textarea { min-height:140px; resize:vertical; font-family:inherit; }
+    .field-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .check-field { display:flex; align-items:flex-start; gap:10px; padding:14px 16px; border:1px solid var(--line); border-radius:var(--radius-sm); background:rgba(0,0,0,.18); }
+    .check-field input[type="checkbox"] { margin-top:4px; accent-color:var(--accent); flex-shrink:0; }
+    .check-field label { font-size:14px; color:var(--muted); font-weight:500; cursor:pointer; line-height:1.5; }
+    .check-field strong { color:var(--text); }
+    .submit-row { display:flex; justify-content:center; margin-top:6px; }
+    .form-status { text-align:center; margin-top:14px; padding:12px 16px; border-radius:var(--radius-sm); font-size:15px; display:none; }
+    .form-status.show { display:block; }
+    .form-status.success { background:rgba(214,161,74,.12); border:1px solid rgba(214,161,74,.45); color:var(--text); }
+    .form-status.error { background:var(--warn); border:1px solid rgba(226,100,100,.45); color:#f3b8b8; }
+
+    /* FAQ */
+    details.faq { border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:var(--radius-md); padding:18px 22px; margin-bottom:10px; transition:border-color .14s, background .14s; }
+    details.faq:hover { border-color:rgba(214,161,74,.32); }
+    details.faq[open] { background:rgba(214,161,74,.05); border-color:rgba(214,161,74,.32); }
+    details.faq summary { font-weight:700; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    details.faq summary::-webkit-details-marker { display:none; }
+    details.faq summary::after { content:"+"; color:var(--accent); font-size:22px; font-weight:800; line-height:1; }
+    details.faq[open] summary::after { content:"−"; }
+    details.faq p { color:var(--muted); margin:14px 0 0; font-size:15px; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:24px; }
+    .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 900px) {
+      .steps, .tiers, .know-grid, .scope-split { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 680px) {
+      body { font-size:16px; }
+      .container { width:min(100% - 28px, var(--max)); }
+      .nav { min-height:64px; }
+      .nav-link { display:none; }
+      .quick-exit { padding:10px 12px; }
+      .hero { padding-top:42px; }
+      .hero-card { padding:28px 18px; border-radius:22px; }
+      h1 { font-size:clamp(36px,11vw,52px); }
+      .hero-actions { align-items:stretch; flex-direction:column; }
+      .btn { width:100%; min-height:50px; }
+      .steps, .tiers, .know-grid, .scope-split, .field-row { grid-template-columns: 1fr; }
+      section { padding:26px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/#wizard">Find help</a>
+        <a class="nav-link" href="/#tools">Evidence Tools</a>
+        <a class="nav-link" href="/investigation-help/" aria-current="page">Investigation Help</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit: instantly hides this page">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-inner">
+            <p class="eyebrow">First-Touch Investigation Help</p>
+            <h1>Sometimes you just need a name.</h1>
+            <p class="hero-subhead">A private, flat-fee first look at small cases. We tell you what we can find, what we can't, and whether your situation needs to escalate to Rexxfield's deeper engagement.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#tiers">See pricing</a>
+              <a class="btn btn-secondary" href="#intake">Submit a case</a>
+            </div>
+            <div class="hero-meta">
+              <span>One-time flat fee</span>
+              <span>No retainer</span>
+              <span>Detailed report regardless of outcome</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="how-title">How it works</h2>
+          <p>Four steps. No long onboarding, no retainer paperwork.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="step-num">1</div><h3>Submit your case</h3><p>Use the intake form below. Tell us what tier seems closest and share what you already have.</p></article>
+          <article class="step"><div class="step-num">2</div><h3>We confirm scope</h3><p>Within 24 hours, we'll confirm we can take your case, suggest a different tier, or refer you elsewhere. No charge yet.</p></article>
+          <article class="step"><div class="step-num">3</div><h3>You pay the flat fee</h3><p>If we move forward, we send a secure payment link. Once paid, work begins.</p></article>
+          <article class="step"><div class="step-num">4</div><h3>You get the report</h3><p>Detailed written findings within the tier's turnaround window. We walk through it with you.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIERS -->
+    <section id="tiers" aria-labelledby="tiers-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="tiers-title">Pricing</h2>
+          <p>Flat, one-time fees. No subscriptions, no retainers, no hourly billing. The price you see is the price you pay.</p>
+        </div>
+        <div class="tiers">
+
+          <article class="tier">
+            <div class="tier-eyebrow">Tier 1</div>
+            <h3 class="tier-name">Pre-Engagement Triage</h3>
+            <p class="tier-best-for">Best for: not sure if your case is small or big</p>
+            <div class="tier-price">
+              <span class="currency">$</span><span class="amount">99</span><span class="frequency">one-time</span>
+            </div>
+            <p class="tier-turn"><strong>3–4 day</strong> turnaround</p>
+            <ul>
+              <li>Comprehensive review of what you've gathered</li>
+              <li>Initial OSINT pass (not a full investigation)</li>
+              <li>Plain-language report on what's findable</li>
+              <li>Recommended path: handle here, escalate to Rexxfield, or DIY route</li>
+              <li>Walkthrough call to review the findings</li>
+            </ul>
+            <a class="btn btn-secondary" href="#intake" data-tier="triage">Start a Triage</a>
+          </article>
+
+          <article class="tier">
+            <div class="tier-eyebrow">Tier 2</div>
+            <h3 class="tier-name">Quick Lookup</h3>
+            <p class="tier-best-for">Best for: "Who is this email, phone, or username?"</p>
+            <div class="tier-price">
+              <span class="currency">$</span><span class="amount">149</span><span class="frequency">one-time</span>
+            </div>
+            <p class="tier-turn"><strong>48–72 hour</strong> turnaround</p>
+            <ul>
+              <li>One subject: email, phone, or username</li>
+              <li>Multi-source OSINT trace</li>
+              <li>Breach &amp; exposure check</li>
+              <li>Basic social/account linkage</li>
+              <li>1–2 page summary report</li>
+            </ul>
+            <a class="btn btn-secondary" href="#intake" data-tier="quick-lookup">Start a Quick Lookup</a>
+          </article>
+
+          <article class="tier featured">
+            <div class="tier-eyebrow">Tier 3 · Most common</div>
+            <h3 class="tier-name">Person Trace</h3>
+            <p class="tier-best-for">Best for: catfishers, harassing accounts, fake reviews</p>
+            <div class="tier-price">
+              <span class="currency">$</span><span class="amount">299</span><span class="frequency">one-time</span>
+            </div>
+            <p class="tier-turn"><strong>5–7 day</strong> turnaround</p>
+            <ul>
+              <li>Up to 3 linked accounts or identifiers</li>
+              <li>Reverse-image &amp; profile fingerprinting</li>
+              <li>Account behavior &amp; cross-platform linking</li>
+              <li>Breach correlation where available</li>
+              <li>Detailed report with screenshots, sources, confidence rating</li>
+              <li>Recommended next steps</li>
+            </ul>
+            <a class="btn btn-primary" href="#intake" data-tier="person-trace">Start a Person Trace</a>
+          </article>
+
+        </div>
+
+        <div class="tier-aside">
+          <strong>Don't see your situation?</strong> Some small cases sit between tiers — narrow background dig, multi-platform attribution, document authentication. Email <a href="mailto:Gus@gcci.io?subject=Custom%20small%20case%20quote">Gus@gcci.io</a> for a flat-fee quote before you submit.
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPORTANT TO KNOW -->
+    <section aria-labelledby="important-title">
+      <div class="container">
+        <div class="important">
+          <h2 id="important-title">Important to know before you submit</h2>
+          <p class="lede">Read this carefully. We'd rather you skip the engagement than be surprised later.</p>
+          <div class="know-grid">
+
+            <div class="know-item warn">
+              <h4>The fee is non-refundable once work begins</h4>
+              <p>Flat-fee engagements protect your wallet from runaway hours, but they shift the outcome risk to you. Once we accept the case and you pay, the work is committed.</p>
+            </div>
+
+            <div class="know-item warn">
+              <h4>We can't guarantee identification</h4>
+              <p>Sometimes the data simply isn't there to be found — the subject is careful, the platform is locked down, or the breach corpus is silent. We never promise an answer.</p>
+            </div>
+
+            <div class="know-item">
+              <h4>You always get the detailed report</h4>
+              <p>Whether we identify the subject or not, you receive written findings: what we checked, what we found, what's still uncertain, and what you can do next.</p>
+            </div>
+
+            <div class="know-item">
+              <h4>We walk through the report with you</h4>
+              <p>Reports without context can be confusing. Your engagement includes a follow-up call or written walkthrough so the findings actually mean something to you.</p>
+            </div>
+
+            <div class="know-item">
+              <h4>Your case stays private</h4>
+              <p>We don't list clients, share findings, or discuss your case outside our engagement. The only exception is a lawful subpoena, which we'd notify you of immediately.</p>
+            </div>
+
+            <div class="know-item">
+              <h4>This is not a court-grade investigation</h4>
+              <p>Findings here are for your private use — to make decisions, protect yourself, or hand off to police on your own. For attribution that holds up legally, we route you to Rexxfield.</p>
+            </div>
+
+            <div class="know-item warn">
+              <h4>Personal use only — not a regulated background check</h4>
+              <p>Our reports are not "consumer reports" under the FCRA. <strong>Do not use them for employment, tenant screening, credit, insurance, or any decision regulated by FCRA.</strong> For those purposes, use a licensed Consumer Reporting Agency.</p>
+            </div>
+
+            <div class="know-item">
+              <h4>We work within legal boundaries</h4>
+              <p>We use only OSINT (open-source intelligence) and the evidence you provide. We don't pretext, social-engineer, impersonate, hack, or access password-protected accounts. If a case requires methods outside that line, we route it to Rexxfield.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCOPE -->
+    <section aria-labelledby="scope-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="scope-title">What we do — and what we don't</h2>
+          <p>Knowing the boundary up front saves everyone time.</p>
+        </div>
+        <div class="scope-split">
+          <div class="scope-card in">
+            <h3>In scope for small-case help</h3>
+            <ul>
+              <li>Catfisher identification</li>
+              <li>Fake review or harassing-account attribution</li>
+              <li>Basic email, phone, username, or IP lookups</li>
+              <li>Personal-use OSINT reports</li>
+              <li>Cross-platform account linking</li>
+              <li>Case triage and pre-engagement scoping</li>
+            </ul>
+          </div>
+          <div class="scope-card out">
+            <h3>Out of scope (we route you elsewhere)</h3>
+            <ul>
+              <li>Court-admissible attribution &amp; expert testimony</li>
+              <li>Active financial fraud or crypto-fund recovery</li>
+              <li>Law-enforcement coordination</li>
+              <li>Employment, tenant, credit, or insurance screening (FCRA)</li>
+              <li>Ongoing surveillance or monitoring</li>
+              <li>Anything involving a minor (NCMEC + LE)</li>
+              <li>Active physical-safety threats (call 911)</li>
+              <li>Pretexting, hacking, or non-OSINT methods</li>
+            </ul>
+          </div>
+        </div>
+        <p class="scope-foot">For court-grade or high-stakes cases we work alongside <a href="https://rexxfield.com/" target="_blank" rel="noopener">Rexxfield Technologies</a>. If your situation is bigger than what's listed here, we'll tell you and route you over.</p>
+      </div>
+    </section>
+
+    <!-- INTAKE FORM -->
+    <section id="intake" aria-labelledby="intake-title">
+      <div class="container">
+        <div class="intake">
+          <h2 id="intake-title">Submit a case</h2>
+          <p class="lede">Tell us what you're dealing with. We'll review within 24 hours and confirm whether we can help — no payment yet.</p>
+
+          <!-- IMPORTANT: replace data-form-endpoint below with your Formspree (or other) endpoint. See deploy notes. -->
+          <form id="intakeForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" novalidate>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="phone">Best phone <span class="hint">(optional)</span></label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+              <div class="field">
+                <label for="tier">Which tier looks closest?</label>
+                <select id="tier" name="tier" required>
+                  <option value="">Select a tier…</option>
+                  <option value="triage">Pre-Engagement Triage — $99</option>
+                  <option value="quick-lookup">Quick Lookup — $149</option>
+                  <option value="person-trace">Person Trace — $299</option>
+                  <option value="custom">Custom small case (please describe)</option>
+                  <option value="not-sure">I'm not sure — help me pick</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="situation">What's happening?</label>
+              <span class="hint">A few sentences is enough. Don't share sensitive details (full SSNs, banking info) here.</span>
+              <textarea id="situation" name="situation" required placeholder="E.g. Someone has been catfishing me on Instagram for 6 weeks under the name 'jordan.travels'. They've sent photos and now they're asking for money. I have screenshots and the phone number they texted from."></textarea>
+            </div>
+
+            <div class="field">
+              <label for="have">What do you already have?</label>
+              <span class="hint">Usernames, profile links, emails, phone numbers, screenshots, transaction IDs, etc.</span>
+              <textarea id="have" name="have" placeholder="Profile URL, screenshots saved on my phone, the phone number they texted from, two of their email addresses…"></textarea>
+            </div>
+
+            <div class="check-field">
+              <input type="checkbox" id="ack" name="acknowledgment" required />
+              <label for="ack"><strong>I understand</strong> the fee is one-time and non-refundable once work begins, that GCCI cannot guarantee identification, and that I will receive a detailed report regardless of outcome.</label>
+            </div>
+
+            <div class="check-field">
+              <input type="checkbox" id="ack-fcra" name="acknowledgment_fcra" required />
+              <label for="ack-fcra"><strong>This request is for personal use only.</strong> I will not use any findings for employment, tenant screening, credit, insurance, or any decision regulated by the Fair Credit Reporting Act (FCRA).</label>
+            </div>
+
+            <input type="hidden" name="_subject" value="New investigation help intake — GCCI" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+            <div class="submit-row">
+              <button class="btn btn-primary" type="submit" id="submitBtn">Submit my case</button>
+            </div>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="faq-title">Common questions</h2>
+        </div>
+
+        <details class="faq">
+          <summary>Why isn't the fee refundable?</summary>
+          <p>Flat-fee small-case engagements only work because the price is committed. The alternative is hourly billing with a retainer, which means more paperwork, more cost, and more risk for you. We'd rather you decide carefully up front than feel locked in mid-engagement. If we don't think we can help, we'll tell you before you pay — that's the entire point of the intake step.</p>
+        </details>
+
+        <details class="faq">
+          <summary>What if you can't identify the person?</summary>
+          <p>You still receive the detailed report. It will document every source we checked, every dead end, every partial match, and what's still uncertain. Many clients use these reports to inform their next decision — escalating to Rexxfield, filing a more detailed police report, or simply having clarity that the trail has gone cold for now.</p>
+        </details>
+
+        <details class="faq">
+          <summary>How is this different from Rexxfield?</summary>
+          <p>Rexxfield handles court-grade attribution, complex financial-fraud recovery, expert testimony, and law-enforcement coordination — work that requires a different evidentiary standard and different tooling. GCCI's small-case tier is for personal-use answers: catfish ID, harassing account attribution, simple lookups. If your case is bigger than what's described on this page, we'll route you to Rexxfield rather than try to force-fit it.</p>
+        </details>
+
+        <details class="faq">
+          <summary>How long does this actually take?</summary>
+          <p>Each tier has a stated turnaround starting from the day you pay. Pre-Engagement Triage is 3–4 days. Quick Lookup is 48–72 hours. Person Trace is 5–7 days. We'll always communicate if something is going to slip — that's rare but it happens.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Can I use this for tenant or employment screening?</summary>
+          <p>No. Anything used for employment, tenant screening, credit, or insurance decisions is regulated by the Fair Credit Reporting Act and must come from a licensed Consumer Reporting Agency. Our reports are personal-use OSINT and explicitly are not consumer reports under the FCRA. If that's what you need, we'll point you toward a licensed CRA.</p>
+        </details>
+
+        <details class="faq">
+          <summary>What methods do you use? Anything sketchy?</summary>
+          <p>Only OSINT — open-source intelligence — and the evidence you provide. We don't pretext (impersonate someone to get information), social-engineer, hack, or access password-protected accounts. If a case can only be resolved by methods outside that line, we route it to Rexxfield, who operates with different tooling and standards.</p>
+        </details>
+
+        <details class="faq">
+          <summary>What can't I include in the intake?</summary>
+          <p>Don't share full Social Security numbers, banking account numbers, passwords, or anything you haven't already shared with the people involved in the case. We'll ask for whatever specific identifiers we need over a secure channel after we've confirmed scope.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Will my case appear in your blog or marketing?</summary>
+          <p>No. We don't publish client cases, list client names, or discuss specific situations publicly. The only exception is a lawful subpoena, which we'd notify you of immediately if it ever happened.</p>
+        </details>
+
+        <details class="faq">
+          <summary>Can I pay by something other than card?</summary>
+          <p>The default payment link is a Stripe-hosted card payment. If you need an alternative (bank transfer, etc.) mention it in your intake and we'll work it out before sending the link.</p>
+        </details>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>Questions? Text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // Quick Exit
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+
+    // Tier-deep-link: clicking "Start a [Tier]" pre-selects that tier in the form
+    document.querySelectorAll('a[data-tier]').forEach(a => {
+      a.addEventListener('click', () => {
+        const t = a.dataset.tier;
+        const sel = document.getElementById('tier');
+        if (sel) sel.value = t;
+      });
+    });
+
+    // Form submission with graceful Formspree handling
+    const form = document.getElementById('intakeForm');
+    const status = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
+
+    function setStatus(msg, kind) {
+      status.textContent = msg;
+      status.className = 'form-status show ' + (kind || '');
+    }
+
+    form.addEventListener('submit', async (e) => {
+      // If the form action still has the placeholder, fall back to mailto so submission works while you set up Formspree.
+      if (form.action.includes('REPLACE_WITH_YOUR_FORM_ID')) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const lines = [
+          'Name: ' + (data.get('name') || ''),
+          'Email: ' + (data.get('email') || ''),
+          'Phone: ' + (data.get('phone') || ''),
+          'Tier: ' + (data.get('tier') || ''),
+          '',
+          'Situation:',
+          data.get('situation') || '',
+          '',
+          'What they have:',
+          data.get('have') || '',
+          '',
+          'Acknowledgment confirmed: ' + (data.get('acknowledgment') ? 'yes' : 'no'),
+          'Personal-use / non-FCRA confirmed: ' + (data.get('acknowledgment_fcra') ? 'yes' : 'no')
+        ].join('\n');
+        const subject = encodeURIComponent('New investigation help intake — GCCI');
+        const body = encodeURIComponent(lines);
+        window.location.href = 'mailto:Gus@gcci.io?subject=' + subject + '&body=' + body;
+        setStatus("Opened your email client with the case details. Send the email to complete your submission.", 'success');
+        return;
+      }
+
+      // Real Formspree submit
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        setStatus("Please complete all required fields before submitting.", 'error');
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Submitting…";
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          setStatus("Got it. We'll review your case within 24 hours and reply to the email you provided.", 'success');
+          form.reset();
+        } else {
+          setStatus("Something went wrong submitting. Email Gus@gcci.io directly and we'll pick it up there.", 'error');
+        }
+      } catch (err) {
+        setStatus("Couldn't reach the server. Email Gus@gcci.io directly and we'll pick it up there.", 'error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit my case";
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
