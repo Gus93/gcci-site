@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Fake Job Offer That Starts With a Text | GCCI</title>
+  <meta name="description" content="A friendly recruiter texts you out of the blue with a remote job that pays well. Here's how the task scam works, and what to do if you've already replied." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">← All posts</a>
+        <div class="post-meta">May 10, 2026 &middot; Scam alert</div>
+        <h1>The fake job offer that starts with a text</h1>
+
+        <p>The text comes through cold. It&rsquo;s a recruiter from a company you&rsquo;ve half-heard of&mdash;a staffing firm, a marketing agency, sometimes a name lifted from a real platform like Indeed or ZipRecruiter&mdash;and they say your profile caught their eye. The pay is good. The hours are flexible. Reply &ldquo;YES&rdquo; and they&rsquo;ll send details.</p>
+
+        <p>You weren&rsquo;t actively looking, but the timing is generous, so you reply. What follows is a slow, friendly conversation that drifts to WhatsApp or Telegram. You&rsquo;re given small &ldquo;tasks&rdquo;&mdash;rate products, optimize listings, click through pages on a polished-looking dashboard. You get paid. You watch a balance grow. Then, at some point, you&rsquo;re told you need to deposit your own money to &ldquo;unlock&rdquo; the next batch of tasks, or to release a withdrawal. The balance you can see is fictional. The money you put in is gone the moment it lands.</p>
+
+        <p>This is the task scam, and the FTC has flagged it as one of the fastest-growing fraud categories of 2026, with losses now running into the billions. The unsolicited text is the front door.</p>
+
+        <h2>What to watch for</h2>
+
+        <ul>
+          <li>The opener is a text, WhatsApp, or DM&mdash;not an email through a job platform you actually applied on</li>
+          <li>They want a one-word reply&mdash;&ldquo;YES,&rdquo; &ldquo;INTERESTED,&rdquo; &ldquo;1&rdquo;&mdash;before sending any details</li>
+          <li>The job is described as &ldquo;remote, flexible, no experience needed&rdquo; and pays $30&ndash;$200 a day for &ldquo;simple tasks&rdquo;</li>
+          <li>The conversation moves off SMS quickly, usually to WhatsApp or Telegram</li>
+          <li>The platform you&rsquo;re asked to log into looks polished, but the URL is a brand-new domain you&rsquo;ve never heard of</li>
+          <li>At some point, you have to &ldquo;deposit&rdquo; or &ldquo;recharge&rdquo; to keep working&mdash;a real employer never asks for this</li>
+        </ul>
+
+        <h2>What to do if you&rsquo;ve engaged with it</h2>
+
+        <p>If you&rsquo;ve replied but no money has moved yet, the safest thing you can do is stop responding. You don&rsquo;t owe them an explanation, and silence is a clean exit.</p>
+
+        <ul>
+          <li>Don&rsquo;t click any links they sent, even out of curiosity</li>
+          <li>Take screenshots of the conversation before blocking&mdash;profile, number, full thread</li>
+          <li>Forward the original text to 7726 (SPAM) so your carrier can act on it</li>
+          <li>If it came through a job site, report the message inside that platform too</li>
+          <li>Then block the number</li>
+        </ul>
+
+        <h2>What not to do</h2>
+
+        <p>The instinct, once you suspect something is off, is to confront the person or string them along to &ldquo;see how the scam works.&rdquo; That tells them you&rsquo;re awake and pushes them to disappear with whatever information they already have. Don&rsquo;t share photos of your ID, even if they call it onboarding. Don&rsquo;t accept a &ldquo;test deposit&rdquo; into your bank account&mdash;those are usually stolen funds being routed through you, and you become part of the chain. And in a few weeks, when a &ldquo;recovery agent&rdquo; texts offering to get your money back for a fee, ignore that too. It is the same operation, or one of its neighbors.</p>
+
+        <h2>If money or data already moved</h2>
+
+        <p>Move quickly, in this order:</p>
+
+        <ul>
+          <li>Call your bank or card issuer and report it as fraud. Ask whether the transfer can be reversed or the card frozen</li>
+          <li>If you used a payment app&mdash;Zelle, Cash App, Venmo, PayPal&mdash;file a dispute inside the app and screenshot the confirmation</li>
+          <li>If you sent crypto, save the transaction ID and the exchange name. The transaction record matters even when recovery doesn&rsquo;t look likely</li>
+          <li>Report to the FTC at reportfraud.ftc.gov and to the FBI&rsquo;s IC3 at ic3.gov</li>
+          <li>If you shared your driver&rsquo;s license or Social Security number, place a free fraud alert with one of the credit bureaus</li>
+        </ul>
+
+        <p>The patterns inside these scams are recognizable, but the people behind them are usually overseas, and self-help has limits once large sums or sensitive identity data are in motion. If your case has reached that point, <a href="/investigation-help.html">Investigation Help</a> is a starting point for smaller matters, and complex cases route to Rexxfield for court-grade attribution work.</p>
+
+        <p>If you&rsquo;re not sure where to start, the <a href="/">resource page</a> walks you through each option by what happened.</p>
+
+        <p class="signature">&mdash; GCCI</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">← All posts</a>
+          <a href="/">Home →</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
+  
