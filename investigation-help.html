@@ -6,6 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Investigation Help | GCCI</title>
   <meta name="description" content="Private, flat-fee first-touch investigation help — catfisher tracing, fake-account attribution, basic OSINT lookups, and case triage. Personal use only." />
+  <link rel="canonical" href="https://gcci.io/investigation-help.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Investigation Help | GCCI" />
+  <meta property="og:description" content="Private, flat-fee first-touch OSINT investigation help — catfisher tracing, fake-account attribution, basic lookups, and case triage. Three tiers from $99." />
+  <meta property="og:url" content="https://gcci.io/investigation-help.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Investigation Help | GCCI" />
+  <meta name="twitter:description" content="Private, flat-fee first-touch OSINT investigation help — catfisher tracing, fake-account attribution, basic lookups, and case triage. Three tiers from $99." />
+  <meta name="theme-color" content="#d6a14a" />
   <meta name="robots" content="index,follow" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -238,7 +249,13 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
     }
+    .tier-cta-stack { display:flex; flex-direction:column; align-items:stretch; gap:8px; margin-top:auto; }
+    .tier-secondary-cta { display:block; text-align:center; font-size:13px; color:var(--quiet); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+    .tier-secondary-cta:hover { color:var(--accent); }
+
   </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"First-Touch Investigation Help","serviceType":"OSINT investigation","provider":{"@type":"Organization","name":"Gus & Co Cyber Investigations","url":"https://gcci.io"},"description":"Private flat-fee OSINT investigation help for small cybercrime cases \u2014 catfisher tracing, fake-account attribution, basic lookups, and case triage.","areaServed":"Global","audience":{"@type":"PeopleAudience","audienceType":"Cybercrime victims and individuals investigating personal-use OSINT cases"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Investigation tiers","itemListElement":[{"@type":"Offer","name":"Pre-Engagement Triage","price":"99","priceCurrency":"USD","url":"https://gcci.io/investigation-help.html","description":"Comprehensive review and recommendations within 3\u20134 days. Plain-language report on what's findable.","availability":"https://schema.org/InStock"},{"@type":"Offer","name":"Quick Lookup","price":"149","priceCurrency":"USD","url":"https://gcci.io/investigation-help.html","description":"Multi-source OSINT trace on one subject (email, phone, or username) within 48\u201372 hours.","availability":"https://schema.org/InStock"},{"@type":"Offer","name":"Person Trace","price":"299","priceCurrency":"USD","url":"https://gcci.io/investigation-help.html","description":"Up to 3 linked accounts traced with reverse-image, cross-platform linking, and breach correlation within 5\u20137 days.","availability":"https://schema.org/InStock"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the fee refundable?","acceptedAnswer":{"@type":"Answer","text":"The flat fee is non-refundable once work begins. Flat-fee engagements protect your wallet from runaway hours, but they shift the outcome risk to you. Once we accept the case and you pay, the work is committed."}},{"@type":"Question","name":"Can you guarantee you'll identify the person?","acceptedAnswer":{"@type":"Answer","text":"No. Sometimes the data isn't there to be found \u2014 the subject is careful, the platform is locked down, or the breach corpus is silent. We never promise an answer. You always receive the detailed report regardless of outcome."}},{"@type":"Question","name":"Can I use the report for employment or tenant screening?","acceptedAnswer":{"@type":"Answer","text":"No. Our reports are for personal use only and are not FCRA 'consumer reports'. Do not use them for employment, tenant, credit, or insurance decisions \u2014 use a licensed Consumer Reporting Agency for those."}},{"@type":"Question","name":"Is this court-grade investigation?","acceptedAnswer":{"@type":"Answer","text":"No. Findings are for private use \u2014 to make decisions, protect yourself, or hand off to police on your own. For attribution that holds up legally, we route you to Rexxfield Technologies."}},{"@type":"Question","name":"What methods do you use?","acceptedAnswer":{"@type":"Answer","text":"OSINT \u2014 open-source intelligence \u2014 plus evidence you provide. We don't pretext, social-engineer, impersonate, hack, or access password-protected accounts. Cases that need methods outside that line route to Rexxfield."}}]}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -292,7 +309,7 @@
         <div class="steps">
           <article class="step"><div class="step-num">1</div><h3>Submit your case</h3><p>Use the intake form below. Tell us what tier seems closest and share what you already have.</p></article>
           <article class="step"><div class="step-num">2</div><h3>We confirm scope</h3><p>Within 24 hours, we'll confirm we can take your case, suggest a different tier, or refer you elsewhere. No charge yet.</p></article>
-          <article class="step"><div class="step-num">3</div><h3>You pay the flat fee</h3><p>If we move forward, we send a secure payment link. Once paid, work begins.</p></article>
+          <article class="step"><div class="step-num">3</div><h3>You pay the flat fee</h3><p>If you used the Pay buttons above, work begins as soon as we receive your case details. If you submitted the intake form first, we send a secure payment link once scope is confirmed.</p></article>
           <article class="step"><div class="step-num">4</div><h3>You get the report</h3><p>Detailed written findings within the tier's turnaround window. We walk through it with you.</p></article>
         </div>
       </div>
@@ -322,7 +339,7 @@
               <li>Recommended path: handle here, escalate to Rexxfield, or DIY route</li>
               <li>Walkthrough call to review the findings</li>
             </ul>
-            <a class="btn btn-secondary" href="#intake" data-tier="triage">Start a Triage</a>
+            <div class="tier-cta-stack"><a class="btn btn-primary" href="https://buy.stripe.com/28EeV65Kj3AL83ZceKe7m00" data-tier="triage" rel="noopener">Pay $99 — Start Triage</a><a class="tier-secondary-cta" href="#intake" data-tier="triage">Want a free scope review first? Use the form below →</a></div>
           </article>
 
           <article class="tier">
@@ -340,7 +357,7 @@
               <li>Basic social/account linkage</li>
               <li>1–2 page summary report</li>
             </ul>
-            <a class="btn btn-secondary" href="#intake" data-tier="quick-lookup">Start a Quick Lookup</a>
+            <div class="tier-cta-stack"><a class="btn btn-primary" href="https://buy.stripe.com/14AeV63Cbefp5VRdiOe7m01" data-tier="quick-lookup" rel="noopener">Pay $149 — Start Quick Lookup</a><a class="tier-secondary-cta" href="#intake" data-tier="quick-lookup">Want a free scope review first? Use the form below →</a></div>
           </article>
 
           <article class="tier featured">
@@ -359,7 +376,7 @@
               <li>Detailed report with screenshots, sources, confidence rating</li>
               <li>Recommended next steps</li>
             </ul>
-            <a class="btn btn-primary" href="#intake" data-tier="person-trace">Start a Person Trace</a>
+            <div class="tier-cta-stack"><a class="btn btn-primary" href="https://buy.stripe.com/aFabIU1u33ALfwr7Yue7m02" data-tier="person-trace" rel="noopener">Pay $299 — Start Person Trace</a><a class="tier-secondary-cta" href="#intake" data-tier="person-trace">Want a free scope review first? Use the form below →</a></div>
           </article>
 
         </div>
@@ -468,7 +485,7 @@
           <p class="lede">Tell us what you're dealing with. We'll review within 24 hours and confirm whether we can help — no payment yet.</p>
 
           <!-- IMPORTANT: replace data-form-endpoint below with your Formspree (or other) endpoint. See deploy notes. -->
-          <form id="intakeForm" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" novalidate>
+          <form id="intakeForm" action="mailto:Gus@gcci.io?subject=Investigation+Help+Intake" method="POST" novalidate>
 
             <div class="field-row">
               <div class="field">
@@ -636,7 +653,7 @@
 
     form.addEventListener('submit', async (e) => {
       // If the form action still has the placeholder, fall back to mailto so submission works while you set up Formspree.
-      if (form.action.includes('REPLACE_WITH_YOUR_FORM_ID')) {
+      if (form.action.startsWith('mailto:')) {
         e.preventDefault();
         const data = new FormData(form);
         const lines = [

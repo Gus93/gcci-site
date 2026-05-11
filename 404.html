@@ -1,36 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Page not found | GCCI</title>
+  <meta name="description" content="That page doesn't exist on gcci.io. Return to the homepage or browse the resource hub." />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://gcci.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+    }
+    * { box-sizing: border-box; }
+    html, body { background: var(--bg); }
+    body {
+      margin:0; min-height:100vh; display:flex; flex-direction:column;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+      color: var(--text); line-height:1.65;
+      background: radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem), var(--bg);
+    }
+    a { color: var(--accent); }
+    header { border-bottom:1px solid var(--line); background:rgba(17,19,21,.78); backdrop-filter: blur(14px); }
+    .nav { width:min(1120px, calc(100% - 40px)); margin:0 auto; min-height:68px; display:flex; align-items:center; justify-content:space-between; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; }
+    .nav-links { display:flex; gap:10px; }
+    .nav-link { border:1px solid var(--line); border-radius:999px; padding:10px 14px; color:var(--muted); text-decoration:none; font-size:14px; background:rgba(255,255,255,.04); }
+    .nav-link:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    main { flex:1; display:grid; place-items:center; padding:64px 20px; }
+    .wrap { width:min(560px, 100%); text-align:center; }
+    .code { color:var(--accent); font-size:14px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; margin-bottom:12px; }
+    h1 { margin:0 0 16px; font-size:clamp(32px, 5vw, 44px); line-height:1.1; letter-spacing:-.02em; font-weight:760; }
+    p { color:var(--muted); margin:0 0 28px; }
+    .actions { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    .btn { display:inline-flex; align-items:center; padding:12px 18px; border-radius:999px; text-decoration:none; font-weight:600; font-size:15px; }
+    .btn-primary { background:var(--accent); color:#17130c; }
+    .btn-primary:hover { background:#e0ae5c; }
+    .btn-ghost { border:1px solid var(--line); color:var(--muted); background:rgba(255,255,255,.04); }
+    .btn-ghost:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    footer { border-top:1px solid var(--line); padding:20px; color:var(--quiet); font-size:13px; text-align:center; }
+  </style>
 </head>
-
-<body style="margin:0;font-family:Arial,sans-serif;background:#070b12;color:#e5e7eb;line-height:1.6;">
-
-  <nav style="border-bottom:1px solid #1f2937;background:#0b1220;">
-    <div style="max-width:1100px;margin:auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
-      <a href="/" style="color:white;text-decoration:none;font-weight:bold;font-size:18px;letter-spacing:0.5px;">GCCI</a>
-      <div style="display:flex;gap:20px;align-items:center;">
-        <a href="/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Home</a>
-        <a href="/blog/" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Blog</a>
-        <a href="mailto:Gus@gcci.io" style="color:#cbd5e1;text-decoration:none;font-size:15px;">Contact</a>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <a class="nav-link" href="/investigation-help.html">Investigation Help</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <div class="code">404 &middot; Page not found</div>
+      <h1>That page isn&rsquo;t here.</h1>
+      <p>The link may be old or mistyped. Head back to the homepage to find the right starting point, or browse the blog for guides and scam alerts.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">Home</a>
+        <a class="btn btn-ghost" href="/blog/">Read the blog</a>
+        <a class="btn btn-ghost" href="/investigation-help.html">Investigation Help</a>
       </div>
     </div>
-  </nav>
-
-  <div style="max-width:700px;margin:auto;padding:80px 20px;text-align:center;">
-    <div style="display:inline-block;padding:8px 14px;border:1px solid #1f3a5f;border-radius:999px;color:#7dd3fc;font-size:13px;background:#0f172a;margin-bottom:24px;">
-      404
-    </div>
-    <h1 style="font-size:42px;margin:0 0 16px 0;color:white;">Page not found</h1>
-    <p style="color:#cbd5e1;font-size:18px;margin-bottom:32px;">
-      The page you&rsquo;re looking for doesn&rsquo;t exist or has moved. If you&rsquo;re looking for help with a cybercrime situation, the resource page is the best place to start.
-    </p>
-    <a href="/" style="background:#2563eb;color:white;padding:14px 22px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;">
-      Go to the resource page
-    </a>
-  </div>
-
+  </main>
+  <footer>GCCI &middot; Gus &amp; Co Cyber Investigations &middot; <a href="mailto:Gus@gcci.io" style="color:var(--muted)">Gus@gcci.io</a></footer>
 </body>
 </html>
