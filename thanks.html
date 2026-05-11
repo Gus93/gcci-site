@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payment received — Send us your case | GCCI</title>
+  <meta name="description" content="Thanks for your payment. Share your case details and we'll start work within the tier's turnaround window." />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://gcci.io/thanks.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#111315; --text:#f4f1eb; --muted:#c9c2b8; --quiet:#948b81; --line:rgba(255,255,255,.11); --accent:#d6a14a; --radius-md:18px; --radius-sm:12px; }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--text);line-height:1.6;font-size:17px;
+      background:radial-gradient(circle at top left,rgba(214,161,74,.08),transparent 32rem),var(--bg);min-height:100vh;}
+    a{color:var(--accent);}
+    header{border-bottom:1px solid var(--line);background:rgba(17,19,21,.78);backdrop-filter:blur(14px);position:sticky;top:0;z-index:20;}
+    .nav{width:min(1120px,calc(100% - 40px));margin:0 auto;min-height:68px;display:flex;align-items:center;justify-content:space-between;}
+    .brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:750;color:var(--text);}
+    .brand-mark{width:36px;height:36px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(214,161,74,.95),rgba(214,161,74,.45));color:#18120b;font-weight:800;}
+    .nav-link{border:1px solid var(--line);border-radius:999px;padding:10px 14px;color:var(--muted);text-decoration:none;font-size:14px;background:rgba(255,255,255,.04);margin-left:10px;}
+    .nav-link:hover{color:var(--text);border-color:rgba(214,161,74,.45);background:rgba(214,161,74,.09);}
+    main{width:min(720px,calc(100% - 40px));margin:0 auto;padding:56px 0 80px;}
+    .badge{display:inline-block;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:rgba(214,161,74,.10);border:1px solid rgba(214,161,74,.35);padding:6px 12px;border-radius:999px;margin-bottom:16px;}
+    h1{margin:0 0 14px;font-size:clamp(32px,5vw,42px);line-height:1.1;letter-spacing:-.025em;font-weight:760;}
+    .lede{color:var(--muted);margin:0 0 28px;font-size:18px;}
+    .next{border:1px solid rgba(214,161,74,.35);background:linear-gradient(180deg,rgba(214,161,74,.07),rgba(255,255,255,.02));border-radius:var(--radius-md);padding:22px;margin-bottom:30px;}
+    .next h2{margin:0 0 8px;font-size:18px;letter-spacing:-.01em;}
+    .next p{margin:0;color:var(--muted);font-size:15px;}
+    form{display:flex;flex-direction:column;gap:14px;}
+    .field{display:flex;flex-direction:column;gap:6px;}
+    label{font-weight:600;font-size:15px;}
+    .hint{color:var(--quiet);font-size:13px;}
+    input[type=text],input[type=email],select,textarea{width:100%;padding:13px 15px;border-radius:var(--radius-sm);border:1px solid var(--line);background:rgba(0,0,0,.22);color:var(--text);font:inherit;font-size:15px;}
+    textarea{min-height:160px;resize:vertical;}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:rgba(214,161,74,.55);background:rgba(0,0,0,.32);}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:13px 20px;border-radius:999px;border:0;font-weight:760;font-size:15px;text-decoration:none;cursor:pointer;font:inherit;}
+    .btn-primary{background:var(--accent);color:#17130c;}
+    .btn-primary:hover{background:#e0ae5c;}
+    .form-status{margin-top:12px;padding:12px 16px;border-radius:var(--radius-sm);font-size:15px;display:none;}
+    .form-status.show{display:block;}
+    .form-status.success{background:rgba(214,161,74,.12);border:1px solid rgba(214,161,74,.45);}
+    footer{border-top:1px solid var(--line);padding:24px;text-align:center;color:var(--quiet);font-size:13px;}
+    @media(max-width:680px){body{font-size:16px;}.field-row{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="/"><span class="brand-mark">G</span><span>GCCI</span></a>
+      <nav><a class="nav-link" href="/">Home</a><a class="nav-link" href="/investigation-help.html">Investigation Help</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="badge">Payment received</div>
+    <h1>Thanks — your case is queued.</h1>
+    <p class="lede">Now we need the actual case details. Send them below and the clock starts as soon as we have them.</p>
+
+    <div class="next">
+      <h2>What happens next</h2>
+      <p>We'll reply to your email within one business day to confirm we have everything and let you know the expected delivery date. Detailed findings come back within your tier's turnaround window: 48&ndash;72 hours for Quick Lookup, 3&ndash;4 days for Triage, 5&ndash;7 days for Person Trace.</p>
+    </div>
+
+    <form id="caseForm" action="mailto:Gus@gcci.io?subject=Paid+case+details" method="POST">
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="email">Email used to pay</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="tier">Which tier did you pay for?</label>
+        <select id="tier" name="tier" required>
+          <option value="">Select…</option>
+          <option value="triage">Pre-Engagement Triage — $99</option>
+          <option value="quick-lookup">Quick Lookup — $149</option>
+          <option value="person-trace">Person Trace — $299</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="situation">What's happening?</label>
+        <span class="hint">A few sentences. Don't share SSNs, full bank numbers, or passwords here.</span>
+        <textarea id="situation" name="situation" required placeholder="E.g. Someone is impersonating me on Instagram under @lookalikename. They've sent DMs to my friends asking for money. Started about 3 weeks ago."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="have">What do you already have?</label>
+        <span class="hint">Profile URLs, usernames, phone numbers, screenshots, email addresses, wallet addresses, dates, anything else.</span>
+        <textarea id="have" name="have" placeholder="Profile URL, two screenshots, the phone number they texted from, an alternate email I think they used…"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="stripe">Stripe receipt or payment reference <span class="hint">(optional — helps match payment to case)</span></label>
+        <input type="text" id="stripe" name="stripe" placeholder="e.g. ch_3AbcDef… or the order confirmation number" />
+      </div>
+
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" id="referrer" name="checkout_session" value="" />
+
+      <button class="btn btn-primary" type="submit">Send case details</button>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+    </form>
+  </main>
+
+  <footer>
+    GCCI &middot; Questions? <a href="mailto:Gus@gcci.io">Gus@gcci.io</a> &middot; <a href="sms:+13215216790">(321) 521-6790</a>
+  </footer>
+
+  <script>
+    (function(){
+      // Pre-fill tier from ?tier= query param
+      const params = new URLSearchParams(location.search);
+      const tier = params.get('tier');
+      if (tier) {
+        const sel = document.getElementById('tier');
+        if (sel && [...sel.options].some(o => o.value === tier)) sel.value = tier;
+      }
+      // Capture Stripe checkout session id from ?session_id= query param
+      const sessionId = params.get('session_id') || params.get('checkout_session');
+      if (sessionId) document.getElementById('referrer').value = sessionId;
+
+      // Mailto submission with all fields composed into the body
+      const form = document.getElementById('caseForm');
+      const status = document.getElementById('formStatus');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const d = new FormData(form);
+        const lines = [
+          'Name: ' + (d.get('name') || ''),
+          'Email used to pay: ' + (d.get('email') || ''),
+          'Tier paid: ' + (d.get('tier') || ''),
+          'Stripe reference: ' + (d.get('stripe') || d.get('checkout_session') || ''),
+          '',
+          'Situation:',
+          d.get('situation') || '',
+          '',
+          'What they have:',
+          d.get('have') || ''
+        ].join('
+');
+        const subject = encodeURIComponent('Paid case details — ' + (d.get('tier') || 'tier?'));
+        window.location.href = 'mailto:Gus@gcci.io?subject=' + subject + '&body=' + encodeURIComponent(lines);
+        status.textContent = "Opened your email client. Send the email to start the clock on your case.";
+        status.className = 'form-status show success';
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GCCI Blog</title>
+    <link>https://gcci.io/blog/</link>
+    <description>Cybercrime victim resources, scam alerts, and evidence-handling guides from Gus &amp; Co Cyber Investigations.</description>
+    <language>en-us</language>
+    <atom:link href="https://gcci.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>The Fake Job Offer That Starts With a Text</title>
+      <link>https://gcci.io/blog/fake-job-offer-text-scam/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/fake-job-offer-text-scam/</guid>
+      <pubDate>Sun, 10 May 2026 09:00:00 GMT</pubDate>
+      <description>A friendly recruiter texts you out of the blue with a remote job that pays well. Here's how the task scam works, and what to do if you've already replied.</description>
+    </item>
+    <item>
+      <title>How to Preserve Evidence in the First 24 Hours</title>
+      <link>https://gcci.io/blog/preserve-evidence/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/preserve-evidence/</guid>
+      <pubDate>Fri, 01 May 2026 09:00:00 GMT</pubDate>
+      <description>What to capture, how to capture it, and what not to do in the critical first day after realizing you've been targeted.</description>
+    </item>
+    <item>
+      <title>Welcome to the GCCI Blog</title>
+      <link>https://gcci.io/blog/welcome/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/welcome/</guid>
+      <pubDate>Mon, 28 Apr 2026 09:00:00 GMT</pubDate>
+      <description>A short introduction to what this blog will cover, who it's for, and how it can help if you're dealing with cybercrime.</description>
+    </item>
+  </channel>
+</rss>
