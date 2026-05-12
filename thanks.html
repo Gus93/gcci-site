@@ -74,7 +74,7 @@
       <p>We'll reply to your email within one business day to confirm we have everything and let you know the expected delivery date. Detailed findings come back within your tier's turnaround window: 48&ndash;72 hours for Quick Lookup, 3&ndash;4 days for Triage, 5&ndash;7 days for Person Trace.</p>
     </div>
 
-    <form id="caseForm" action="mailto:Gus@gcci.io?subject=Paid+case+details" method="POST">
+    <form id="caseForm" action="https://formspree.io/f/mlgzzgdk" method="POST">
       <div class="field-row">
         <div class="field">
           <label for="name">Your name</label>
@@ -142,26 +142,27 @@
       // Mailto submission with all fields composed into the body
       const form = document.getElementById('caseForm');
       const status = document.getElementById('formStatus');
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const d = new FormData(form);
-        const lines = [
-          'Name: ' + (d.get('name') || ''),
-          'Email used to pay: ' + (d.get('email') || ''),
-          'Tier paid: ' + (d.get('tier') || ''),
-          'Stripe reference: ' + (d.get('stripe') || d.get('checkout_session') || ''),
-          '',
-          'Situation:',
-          d.get('situation') || '',
-          '',
-          'What they have:',
-          d.get('have') || ''
-        ].join('
-');
-        const subject = encodeURIComponent('Paid case details — ' + (d.get('tier') || 'tier?'));
-        window.location.href = 'mailto:Gus@gcci.io?subject=' + subject + '&body=' + encodeURIComponent(lines);
-        status.textContent = "Opened your email client. Send the email to start the clock on your case.";
-        status.className = 'form-status show success';
+        if (!form.checkValidity()) { status.textContent = "Please fill all required fields."; status.className = 'form-status show'; return; }
+        const btn = form.querySelector('button[type=submit]');
+        btn.disabled = true; btn.textContent = "Sending…";
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          if (res.ok) {
+            status.textContent = "Got it. We'll confirm receipt within one business day and start the clock.";
+            status.className = 'form-status show success';
+            form.reset();
+          } else {
+            status.textContent = "Couldn't submit. Email Gus@gcci.io directly and we'll pick it up there.";
+            status.className = 'form-status show';
+          }
+        } catch (err) {
+          status.textContent = "Network issue. Email Gus@gcci.io directly and we'll pick it up there.";
+          status.className = 'form-status show';
+        } finally {
+          btn.disabled = false; btn.textContent = "Send case details";
+        }
       });
     })();
   </script>
