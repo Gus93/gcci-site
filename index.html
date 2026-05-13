@@ -890,6 +890,6 @@ What I have already done:</textarea>
 
   })();
   </script>
-<script>(function(){try{var r=localStorage.getItem('gcci-state-v1');var s=r?JSON.parse(r):{};var w=document.getElementById('wizardResume');if(!w)return;if(s&&s.wizard&&s.wizard.step){w.classList.remove('hidden');}else{w.classList.add('hidden');}}catch(e){}})();</script>
+<script>(function(){try{var r=localStorage.getItem('gcci-state-v1');var s=r?JSON.parse(r):{};var w=document.getElementById('wizardResume');if(!w)return;if(s&&s.wizard&&(s.wizard.category||s.wizard.completed||s.wizard.detail)){w.classList.remove('hidden');}else{w.classList.add('hidden');}}catch(e){}})();</script>
 </body>
 </html>
