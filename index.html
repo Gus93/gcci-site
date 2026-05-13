@@ -890,5 +890,20 @@ What I have already done:</textarea>
 
   })();
   </script>
+<script>
+(function(){
+  try {
+    var raw = localStorage.getItem('gcci-state-v1');
+    var state = raw ? JSON.parse(raw) : {};
+    var wr = document.getElementById('wizardResume');
+    if (!wr) return;
+    if (state && state.wizard && state.wizard.step) {
+      wr.classList.remove('hidden');
+    } else {
+      wr.classList.add('hidden');
+    }
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
