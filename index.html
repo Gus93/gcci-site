@@ -151,7 +151,7 @@
     .wizard-option .arrow { color:var(--accent); font-weight:700; }
     .wizard-actions { display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; }
     .wizard-actions .spacer { flex:1; }
-    .wizard-step.hidden, .wizard-result.hidden { display:none; }
+    .wizard-step.hidden, .wizard-result.hidden, .wizard-resume.hidden { display:none; }
     .wizard-resume {
       background:rgba(214,161,74,.10); border:1px solid rgba(214,161,74,.3);
       border-radius:var(--radius-sm); padding:10px 14px;
@@ -890,20 +890,5 @@ What I have already done:</textarea>
 
   })();
   </script>
-<script>
-(function(){
-  try {
-    var raw = localStorage.getItem('gcci-state-v1');
-    var state = raw ? JSON.parse(raw) : {};
-    var wr = document.getElementById('wizardResume');
-    if (!wr) return;
-    if (state && state.wizard && state.wizard.step) {
-      wr.classList.remove('hidden');
-    } else {
-      wr.classList.add('hidden');
-    }
-  } catch (e) {}
-})();
-</script>
 </body>
 </html>
