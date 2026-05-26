@@ -265,7 +265,7 @@
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a class="nav-link" href="#wizard">Find help</a>
-        <a class="nav-link" href="/investigation-help.html">Investigation Help</a>
+        <a class="nav-link" href="/investigation-help/">Investigation Help</a>
         <a class="nav-link" href="#tools">Evidence Tools</a>
         <a class="nav-link" href="/blog/">Blog</a>
         <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit: instantly hides this page">Quick Exit</button>
@@ -471,7 +471,7 @@ What I have already done:</textarea>
             <p>Sometimes you need somebody to actually look. For smaller ones (catfishers, harassing accounts, simple lookups), our Investigation Help is a flat fee starting at $99. For bigger or court-grade work, Rexxfield handles those.</p>
           </div>
           <div class="escalation-cta">
-            <a class="btn btn-primary" href="/investigation-help.html">Investigation Help</a>
+            <a class="btn btn-primary" href="/investigation-help/">Investigation Help</a>
             <a class="btn btn-secondary" href="https://rexxfield.com/" target="_blank" rel="noopener">Visit Rexxfield</a>
             <p class="under-cta">From flat-fee small cases to court-grade attribution</p>
           </div>
@@ -886,6 +886,24 @@ What I have already done:</textarea>
         notes.select();
         showToast("Select and copy the notes.");
       }
+    });
+
+    // ------ SMS fallback for desktop (sms: links do nothing on most desktop browsers) ------
+    // On mobile, the link still opens the SMS app via the browser's normal handling.
+    // On desktop, the click copies the number to the clipboard and shows a toast.
+    document.querySelectorAll('a[href^="sms:"]').forEach(link => {
+      link.addEventListener('click', async (e) => {
+        const raw = (link.getAttribute('href') || '').replace(/^sms:/, '').trim();
+        const m = raw.match(/^\+?1?(\d{3})(\d{3})(\d{4})$/);
+        const display = m ? ('(' + m[1] + ') ' + m[2] + '-' + m[3]) : raw;
+        try {
+          await navigator.clipboard.writeText(raw);
+          showToast(display + ' copied — paste into your SMS app');
+        } catch (err) {
+          showToast('Text us at ' + display);
+        }
+        // No preventDefault: lets mobile browsers still launch the SMS app.
+      });
     });
 
   })();

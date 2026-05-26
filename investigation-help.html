@@ -714,6 +714,45 @@
         submitBtn.textContent = "Submit my case";
       }
     });
+    // ------ SMS fallback for desktop (sms: links do nothing on most desktop browsers) ------
+    const smsToast = document.createElement('div');
+    smsToast.setAttribute('role', 'status');
+    smsToast.setAttribute('aria-live', 'polite');
+    smsToast.style.cssText = [
+      'position:fixed','left:50%','bottom:24px','transform:translateX(-50%) translateY(20px)',
+      'background:rgba(214,161,74,.96)','color:#17120b','padding:12px 18px',
+      'border-radius:999px','font:600 14px/1.4 Inter,ui-sans-serif,system-ui,sans-serif',
+      'box-shadow:0 12px 30px rgba(0,0,0,.35)','z-index:9999','opacity:0',
+      'transition:opacity .2s ease, transform .2s ease','pointer-events:none',
+      'max-width:90vw','text-align:center'
+    ].join(';');
+    document.body.appendChild(smsToast);
+    let smsToastTimer;
+    function showSmsToast(msg) {
+      smsToast.textContent = msg;
+      smsToast.style.opacity = '1';
+      smsToast.style.transform = 'translateX(-50%) translateY(0)';
+      clearTimeout(smsToastTimer);
+      smsToastTimer = setTimeout(() => {
+        smsToast.style.opacity = '0';
+        smsToast.style.transform = 'translateX(-50%) translateY(20px)';
+      }, 3500);
+    }
+    document.querySelectorAll('a[href^="sms:"]').forEach(link => {
+      link.addEventListener('click', async (e) => {
+        const raw = (link.getAttribute('href') || '').replace(/^sms:/, '').trim();
+        const m = raw.match(/^\+?1?(\d{3})(\d{3})(\d{4})$/);
+        const display = m ? ('(' + m[1] + ') ' + m[2] + '-' + m[3]) : raw;
+        try {
+          await navigator.clipboard.writeText(raw);
+          showSmsToast(display + ' copied — paste into your SMS app');
+        } catch (err) {
+          showSmsToast('Text us at ' + display);
+        }
+        // No preventDefault: lets mobile browsers still launch the SMS app.
+      });
+    });
+
   })();
   </script>
 </body>
