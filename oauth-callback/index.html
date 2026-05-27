@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>OAuth callback | GCCI</title>
+  <style>
+    body { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; background:#111315; color:#f4f1eb; margin:0; padding:40px 20px; line-height:1.5; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    h1 { color:#d6a14a; margin: 0 0 14px; font-size: 28px; }
+    p { color:#c9c2b8; }
+    .box { border:1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.03); border-radius:14px; padding:24px; margin: 24px 0; }
+    .code { font-family: ui-monospace, "Cascadia Code", Menlo, monospace; background: rgba(0,0,0,.35); padding: 14px 16px; border-radius: 10px; word-break: break-all; color:#d6a14a; font-size: 14px; }
+    button { background:#d6a14a; color:#17120b; border:none; padding: 10px 16px; border-radius: 999px; font-weight: 700; cursor: pointer; font:inherit; }
+    button:hover { background:#e0ae5c; }
+    .ok { color: #6ddc8a; }
+    .err { color: #f3b8b8; }
+    .muted { color:#948b81; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>GCCI OAuth callback</h1>
+    <p>This page captures the authorization code returned by TikTok after you approve the GCCI Publisher app. It's only used during the one-time setup.</p>
+
+    <div class="box" id="result">
+      <div class="muted">Reading the code from the URL…</div>
+    </div>
+
+    <p class="muted">If something went wrong, check the URL you were redirected to. It should contain <code>?code=...</code>. If it shows <code>?error=...</code> instead, the authorization was denied or expired.</p>
+  </div>
+
+  <script>
+  (function() {
+    var params = new URLSearchParams(location.search);
+    var code = params.get("code");
+    var state = params.get("state");
+    var err = params.get("error");
+    var errDesc = params.get("error_description");
+    var el = document.getElementById("result");
+    if (err) {
+      el.innerHTML = '<p class="err"><strong>Authorization failed.</strong></p>' +
+        '<p>Error: <code>' + escapeHtml(err) + '</code></p>' +
+        (errDesc ? '<p>Detail: ' + escapeHtml(errDesc) + '</p>' : '');
+      return;
+    }
+    if (!code) {
+      el.innerHTML = '<p class="err"><strong>No authorization code found in URL.</strong></p>' +
+        '<p>This page should be opened only as the redirect target of a TikTok OAuth flow.</p>';
+      return;
+    }
+    el.innerHTML =
+      '<p class="ok"><strong>Authorization successful.</strong></p>' +
+      '<p>Copy this code and paste it back to Claude (or run the exchange-code command):</p>' +
+      '<div class="code" id="codebox">' + escapeHtml(code) + '</div>' +
+      '<p style="margin-top:14px;"><button onclick="copyCode()">Copy code</button> ' +
+      '<span class="muted" id="copied" style="margin-left:8px;"></span></p>' +
+      (state ? '<p class="muted">state: <code>' + escapeHtml(state) + '</code></p>' : '');
+
+    window.copyCode = function() {
+      var c = document.getElementById("codebox").textContent;
+      navigator.clipboard.writeText(c).then(function() {
+        document.getElementById("copied").textContent = "Copied to clipboard.";
+      }).catch(function() {
+        document.getElementById("copied").textContent = "Couldn't copy — select the code manually.";
+      });
+    };
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, function(c) {
+        return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
