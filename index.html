@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Pastry Studio — Coming Soon</title>
+<meta name="description" content="The Pastry Studio — small-batch artisan pastries, cupcakes, cookies & custom cakes. Coming soon to Martinsburg & the Eastern Panhandle, WV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fbf4ea;
+    --cream-2:#f4e7d4;
+    --caramel:#c2853c;
+    --caramel-dark:#a86b28;
+    --cocoa:#5a3b25;
+    --cocoa-soft:#7a5740;
+    --ink:#3a2718;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Nunito Sans',sans-serif;color:var(--ink);
+    min-height:100vh;display:flex;flex-direction:column;
+    background:
+      radial-gradient(ellipse at 50% 0%,#fdf9f1 0%,var(--cream) 60%),
+      var(--cream);
+  }
+  h1,h2,h3,.logo,.tagline{font-family:'Fraunces',serif}
 
+  .wrap{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:80px 7vw 60px;max-width:760px;margin:0 auto;
+  }
+  .logo{
+    font-size:1.5rem;font-weight:600;color:var(--cocoa);letter-spacing:1px;
+    text-transform:uppercase;margin-bottom:38px;
+  }
+  .logo span{color:var(--caramel)}
+
+  .badge{
+    display:inline-block;background:var(--cream-2);color:var(--caramel-dark);
+    font-weight:700;font-size:.78rem;letter-spacing:2.5px;text-transform:uppercase;
+    padding:9px 20px;border-radius:30px;margin-bottom:30px;
+  }
+  h1{
+    font-size:clamp(2.8rem,7vw,5rem);color:var(--cocoa);
+    font-weight:600;line-height:1.05;margin-bottom:20px;
+  }
+  h1 em{color:var(--caramel);font-style:italic}
+  .tagline{
+    font-style:italic;font-size:clamp(1.15rem,2.6vw,1.55rem);
+    color:var(--cocoa-soft);margin-bottom:14px;
+  }
+  .blurb{
+    font-size:1.08rem;color:var(--cocoa-soft);max-width:540px;margin:0 auto 40px;
+  }
+
+  .pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+  .pill{
+    background:#fff;border:1px solid #efdfca;border-radius:30px;
+    padding:10px 20px;font-weight:600;color:var(--cocoa);font-size:.95rem;
+    box-shadow:0 4px 14px rgba(90,59,37,.06);
+  }
+
+  /* CTA */
+  .cta{width:100%;max-width:460px;margin:0 auto}
+  .cta-label{font-weight:700;color:var(--cocoa);margin-bottom:18px;font-size:1.05rem}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:15px 30px;border-radius:40px;
+    font-weight:700;font-size:1rem;text-decoration:none;
+    transition:transform .15s,box-shadow .2s;
+  }
+  .btn-primary{background:var(--caramel);color:#fff;box-shadow:0 8px 22px rgba(194,133,60,.32)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(194,133,60,.42)}
+  .btn-ghost{background:#fff;color:var(--cocoa);border:2px solid #e4d2b6}
+  .btn-ghost:hover{background:var(--cream-2)}
+
+  /* About */
+  .about{
+    background:var(--cream-2);
+    padding:70px 7vw;
+  }
+  .about-inner{max-width:680px;margin:0 auto;text-align:center}
+  .about h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--cocoa);font-weight:600;margin-bottom:24px}
+  .about p{font-size:1.1rem;color:var(--ink);margin-bottom:18px;line-height:1.7}
+  .signature{font-family:'Fraunces',serif;font-style:italic;font-size:1.4rem;color:var(--caramel-dark);margin-top:30px;margin-bottom:4px}
+  .sig-role{font-size:.85rem;color:var(--cocoa-soft);letter-spacing:1.5px;text-transform:uppercase;font-weight:700}
+
+  /* Footer */
+  footer{
+    text-align:center;padding:30px 7vw 40px;color:var(--cocoa-soft);font-size:.95rem;
+  }
+  footer a{color:var(--cocoa);text-decoration:none;font-weight:700}
+  footer a:hover{color:var(--caramel-dark)}
+  .contact-line{margin-bottom:8px}
+  .sep{margin:0 8px;color:#d8c2a8}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <div class="logo">The Pastry <span>Studio</span></div>
+  <span class="badge">Coming Soon · Martinsburg, WV</span>
+  <h1>Something <em>Sweet</em><br>Is Baking</h1>
+  <p class="tagline">Freshly Baked, Beautifully Crafted</p>
+  <p class="blurb">Small-batch artisan pastries, gourmet cupcakes, specialty cookies, and custom cakes — handcrafted in the studio and coming soon to the Eastern Panhandle.</p>
+
+  <div class="pills">
+    <span class="pill">🥐 Artisan Pastries</span>
+    <span class="pill">🧁 Gourmet Cupcakes</span>
+    <span class="pill">🍪 Specialty Cookies</span>
+    <span class="pill">🎂 Custom Cakes</span>
+  </div>
+
+  <div class="cta">
+    <p class="cta-label">Follow along &amp; place your order</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://instagram.com/ThePastryStudioWV" target="_blank" rel="noopener">Follow on Instagram</a>
+      <a class="btn btn-ghost" href="tel:+13044339588">Call or Text Us</a>
+    </div>
+  </div>
+</main>
+
+<section class="about">
+  <div class="about-inner">
+    <h2>A Little About Us</h2>
+    <p>The Pastry Studio is a small-batch bakery rooted in the Eastern Panhandle, where every pastry is handcrafted to order. No factory lines, no shortcuts — just butter, patience, and a love for the craft.</p>
+    <p>From flaky morning pastries to showstopping custom cakes, each bake leaves the studio fresh, beautiful, and made just for you.</p>
+    <p class="signature">Autumn Jones</p>
+    <p class="sig-role">Pastry Chef &amp; Founder</p>
+  </div>
+</section>
+
+<footer>
+  <div class="contact-line">
+    <a href="tel:+13044339588">(304) 433-9588</a>
+    <span class="sep">·</span>
+    <a href="mailto:thepastrystudio02@gmail.com">thepastrystudio02@gmail.com</a>
+    <span class="sep">·</span>
+    <a href="https://instagram.com/ThePastryStudioWV" target="_blank" rel="noopener">@ThePastryStudiowv</a>
+  </div>
+  <div>© 2026 The Pastry Studio · Martinsburg &amp; the Eastern Panhandle, WV</div>
+</footer>
+</body>
+</html>
