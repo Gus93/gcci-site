@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What to do if you wired money to a scammer | GCCI</title>
+  <meta name="description" content="The wire cleared and the bank is closed. Here's what to do in the first hours, when a wire recall is still possible, why filing with IC3 matters, and how to avoid the recovery scam that follows." />
+  <link rel="canonical" href="https://gcci.io/blog/what-to-do-if-you-wired-money-to-a-scammer/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="What to do if you wired money to a scammer" />
+  <meta property="og:description" content="The wire cleared and the bank is closed. Here's what to do in the first hours, when a wire recall is still possible, why filing with IC3 matters, and how to avoid the recovery scam that follows." />
+  <meta property="og:url" content="https://gcci.io/blog/what-to-do-if-you-wired-money-to-a-scammer/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What to do if you wired money to a scammer" />
+  <meta name="twitter:description" content="The wire cleared and the bank is closed. Here's what to do in the first hours, when a wire recall is still possible, why filing with IC3 matters, and how to avoid the recovery scam that follows." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What to do if you wired money to a scammer","description":"The wire cleared and the bank is closed. Here's what to do in the first hours, when a wire recall is still possible, why filing with IC3 matters, and how to avoid the recovery scam that follows.","datePublished":"2026-06-05","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/what-to-do-if-you-wired-money-to-a-scammer/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/what-to-do-if-you-wired-money-to-a-scammer/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">June 5, 2026 &middot; Scam alert</div>
+        <h1>What to do if you wired money to a scammer</h1>
+
+        <p>The wire went through hours ago. Maybe a &ldquo;bank investigator&rdquo; warned you about fraud on your account and told you to move your savings to a safe one. Maybe a title company emailed new closing instructions, or a voice that sounded exactly like your daughter begged for help. Now the money is gone, the branch is closed, and you keep refreshing the same screen hoping it reverses on its own.</p>
+
+        <p>Wires feel final because they usually are. Once the funds settle in the recipient&rsquo;s account, there is no built-in undo button the way there is with a credit card. That does not mean nothing can be done. It means the next few hours matter more than almost anything else you will do.</p>
+
+        <h2>Call your bank now and ask for a wire recall</h2>
+
+        <p>Do not wait for morning. Most large banks run a 24-hour fraud line, listed on the back of your card or on their website. Tell them in plain words that you were defrauded and you want a wire recall placed immediately. Your bank can contact the receiving bank and ask it to freeze the funds before they are withdrawn. Speed is the whole game here. Money that is still sitting in the recipient&rsquo;s account can sometimes be held. Money that has already been pulled out or forwarded is much harder to reach.</p>
+
+        <h2>File with IC3 the same day</h2>
+
+        <p>Go to <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a> and file a complaint while the details are fresh. This is not just paperwork. The FBI runs a Recovery Asset Team that works with banks through a process called the Financial Fraud Kill Chain, flagging and freezing suspicious transfers before the money disappears. In 2024 that team froze about $561 million across roughly 3,000 cases, a 66 percent success rate. The kill chain works best on international wires of $50,000 or more reported within 72 hours, though domestic cases get worked too. The sooner your complaint lands, the more there is to grab.</p>
+
+        <h2>Write down everything while it is fresh</h2>
+
+        <p>Save the wire confirmation number, the amount, the date and time, and the exact name and account number of the recipient. Keep every email, text, and call log tied to the request. If a person or company handed you &ldquo;new&rdquo; payment instructions, screenshot those too. Don&rsquo;t delete the thread out of embarrassment, because that thread is the case. Our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> covers what to keep and how.</p>
+
+        <h2>Report it to police if the loss is large</h2>
+
+        <p>For a serious loss, or when an older family member was the target, file a report with your local police department and get a case number. Bank fraud teams sometimes need that number before they will push a recall further, and it feeds the bigger picture if the same account is hitting other people. A single report rarely gets a detective assigned, but it becomes one more thread investigators can pull when a pattern forms.</p>
+
+        <h2>Watch for the second scam</h2>
+
+        <p>Within days you may hear from someone on Instagram or Telegram who promises to recover your wire for an upfront fee. That is a second scam, built from the same victim lists that got you the first time. No real investigator asks for crypto or gift cards in advance, and nobody can guarantee your money back. Anyone who promises a refund is lying to you.</p>
+
+        <h2>When to bring in help</h2>
+
+        <p>Most wire-fraud cases live or die on those first calls to the bank and IC3. If the loss is large, or you need a documented trail for a civil claim, our <a href="/investigation-help">Investigation Help</a> page covers the small-case work we sometimes take on. For five- and six-figure losses that have to hold up in court, we route to <a href="https://rexxfield.com/" target="_blank" rel="noopener">Rexxfield</a> for court-grade tracing.</p>
+
+        <p>There is no promise here that the money comes back. Plenty of wires never do. But the recall request, the IC3 complaint, and a clean record of what happened are the steps that keep the door open, and they only work if you move fast.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
