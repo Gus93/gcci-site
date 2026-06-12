@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to find a scammer's identity | GCCI</title>
+  <meta name="description" content="You can search the photos and the phone number yourself, but a scammer's real name lives in payment and platform records. Here's what you can find on your own, and what it takes to get the rest." />
+  <link rel="canonical" href="https://gcci.io/blog/how-to-find-a-scammers-identity/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="How to find a scammer's identity" />
+  <meta property="og:description" content="You can search the photos and the phone number yourself, but a scammer's real name lives in payment and platform records. Here's what you can find on your own, and what it takes to get the rest." />
+  <meta property="og:url" content="https://gcci.io/blog/how-to-find-a-scammers-identity/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to find a scammer's identity" />
+  <meta name="twitter:description" content="You can search the photos and the phone number yourself, but a scammer's real name lives in payment and platform records. Here's what you can find on your own, and what it takes to get the rest." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to find a scammer's identity","description":"You can search the photos and the phone number yourself, but a scammer's real name lives in payment and platform records. Here's what you can find on your own, and what it takes to get the rest.","datePublished":"2026-06-12","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/how-to-find-a-scammers-identity/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/how-to-find-a-scammers-identity/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">June 12, 2026 &middot; Guide</div>
+        <h1>How to find a scammer&rsquo;s identity</h1>
+
+        <p>You want to know who did this to you. Once the money is gone and the shock fades a little, that question takes over, and it is a fair one. Sometimes it is even answerable. Here is what you can do yourself, and where the search usually has to go from there.</p>
+
+        <h2>Search the face they showed you</h2>
+
+        <p>If you have photos of the person, run them through a reverse image search on Google Images or TinEye. Stolen photos are the norm in romance and investment scams. Finding the same face on a stranger&rsquo;s public profile, or on a scam-report site, tells you the persona was manufactured. That does not name your scammer yet, but it confirms what you are dealing with, and the match itself is evidence worth saving.</p>
+
+        <h2>Search everything else they gave you</h2>
+
+        <p>Take each piece of contact information and search it with the word &ldquo;scam&rdquo; beside it. The phone number. The email address. The username, the website, the company name they used. Other victims post these details on complaint boards constantly, and a hit means the same operation has been reported before. Keep a note of every place they appear, because investigators use those clusters to tie cases together.</p>
+
+        <h2>The name they gave you is not the lead</h2>
+
+        <p>This is the part most guides skip. The name, the accent, the profile, the convincing video calls, all of it was built to survive exactly the searching you are doing now. What actually identifies a scammer is what they cannot fake as cheaply: the account that received your money, the IP addresses behind their messages, the device records held by the platform you met them on. Those records exist. They sit with banks, payment apps, and platforms, and they come out through legal process rather than clever googling.</p>
+
+        <h2>Save the trail before it disappears</h2>
+
+        <p>Screenshot their profiles today. Scammers delete accounts the moment a victim goes quiet, and a dead link proves nothing. Save every message, payment confirmation, wallet address, and transaction number. Our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> covers what to grab. A clean evidence file is the difference between &ldquo;someone scammed me&rdquo; and a case a platform or a court can act on.</p>
+
+        <h2>Report it with every identifier attached</h2>
+
+        <p>File at <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a> and <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a>, and include the numbers, emails, usernames, and wallet addresses you collected. You probably will not get a callback about your individual case. That is normal. These systems work on patterns, and your identifiers may be the piece that connects your report to fifty others already on file.</p>
+
+        <h2>When you need the actual name</h2>
+
+        <p>If the loss is serious, or you are heading toward a civil claim, identification becomes professional work: preservation letters, subpoenas to platforms, on-chain tracing, attribution analysis. Be careful who you hire for it. Anyone promising to unmask your scammer for an upfront fee, or calling themselves a hacker, is very likely the second scam working off a victim list. Our <a href="/investigation-help">Investigation Help</a> page covers the smaller cases we take on, and for court-grade attribution we work alongside <a href="https://rexxfield.com/" target="_blank" rel="noopener">Rexxfield</a>. Nobody honest guarantees a name. The trail, though, is more recoverable than most victims assume.</p>
+
+        <p>One last thing. If you do figure out who they are, or think you have, do not confront them. Hand what you found to law enforcement or your attorney. A scammer who feels exposed deletes evidence, recycles into a new identity, and occasionally retaliates. What you want is accountability, and that runs through the records, the reports, and the people whose job it is to act on them.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
