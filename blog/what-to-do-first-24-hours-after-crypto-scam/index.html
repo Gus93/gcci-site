@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What to do in the first 24 hours after a crypto scam | GCCI</title>
+  <meta name="description" content="You just sent crypto to a scammer and the next day is a blur. Here's exactly what to do in the first 24 hours: stop paying, save evidence, report it, and give the trace a real chance." />
+  <link rel="canonical" href="https://gcci.io/blog/what-to-do-first-24-hours-after-crypto-scam/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="What to do in the first 24 hours after a crypto scam" />
+  <meta property="og:description" content="You just sent crypto to a scammer and the next day is a blur. Here's exactly what to do in the first 24 hours: stop paying, save evidence, report it, and give the trace a real chance." />
+  <meta property="og:url" content="https://gcci.io/blog/what-to-do-first-24-hours-after-crypto-scam/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What to do in the first 24 hours after a crypto scam" />
+  <meta name="twitter:description" content="You just sent crypto to a scammer and the next day is a blur. Here's exactly what to do in the first 24 hours: stop paying, save evidence, report it, and give the trace a real chance." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What to do in the first 24 hours after a crypto scam","description":"You just sent crypto to a scammer and the next day is a blur. Here's exactly what to do in the first 24 hours: stop paying, save evidence, report it, and give the trace a real chance.","datePublished":"2026-06-19","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/what-to-do-first-24-hours-after-crypto-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/what-to-do-first-24-hours-after-crypto-scam/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">June 19, 2026 &middot; Crypto fraud</div>
+        <h1>What to do in the first 24 hours after a crypto scam</h1>
+
+        <p>The transfer went through, the person who promised to help has gone quiet, and you have spent the last few hours refreshing a screen that will not change. If you only have energy for one thing right now, spend it on the next 24 hours. That window is where most of what can still be done actually gets done.</p>
+
+        <p>First, something you probably need to hear. You were targeted by people who do this for a living, working from scripts refined on thousands of victims before you. Falling for it is not a character flaw. The sooner the shame loosens its grip, the sooner you can act, and acting fast is the one part of this you still control.</p>
+
+        <h2>Stop paying, including the &ldquo;fee to get it back&rdquo;</h2>
+
+        <p>Whatever the platform or the person is asking for next, do not pay it. The withdrawal tax, the account-unlock fee, the small deposit to &ldquo;verify&rdquo; your wallet, they are all the same scam wearing a new label. No payment releases the rest. Cut contact, but do not delete anything yet. Stepping away quietly keeps the scammer from rushing the money somewhere harder to follow.</p>
+
+        <h2>Save the evidence before it vanishes</h2>
+
+        <p>Fake sites and chat accounts tend to disappear once a victim pushes back, so capture everything now. Screenshot the dashboard, the platform URL, and the whole conversation wherever it happened. The pieces that matter most to anyone tracing this later are the wallet addresses and the transaction hashes for each transfer you made. Keep copies in two places, like your phone and a cloud drive, because forensic work needs the original unedited files. Our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> walks through how to do it cleanly.</p>
+
+        <h2>Report it in the right places, today</h2>
+
+        <p>File with <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a> and <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a>, then ask your local police for a report and a case number. That number matters more than it looks. Exchanges usually want an official police or federal case reference before they will act on a freeze request. Include your wallet addresses, the transaction IDs, the platform name, and your screenshots. The FBI is upfront that reporting does not by itself bring money back, but it is what gives an investigator or an exchange something concrete to act on.</p>
+
+        <h2>Call the exchange while the money may still be reachable</h2>
+
+        <p>Crypto payments cannot be reversed the way a card charge can. What sometimes works is different. Funds that land at a compliant exchange can occasionally be frozen, but only if that exchange hears about it before the money is cashed out or run through a mixer. So call the platform your money left from, and the receiving exchange if you can identify it, and ask them to flag the destination address. This is the step where hours genuinely change the outcome.</p>
+
+        <h2>Expect the second scam, and ignore it</h2>
+
+        <p>Within a day or two, messages will start arriving that promise to recover your crypto for an upfront fee. They found you on the same victim lists the first crew sold. Real tracing is paid for as investigative work, not sold as a guaranteed refund, and nobody legitimate asks to be paid in crypto or gift cards. If you want the longer version before someone talks you into round two, we wrote about <a href="/blog/crypto-recovery-service-legit-or-scam/">whether crypto recovery services are legit</a>.</p>
+
+        <h2>When to bring in an investigator</h2>
+
+        <p>For larger losses, a documented on-chain trace can turn your report into something law enforcement or a court can actually use. Our <a href="/investigation-help">Investigation Help</a> page covers the smaller cases we sometimes take on, and for five and six figure losses that need court-grade attribution we point people to <a href="https://rexxfield.com/" target="_blank" rel="noopener">Rexxfield</a>. If you are weighing whether it is even worth it, our honest take on <a href="/blog/chances-of-getting-money-back-after-crypto-scam/">the real chances of getting money back</a> may help.</p>
+
+        <p>None of this guarantees the money comes home. What the first 24 hours decide is how much of a trail is left to follow, and that is worth protecting while you still can.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
