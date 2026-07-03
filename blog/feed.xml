@@ -7,6 +7,13 @@
     <language>en-us</language>
     <atom:link href="https://gcci.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Is this bank fraud alert text a scam?</title>
+      <link>https://gcci.io/blog/fake-bank-fraud-alert-text-scam/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/fake-bank-fraud-alert-text-scam/</guid>
+      <pubDate>Fri, 03 Jul 2026 09:00:00 GMT</pubDate>
+      <description>A text warns of suspicious activity on your bank account, then the "fraud department" calls. How the fake bank fraud alert scam works and what to do.</description>
+    </item>
+    <item>
       <title>What to do about the phantom hacker scam</title>
       <link>https://gcci.io/blog/phantom-hacker-scam-what-to-do/</link>
       <guid isPermaLink="true">https://gcci.io/blog/phantom-hacker-scam-what-to-do/</guid>
@@ -60,14 +67,4 @@
       <link>https://gcci.io/blog/preserve-evidence/</link>
       <guid isPermaLink="true">https://gcci.io/blog/preserve-evidence/</guid>
       <pubDate>Fri, 01 May 2026 09:00:00 GMT</pubDate>
-      <description>What to capture, how to capture it, and what not to do in the critical first day after realizing you've been targeted.</description>
-    </item>
-    <item>
-      <title>Welcome to the GCCI Blog</title>
-      <link>https://gcci.io/blog/welcome/</link>
-      <guid isPermaLink="true">https://gcci.io/blog/welcome/</guid>
-      <pubDate>Mon, 28 Apr 2026 09:00:00 GMT</pubDate>
-      <description>A short introduction to what this blog will cover, who it's for, and how it can help if you're dealing with cybercrime.</description>
-    </item>
-  </channel>
-</rss>
+      <description>What to capture, how to capture it, and what not to do in the critical fir
