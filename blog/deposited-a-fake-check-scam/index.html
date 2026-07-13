@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What to do if you deposited a fake check | GCCI</title>
+  <meta name="description" content="The check cleared, you sent money back, and now the bank says it bounced. How the fake check scam works and what to do if you already sent the money." />
+  <link rel="canonical" href="https://gcci.io/blog/deposited-a-fake-check-scam/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="What to do if you deposited a fake check" />
+  <meta property="og:description" content="The check cleared, you sent money back, and now the bank says it bounced. How the fake check scam works and what to do if you already sent the money." />
+  <meta property="og:url" content="https://gcci.io/blog/deposited-a-fake-check-scam/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What to do if you deposited a fake check" />
+  <meta name="twitter:description" content="The check cleared, you sent money back, and now the bank says it bounced. How the fake check scam works and what to do if you already sent the money." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What to do if you deposited a fake check","description":"The check cleared, you sent money back, and now the bank says it bounced. How the fake check scam works and what to do if you already sent the money.","datePublished":"2026-07-13","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/deposited-a-fake-check-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/deposited-a-fake-check-scam/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">July 13, 2026 &middot; Scam alert</div>
+        <h1>What to do if you deposited a fake check</h1>
+
+        <p>The check arrived, you deposited it, and your banking app showed the money as available. You did what you were asked, sent a portion back by Zelle, wire, gift cards, or crypto, and kept your share. Then, days or weeks later, the bank pulled the whole amount back out of your account and told you the check was counterfeit. Now you may be negative, and the person who sent it has gone quiet.</p>
+
+        <p>Before anything else, understand what happened, because it is the part victims blame themselves for most. The fake check scam works precisely because your bank showed you the money. You did not miss an obvious red flag. You trusted your own bank's app, which is what anyone would do.</p>
+
+        <h2>Why the money looked real when it wasn't</h2>
+
+        <p>Under U.S. banking rules, banks generally have to make deposited funds available within a day or two, but actually discovering that a check is counterfeit can take much longer, sometimes weeks. &ldquo;Available&rdquo; is not the same as &ldquo;cleared.&rdquo; Scammers live in that gap. They push you to send money out while the balance still looks real, and when the check finally bounces, the bank removes the deposit and you are on the hook for whatever you sent away. The FTC's guidance on <a href="https://consumer.ftc.gov/articles/how-spot-avoid-and-report-fake-check-scams" target="_blank" rel="noopener">fake check scams</a> describes exactly this pattern.</p>
+
+        <h2>The costumes this scam wears</h2>
+
+        <p>The check is the engine; the story around it changes. An &ldquo;employer&rdquo; sends a check for a laptop and asks you to pay their &ldquo;vendor.&rdquo; A mystery shopping company has you evaluate a money transfer service using their check. A buyer for something you are selling &ldquo;accidentally&rdquo; overpays and asks for the difference back. A car wrap company pays upfront and wants the &ldquo;installer&rdquo; paid from it. If a stranger's money has to pass through your account and part of it has to leave again quickly, it is this scam. It often begins the same way as the <a href="/blog/fake-job-offer-text-scam/">fake job offer that starts with a text</a>.</p>
+
+        <h2>Call your bank first, today</h2>
+
+        <p>Contact your bank's fraud department right away, not just the branch teller. Tell them the check was counterfeit and that you were the target of a fake check scam. Ask them to document it as fraud on your file, stop any further payments you were tricked into authorizing, and tell you exactly where the balance stands. If you sent money by wire or a payment app, ask in the same call whether a recall or dispute is still possible. Hours matter for that part.</p>
+
+        <h2>Stop all contact and do not send another cent</h2>
+
+        <p>Whoever sent the check may keep pressing: a replacement check, a bonus, a fee to &ldquo;fix&rdquo; the problem. Some will threaten you with arrest for cashing a bad check. That threat is theater. Do not pay it, and do not agree to receive or move any more money for them, because letting more strangers' funds pass through your account is how victims get treated as money mules. Go quiet, but keep every message.</p>
+
+        <h2>Will you owe the bank the money?</h2>
+
+        <p>Usually, yes, and it is better to hear that plainly. When a deposited check is returned, the bank takes the deposit back, and the money you forwarded to the scammer came out of your own funds. Ask the fraud department about hardship options and repayment plans, and provide your police report and FTC report numbers so the file shows you as a fraud victim rather than a bad-check writer. If the account was closed, you can still negotiate with the bank's recovery department.</p>
+
+        <h2>Save the evidence</h2>
+
+        <p>Keep the check image from your banking app, the envelope it came in if you still have it, and the entire conversation: the job posting, the emails, the texts, the payment receipts for whatever you sent. Postal inspectors and investigators care about the envelope more than you would expect. Our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> walks through capturing it cleanly.</p>
+
+        <h2>Report it in the right places</h2>
+
+        <p>File at <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a> and <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a>, and get a local police report with a case number for the bank. If the check came through the mail, also report it to the <a href="https://www.uspis.gov/report" target="_blank" rel="noopener">U.S. Postal Inspection Service</a>, because mailing counterfeit checks is a federal crime they actively work. If part of what you sent went out as crypto, our post on <a href="/blog/how-to-report-a-crypto-scam-and-recover-money/">reporting a crypto scam</a> covers that piece.</p>
+
+        <h2>Expect the second scam</h2>
+
+        <p>Once your information circulates on a victim list, offers to &ldquo;recover&rdquo; your money for an upfront fee tend to follow. Nobody legitimate guarantees recovery or asks to be paid in gift cards or crypto. If the loss is large and you want to understand what real tracing looks like, our <a href="/investigation-help">Investigation Help</a> page explains the options honestly.</p>
+
+        <p>The check fooled the bank's own systems before it fooled you. What you control now is the speed of the phone call to your bank, the paper trail you keep, and the reports that put this on the record. Start there.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
