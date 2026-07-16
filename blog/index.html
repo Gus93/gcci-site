@@ -139,6 +139,12 @@
 
     <div class="container">
       <div class="post-list" id="post-list">
+        <a href="/blog/bought-fake-concert-tickets-scam/" class="post-card">
+          <div class="post-meta">July 16, 2026 &middot; Scam alert</div>
+          <h2>What to do if you bought fake concert tickets</h2>
+          <p>The tickets never arrived, or the QR code turned red at the gate. Here&rsquo;s how to dispute the payment, report the seller, and dodge the &ldquo;refund agent&rdquo; scam that follows.</p>
+        </a>
+
         <a href="/blog/utility-shut-off-scam-call/" class="post-card">
           <div class="post-meta">July 15, 2026 &middot; Impersonation scam</div>
           <h2>Is this utility shut-off call a scam?</h2>
@@ -450,16 +456,4 @@
 
   <script>
     const QUICK_EXIT_URL = "https://www.google.com";
-    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
-    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
-    let escPresses = 0, escTimer;
-    document.addEventListener("keydown", e => {
-      if (e.key !== "Escape") return;
-      escPresses += 1;
-      clearTimeout(escTimer);
-      if (escPresses >= 2) exitNow();
-      escTimer = setTimeout(() => { escPresses = 0; }, 900);
-    });
-  </script>
-</body>
-</html>
+    const exitNow = () => { window.location.r
