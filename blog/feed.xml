@@ -7,6 +7,14 @@
     <language>en-us</language>
     <atom:link href="https://gcci.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>What to do if you bought fake concert tickets</title>
+      <link>https://gcci.io/blog/bought-fake-concert-tickets-scam/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/bought-fake-concert-tickets-scam/</guid>
+      <pubDate>Thu, 16 Jul 2026 09:00:00 GMT</pubDate>
+      <description>The tickets never arrived, or the QR code turned red at the gate. How to dispute the payment, report the seller, and avoid the refund-agent scam that follows.</description>
+    </item>
+
+    <item>
       <title>Is this utility shut-off call a scam?</title>
       <link>https://gcci.io/blog/utility-shut-off-scam-call/</link>
       <guid isPermaLink="true">https://gcci.io/blog/utility-shut-off-scam-call/</guid>
@@ -105,14 +113,4 @@
       <link>https://gcci.io/blog/geek-squad-renewal-email-scam/</link>
       <guid isPermaLink="true">https://gcci.io/blog/geek-squad-renewal-email-scam/</guid>
       <pubDate>Fri, 29 May 2026 09:00:00 GMT</pubDate>
-      <description>A clean-looking $349 Geek Squad renewal invoice lands in your inbox. You never signed up. The email isn't the trap. The phone number on it is.</description>
-    </item>
-    <item>
-      <title>The Fake Job Offer That Starts With a Text</title>
-      <link>https://gcci.io/blog/fake-job-offer-text-scam/</link>
-      <guid isPermaLink="true">https://gcci.io/blog/fake-job-offer-text-scam/</guid>
-      <pubDate>Sun, 10 May 2026 09:00:00 GMT</pubDate>
-      <description>A friendly recruiter texts you out of the blue with a flexible remote job. How the task scam works, and what to do if you've already replied.</description>
-    </item>
-  </channel>
-</rss>
+      <description>A clean-looking $349 Geek Squad renewal invoice lands in your inbox. You never signed up. The email isn't the trap. The phone number on it is.</descript
