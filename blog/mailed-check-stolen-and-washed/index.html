@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What to do if your mailed check was stolen and washed | GCCI</title>
+  <meta name="description" content="A check you mailed cleared for a different name or amount. How check washing works, what to do with your bank today, and how to report the mail theft." />
+  <link rel="canonical" href="https://gcci.io/blog/mailed-check-stolen-and-washed/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="What to do if your mailed check was stolen and washed" />
+  <meta property="og:description" content="A check you mailed cleared for a different name or amount. How check washing works, what to do with your bank today, and how to report the mail theft." />
+  <meta property="og:url" content="https://gcci.io/blog/mailed-check-stolen-and-washed/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What to do if your mailed check was stolen and washed" />
+  <meta name="twitter:description" content="A check you mailed cleared for a different name or amount. How check washing works, what to do with your bank today, and how to report the mail theft." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What to do if your mailed check was stolen and washed","description":"A check you mailed cleared for a different name or amount. How check washing works, what to do with your bank today, and how to report the mail theft.","datePublished":"2026-07-27","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/mailed-check-stolen-and-washed/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/mailed-check-stolen-and-washed/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">July 27, 2026 &middot; Scam alert</div>
+        <h1>What to do if your mailed check was stolen and washed</h1>
+
+        <p>You mailed a check to pay a bill or a person you trust. Weeks later the payment is marked late, and when you pull up the check image in your banking app, something is wrong. The handwriting isn&rsquo;t yours anymore. The payee is a stranger, or the amount has grown, and the money is gone. That is check washing, and if it just happened to you, the order you do things in today matters.</p>
+
+        <p>One thing first: you didn&rsquo;t do anything careless. Check washing starts with mail theft, often from blue collection boxes or apartment mailbox banks, sometimes with stolen or counterfeit postal keys. Your check was taken in transit, the ink was chemically erased, and it was rewritten and cashed or mobile-deposited, sometimes weeks later and sometimes after being sold to someone else entirely. None of that happened because of a choice you made.</p>
+
+        <h2>Call your bank today and use the word &ldquo;altered&rdquo;</h2>
+
+        <p>Contact your bank as soon as you discover the check, and be specific: the check was <em>altered</em> or the endorsement was <em>forged</em>. Those words matter, because banks handle an altered check differently from a payment you authorized. Ask to file a fraud or forgery affidavit, and ask them to open a claim to recover the funds from the bank where the check was deposited. Under the rules that govern checks, the loss on an altered or forged item generally falls on the banks rather than the customer, but only when it is reported promptly, so the phone call itself is the step that protects you. Timelines vary by bank and state, which is one more reason not to wait.</p>
+
+        <p>While you are on the line, close the compromised checking account and open a new one. The thief has your account number, routing number, name, address, and signature, everything needed to print counterfeit checks against that account for months. Ask the bank to flag or return any checks still outstanding, and set up alerts on the new account.</p>
+
+        <h2>Report the mail theft to the postal inspectors</h2>
+
+        <p>Check washing that starts in the mail is a federal crime, and the agency that works it is the U.S. Postal Inspection Service. File a report at <a href="https://www.uspis.gov/report" target="_blank" rel="noopener">uspis.gov/report</a> or by phone at 1-877-876-2455. Give them where and when you mailed the check, and attach the altered check image from your banking app. A single report rarely gets an arrest on its own, but inspectors work these as patterns, and your report helps tie a washing crew to a neighborhood, a collection box, or a stack of other victims.</p>
+
+        <p>File a local police report as well and keep the report number. Your bank may ask for it during the claim, and it becomes part of your paper trail. You can also report the fraud to the FTC at <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a>.</p>
+
+        <h2>Save the evidence before it gets away from you</h2>
+
+        <p>Download the front and back images of the washed check from your bank before the claim process starts, and keep your own copies of the affidavit, the claim number, and every date and name from your calls. If the payment that check was covering is now late, contact that biller, explain there was mail theft, and ask them to note the account while the bank claim runs. Our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> applies here too: originals, kept in two places, unedited.</p>
+
+        <h2>Assume your information is circulating</h2>
+
+        <p>Stolen checks and the account details on them are routinely resold in bulk. That means the risk doesn&rsquo;t end when the bank makes you whole. Watch the old account until it is fully closed, watch the new one, and consider a credit freeze with the three bureaus, which is free and stops new accounts from being opened in your name. If other personal information was in the same envelope, or you start seeing accounts you don&rsquo;t recognize, <a href="https://www.identitytheft.gov/" target="_blank" rel="noopener">IdentityTheft.gov</a> will build you a recovery plan for exactly that situation.</p>
+
+        <h2>Make the next check harder to steal</h2>
+
+        <p>Going forward, a few small changes remove most of the risk. Hand outgoing mail to a carrier or drop it inside the post office rather than in an outdoor collection box, especially anything with a check in it. If you write checks, use a gel pen with permanent ink, which resists the solvents washers rely on. And where a biller offers it, paying electronically takes the check out of the mail stream entirely.</p>
+
+        <h2>If the losses go beyond one check</h2>
+
+        <p>Most check washing cases are resolved between your bank and the postal inspectors, and that is the right path to push first. Where it turns into something bigger, a string of counterfeit checks, an identity being used to open accounts, or a fraud operation that keeps coming back to you, a documented investigation can help your bank or law enforcement see the whole picture instead of one incident at a time. Our <a href="/investigation-help">Investigation Help</a> page explains what we take on and when it is worth it, and our honest answer for anyone who reported and heard nothing is over in <a href="/blog/reported-a-scam-and-no-one-responded/">what to do when no one responds</a>.</p>
+
+        <p>The bank claim will take longer than feels fair, and the silence in the middle is normal. What you did today, the affidavit, the reports, the closed account, is what decides how it ends.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
