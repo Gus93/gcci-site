@@ -7,6 +7,14 @@
     <language>en-us</language>
     <atom:link href="https://gcci.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>What to do if you gave money to a fake charity</title>
+      <link>https://gcci.io/blog/gave-money-to-a-fake-charity/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/gave-money-to-a-fake-charity/</guid>
+      <pubDate>Mon, 03 Aug 2026 09:00:00 GMT</pubDate>
+      <description>A cause tugged at you and you gave fast, and now something about the request feels off. How to spot a fake charity, and what to do if you already paid.</description>
+    </item>
+
+    <item>
       <title>The Fake Virus Pop-Up Scam: What to Do Next</title>
       <link>https://gcci.io/blog/fake-virus-popup-scam-what-to-do/</link>
       <guid isPermaLink="true">https://gcci.io/blog/fake-virus-popup-scam-what-to-do/</guid>
@@ -204,3 +212,4 @@
     </item>
   </channel>
 </rss>
+
