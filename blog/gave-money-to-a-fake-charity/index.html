@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What to do if you gave money to a fake charity | GCCI</title>
+  <meta name="description" content="A cause tugged at you, you gave fast, and now something about the request feels off. How to spot a fake charity, and what to do if you already paid." />
+  <link rel="canonical" href="https://gcci.io/blog/gave-money-to-a-fake-charity/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="What to do if you gave money to a fake charity" />
+  <meta property="og:description" content="A cause tugged at you, you gave fast, and now something about the request feels off. How to spot a fake charity, and what to do if you already paid." />
+  <meta property="og:url" content="https://gcci.io/blog/gave-money-to-a-fake-charity/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What to do if you gave money to a fake charity" />
+  <meta name="twitter:description" content="A cause tugged at you, you gave fast, and now something about the request feels off. How to spot a fake charity, and what to do if you already paid." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What to do if you gave money to a fake charity","description":"A cause tugged at you, you gave fast, and now something about the request feels off. How to spot a fake charity, and what to do if you already paid.","datePublished":"2026-08-03","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/gave-money-to-a-fake-charity/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/gave-money-to-a-fake-charity/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 3, 2026 &middot; Scam alert</div>
+        <h1>What to do if you gave money to a fake charity</h1>
+
+        <p>A post, a text, or a call made a cause feel urgent, and you gave without stopping to check. Maybe it was disaster relief after a storm on the news, a sick child's medical fund, or a veterans' group with a name that sounded familiar. Now the receipt looks thin, nobody answers the number back, or a friend mentioned the same &ldquo;charity&rdquo; called them too. That instinct to help is not the problem. Scammers are counting on it, and they build their pitches to skip past the questions you would normally ask.</p>
+
+        <p>You are not the first person this has happened to, and pressing pause now to sort out what happened is a reasonable, useful thing to do. Here is where to start.</p>
+
+        <h2>The signs it wasn&rsquo;t a real charity</h2>
+
+        <p>A few patterns show up again and again in charity scams. The ask arrived right after a disaster, tragedy, or news story, timed for when people are moved and not thinking about paperwork. The name was close to a well-known organization&rsquo;s, off by a word or two. You were pushed to act immediately, sometimes with a countdown or a claim that matching funds were about to expire. And the payment method was one that is hard to reverse or trace, like a gift card, wire transfer, cash app, or cryptocurrency, rather than a credit card or check to a named, registered organization.</p>
+
+        <p>None of this means you were careless. These campaigns are built by people who run them full-time and test what gets a response.</p>
+
+        <h2>Check whether the charity is even real</h2>
+
+        <p>Before anything else, look up the organization independently, not through any link or number the fundraiser gave you. Search its name plus &ldquo;charity navigator,&rdquo; &ldquo;BBB Wise Giving Alliance,&rdquo; or &ldquo;give.org,&rdquo; and check whether your state&rsquo;s Attorney General or Secretary of State lists it as a registered charitable organization. A legitimate nonprofit will have a public tax filing, a real address, and a track record you can verify in minutes. If none of that turns up, or the group only existed as a social media page created a week ago, you are very likely dealing with a fake.</p>
+
+        <h2>Try to get the payment back</h2>
+
+        <p>What is recoverable depends entirely on how you paid. If you used a credit card, call the card issuer, explain that the recipient may be a fraudulent charity, and ask about disputing the charge. If you paid by debit card, wire, gift card, or a peer-to-peer app, act fast, since those methods are much harder to reverse the longer you wait. Our guides on <a href="/blog/apple-gift-card-scam-what-to-do/">what to do if you sent gift cards</a>, <a href="/blog/what-to-do-if-you-wired-money-to-a-scammer/">wired money to a scammer</a>, and <a href="/blog/cash-app-sent-money-to-scammer/">sent money on Cash App</a> walk through the specific steps for each payment method. If the donation went out as crypto, our post on <a href="/blog/how-to-report-a-crypto-scam-and-recover-money/">reporting a crypto scam and what can still be traced</a> covers what is realistic to expect.</p>
+
+        <h2>Report it, even for a small amount</h2>
+
+        <p>File a report with the <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">FTC at ReportFraud.ftc.gov</a>, which tracks charity fraud specifically and shares data with state regulators who can act on patterns across many small reports. If the solicitation came through a website, social media ad, or crowdfunding page, report it to that platform directly, since most have a dedicated fraud or fake-fundraiser reporting flow. If you gave through cryptocurrency, <a href="https://www.chainabuse.com/" target="_blank" rel="noopener">Chainabuse.com</a> lets you flag the receiving wallet address so it is on record if others report the same one. And if the ask came in over the phone or through a scam website, <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a> is the right place for that report too.</p>
+
+        <h2>Watch for the follow-up</h2>
+
+        <p>Once you have reported a fake charity or disputed a payment, be cautious of anyone who reaches out afterward offering to help you get the money back for an upfront fee. That is a second scam built on the first one, and it is common enough that we cover it in our piece on <a href="/blog/crypto-recovery-service-legit-or-scam/">how to tell a real recovery process from a recovery scam</a>. Legitimate refunds come from your bank, your card issuer, or a regulator, never from a stranger who contacts you first and asks to be paid before they start.</p>
+
+        <p>Giving because something moved you is not a mistake. The people running these campaigns are betting that you will not check, so checking, reporting, and telling the people around you what you found is exactly the right response.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
