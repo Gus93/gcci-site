@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to tell if there is stalkerware on your phone | GCCI</title>
+  <meta name="description" content="Someone seems to know where you are and what you say. How to tell if stalkerware is on your phone, and why safety planning comes before removing it." />
+  <link rel="canonical" href="https://gcci.io/blog/is-there-stalkerware-on-my-phone/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="How to tell if there is stalkerware on your phone" />
+  <meta property="og:description" content="Someone seems to know where you are and what you say. How to tell if stalkerware is on your phone, and why safety planning comes before removing it." />
+  <meta property="og:url" content="https://gcci.io/blog/is-there-stalkerware-on-my-phone/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to tell if there is stalkerware on your phone" />
+  <meta name="twitter:description" content="Someone seems to know where you are and what you say. How to tell if stalkerware is on your phone, and why safety planning comes before removing it." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to tell if there is stalkerware on your phone","description":"Someone seems to know where you are and what you say. How to tell if stalkerware is on your phone, and why safety planning comes before removing it.","datePublished":"2026-08-16","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/is-there-stalkerware-on-my-phone/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/is-there-stalkerware-on-my-phone/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 16, 2026 &middot; Digital abuse</div>
+        <h1>How to tell if there is stalkerware on your phone</h1>
+
+        <p>It usually starts with something small that does not add up. They mention a street you drove down and never told anyone about. They repeat a line from a message you sent a friend. They call the moment you leave the house, every time. You have probably told yourself it is a coincidence more than once, and you may have started censoring what you type without deciding to.</p>
+
+        <p>Stalkerware is the name for apps that let another person quietly watch what happens on your phone: your location, your messages, your call history, your photos, sometimes the microphone. If that is what is happening here, please know two things up front. This is not paranoia, and it is not something you caused by being careless. Almost every one of these apps has to be installed by hand, by someone who had your phone in their hands and knew your passcode.</p>
+
+        <h2>Read the rest of this on a different device if you can</h2>
+
+        <p>This is the one thing worth doing before anything else. If there is monitoring software on your phone, then searching for it, reading this page, and calling for help are all things the other person may be able to see. A friend&rsquo;s phone, a work computer, or a library terminal gives you room to think that your own phone may not.</p>
+
+        <p>It is not an overreaction to step away from your device for an hour. It is the same instinct that brought you here, followed one step further.</p>
+
+        <h2>What actually points to stalkerware</h2>
+
+        <p>The technical signs are real but unreliable on their own. A battery that drains much faster than it used to, a phone that runs warm while sitting idle, data use that climbs without explanation, restarts you did not ask for, an app or profile in your settings with a dull name like &ldquo;System Service&rdquo; that you do not remember installing. Any of these can also be an aging battery or a badly behaved app, which is why chasing them alone tends to leave people more unsettled rather than less.</p>
+
+        <p>The stronger signal is behavioral, and you already have it. The National Network to End Domestic Violence puts it plainly: the most common sign that your activity is being monitored is the other person&rsquo;s own behavior. What do they know that they should not, and where could they possibly have gotten it? Write down the specific instances, with dates, on paper or on a device they cannot reach. Patterns are much easier to see when they are side by side, and that same list becomes useful later if this ever goes in front of an advocate, a lawyer, or a judge.</p>
+
+        <h2>Do not rip it out yet</h2>
+
+        <p>This is the part that gets skipped, and it matters more than any detection tip. The FTC and domestic violence advocates both warn that someone who has been monitoring you may escalate when that access suddenly disappears. From their side, a phone going dark looks like a decision you made, and they will know roughly when you made it.</p>
+
+        <p>So the order matters. Safety planning comes first, removal comes second. The <a href="https://www.thehotline.org/" target="_blank" rel="noopener">National Domestic Violence Hotline</a> is free, confidential, and available at 1-800-799-7233 or by texting START to 88788, and their advocates do this specific conversation every day, including the technology side of it. Call from a device that is not the one you are worried about. If there is no abusive relationship in the picture and this is a former friend, a coworker, or a landlord, the escalation risk is usually lower, but the sequence still holds: understand what is there before you change it.</p>
+
+        <h2>When it is not stalkerware at all</h2>
+
+        <p>Often it is something simpler, and simpler is good news, because it is easier to fix. Someone who is still signed into your iCloud or Google account can see your location, your photos, and your backups without installing anything. Family location sharing that you set up years ago is still switched on. A shared streaming or phone plan shows travel and call history. An old tablet or a car left logged into your accounts keeps syncing. A tracker tucked in a bag or a car reports location on its own; both iPhone and Android will alert you to an unknown tracker moving with you, so do not dismiss those notifications.</p>
+
+        <p>Working through your account access is worth doing regardless, and our guide on <a href="/blog/email-account-hacked-what-to-do/">locking down an email account someone else has touched</a> covers the sign-out-everywhere and recovery-detail steps that apply just as well here.</p>
+
+        <h2>Preserve what is there before you clean it up</h2>
+
+        <p>A factory reset is the reliable way to remove stalkerware, and it is also the moment the evidence disappears. If there is any chance you will want a protective order, a police report, or a civil claim, get the device examined before you wipe it. A forensic examination can establish what was installed, when, and sometimes from which account, in a form that holds up rather than as a screenshot of a suspicion. Our post on <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> walks through what to capture and what not to touch, and <a href="/blog/what-to-do-if-someone-doxxed-you/">what to do if someone doxxed you</a> covers documenting an ongoing pattern of harassment.</p>
+
+        <h2>Cleaning the phone properly</h2>
+
+        <p>When you have a plan and the evidence question is settled, a full factory reset is the standard fix. Two details decide whether it works. Do not restore from a backup of the old phone, because that can quietly bring the app back with everything else; install your apps fresh from the app store instead. And set the device up on a new Apple or Google account, not the old one, since an account the other person still has credentials for undoes the reset entirely.</p>
+
+        <p>Then close the door behind you. A six-digit passcode or longer that nobody else knows, biometrics turned on, automatic updates enabled, two-factor authentication on your email and your Apple or Google account, and new passwords everywhere the old ones may have been seen. If a new phone is realistic, one bought on an account they have never had access to is the cleanest possible start.</p>
+
+        <h2>You are allowed to act on a hunch</h2>
+
+        <p>You do not need proof before you take your own privacy back. Changing your passcode, leaving the phone in another room, or setting up a device they have never touched are all reasonable things to do while you are still working out what is happening. If it turns out to be nothing technical, you have lost very little. If it turns out to be something, you will be glad you started early.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
