@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to remove your info from people-search sites | GCCI</title>
+  <meta name="description" content="Your address and phone number are on dozens of people-search sites. How to get them removed, where to start, and what the new California DROP tool does." />
+  <link rel="canonical" href="https://gcci.io/blog/remove-personal-info-from-people-search-sites/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="How to remove your info from people-search sites" />
+  <meta property="og:description" content="Your address and phone number are on dozens of people-search sites. How to get them removed, where to start, and what the new California DROP tool does." />
+  <meta property="og:url" content="https://gcci.io/blog/remove-personal-info-from-people-search-sites/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to remove your info from people-search sites" />
+  <meta name="twitter:description" content="Your address and phone number are on dozens of people-search sites. How to get them removed, where to start, and what the new California DROP tool does." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to remove your information from people-search sites","description":"Your address and phone number are on dozens of people-search sites. How to get them removed, where to start, and what the new California DROP tool does.","datePublished":"2026-08-17","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/remove-personal-info-from-people-search-sites/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/remove-personal-info-from-people-search-sites/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 17, 2026 &middot; Privacy</div>
+        <h1>How to remove your information from people-search sites</h1>
+
+        <p>Most people find out about people-search sites the hard way. You search your own name and there it is: your current address, a phone number you still use, your age, the names of your relatives, and a map of the street you live on. Sometimes it surfaces because someone used it against you, and sometimes you just went looking. Either way, seeing your home laid out on a stranger&rsquo;s website is unsettling, and the reaction that follows is usually the same question. Can I make it stop?</p>
+
+        <p>Mostly, yes. It takes some patience rather than any technical skill, and it works better if you go in with a plan instead of clicking every removal link you can find. Here is how to approach it.</p>
+
+        <h2>First, find out what is actually out there</h2>
+
+        <p>Before removing anything, spend twenty minutes building a list. Search your full name in quotation marks along with your city, then repeat it with your state, a former address, your phone number, and any other name you have used, including a maiden name. Do the same in a second search engine, since the results differ more than you would expect. Save the links you find in a simple document or spreadsheet as you go.</p>
+
+        <p>This list is the whole project. Without it you will lose track of which sites you have contacted and which ones quietly put you back up, and that is where most people give up.</p>
+
+        <h2>Start upstream, not with the site that upset you</h2>
+
+        <p>People-search sites are mostly resellers. A smaller group of large data aggregators collects records from public filings, property deeds, voter files, court records, and commercial sources, then licenses that data onward to the sites you actually see in search results. If you remove yourself from one reseller and ignore the source, your listing tends to reappear the next time that site refreshes its data.</p>
+
+        <p>So work the big suppliers first, then the resellers. Among the consumer-facing sites, the ones worth prioritising are the ones showing a current address or a working phone number, because those are the entries that can put you at real risk rather than merely annoy you. Whitepages, Spokeo, Radaris, BeenVerified, Intelius, TruthFinder, FastPeopleSearch, and PeopleFinders come up most often, but your own list matters more than any general list.</p>
+
+        <h2>The opt-out itself is a form, not a fight</h2>
+
+        <p>Nearly every one of these sites has a removal process, usually reachable from a &ldquo;Do Not Sell My Personal Information,&rdquo; &ldquo;Privacy,&rdquo; or &ldquo;Opt Out&rdquo; link in the page footer. You will typically paste in the URL of the specific listing about you, give an email address, and confirm through a link they send back. Some will ask you to verify by phone.</p>
+
+        <p>A few notes that save frustration. Use a dedicated email address for this work rather than your main one. Never pay a people-search site to remove your own record, and be sceptical of any site that will only remove you if you first create a paid account. Under California and a growing number of other state privacy laws, deletion and opt-out requests are free, and a company cannot charge you a different price or deny you service for making one. Removals usually take somewhere between a few days and a few weeks to show up.</p>
+
+        <h2>If you live in California, one request can now cover hundreds of brokers</h2>
+
+        <p>This part is genuinely new. California&rsquo;s Delete Act created a state-run system called DROP, the Delete Request and Opt-Out Platform, which lets a California resident submit a single verified deletion request that reaches every registered data broker at once. Consumers have been able to file requests since January 2026, and as of the beginning of this month brokers are legally required to check the platform at least every 45 days, act on the requests, and report back their status. That means requests filed now should start producing visible results rather than sitting in a queue.</p>
+
+        <p>If you are a California resident, start at the <a href="https://privacy.ca.gov/drop/" target="_blank" rel="noopener">CalPrivacy DROP page</a> before doing anything by hand, because it does in one submission what would otherwise take you many evenings. It does not cover everything, since it only reaches brokers registered with the state and does not touch data a company holds because you have a direct relationship with it. If you live elsewhere, you are still doing this one site at a time, though several states are moving in the same direction.</p>
+
+        <h2>Expect some of it to come back</h2>
+
+        <p>This is maintenance, not a one-time fix. New records get pulled in whenever you move, register a vehicle, appear in a court filing, or a broker refreshes from a source that still has you. Put a reminder in your calendar to re-run your own name search every three or four months and re-file removals for anything that reappeared. It takes far less time the second and third round because your list already exists.</p>
+
+        <p>You will also see paid services that promise to handle all of this for you. Some do real work and save real hours; the honest way to think about them is that you are buying time and record-keeping rather than a legal power you do not have yourself. Whichever route you take, keep the running list, because that record is what tells you whether anything is actually improving.</p>
+
+        <h2>When removal is not the whole problem</h2>
+
+        <p>Sometimes a listing is a privacy nuisance, and sometimes it is the fuel for something worse. If someone has deliberately published your details to invite harassment, opting out of brokers is only one part of the response, and our guide on <a href="/blog/what-to-do-if-someone-doxxed-you/">what to do if someone doxxed you</a> covers the takedown and reporting side. If your name and photos are being used to build fake accounts, <a href="/blog/someone-is-impersonating-me-on-social-media/">someone impersonating you on social media</a> is the closer fit. And if the data was already used to open credit in your name, freezing your credit comes before any of this, which we walk through in <a href="/blog/someone-opened-accounts-in-my-name/">what to do if someone opened accounts in your name</a>.</p>
+
+        <p>One more thing worth saying plainly. If the person you are worried about is an ex-partner or someone who has been in your home, and you think they may be watching your accounts or your devices, be a little careful about the order you do things in. Scrubbing your records is a good move, but a sudden change can be noticed, and safety planning should come first. A domestic violence advocate can help you sequence it, and you are welcome to write to us if you want a second opinion on where to start.</p>
+
+        <p>Getting your address off these sites will not undo whatever brought you here, but it does narrow what a stranger can learn about you in thirty seconds. That is a reasonable thing to want, and it is well within reach.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
