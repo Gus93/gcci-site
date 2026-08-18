@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Someone is posting lies about you online: what to do | GCCI</title>
+  <meta name="description" content="An anonymous account is spreading false claims about you. How to document it, get it removed, and what it takes to find out who is behind it." />
+  <link rel="canonical" href="https://gcci.io/blog/someone-posting-lies-about-me-online/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Someone is posting lies about you online: what to do" />
+  <meta property="og:description" content="An anonymous account is spreading false claims about you. How to document it, get it removed, and what it takes to find out who is behind it." />
+  <meta property="og:url" content="https://gcci.io/blog/someone-posting-lies-about-me-online/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Someone is posting lies about you online: what to do" />
+  <meta name="twitter:description" content="An anonymous account is spreading false claims about you. How to document it, get it removed, and what it takes to find out who is behind it." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Someone is posting lies about you online: what to do","description":"An anonymous account is spreading false claims about you. How to document it, get it removed, and what it takes to find out who is behind it.","datePublished":"2026-08-18","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/someone-posting-lies-about-me-online/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/someone-posting-lies-about-me-online/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 18, 2026 &middot; Online harassment</div>
+        <h1>Someone is posting lies about you online</h1>
+
+        <p>It usually arrives sideways. A friend forwards a screenshot, or you search your own name for an unrelated reason and find a post claiming you did something you did not do. Sometimes it is a review on a business page, sometimes a thread on a complaints site, sometimes a burner account tagging your employer. The account has no real name on it, and the claims are specific enough that people who do not know you well might believe them.</p>
+
+        <p>The first feeling is often a mix of anger and a strange kind of helplessness, because the thing being said is false and you cannot make it stop by simply saying so. What follows is not a legal argument, and it is not a plan for winning an online fight. It is the practical order of operations that tends to work when someone is posting lies about you online, starting with the part that quietly matters most.</p>
+
+        <h2>Save everything before it disappears</h2>
+
+        <p>Posts get edited. Accounts get deleted. The person doing this may take content down the moment they sense you have noticed, and then put it back up somewhere else next month. Anything you have not captured is effectively gone, and a description of what a post said is worth far less than the post itself.</p>
+
+        <p>Capture full-page screenshots that show the account name, the timestamp, and the URL in the address bar rather than cropped images of the text alone. Copy each URL into a plain document alongside the date you found it and where it appeared. If a post has a permalink, save that too, because platform search results shift but permalinks do not. Keep it all in one folder, and keep the originals untouched even if you later make a tidier summary. PEN America&rsquo;s <a href="https://onlineharassmentfieldmanual.pen.org/" target="_blank" rel="noopener">Online Harassment Field Manual</a> has a thorough section on documenting abuse that is worth reading if this looks like it will go on for a while. Our guide on <a href="/blog/preserve-evidence/">how to preserve evidence in the first 24 hours</a> covers the same ground for other kinds of incidents.</p>
+
+        <h2>Do not reply, at least not yet</h2>
+
+        <p>Replying feels like the natural response, and it is almost always the one that costs you something. A public argument gives the post reach it did not have, moves it up in the platform&rsquo;s ranking because engagement is engagement, and produces a back-and-forth that later reads as a dispute between two parties rather than one person making things up about another. It also tells the person that you are watching, which for some of them is the entire point.</p>
+
+        <p>There are exceptions. If the false claim is sitting on your business listing where customers will see it, a single short, factual, unemotional reply that corrects the record and offers to resolve anything real can be worth posting for the benefit of the people reading, not the person writing. Write it, wait an hour, then read it again before it goes up.</p>
+
+        <h2>What platforms will actually remove</h2>
+
+        <p>Here is the part that surprises people. Most platforms do not remove content simply because it is false. Their moderation rules are built around harassment, threats, privacy violations, impersonation, and coordinated behavior, and defamation as such is usually treated as a matter for the courts rather than the trust-and-safety team.</p>
+
+        <p>That does not mean reporting is pointless. It means the report should be framed around the rule the content actually breaks. If your address, phone number, or workplace appears in the post, that is doxxing and most platforms remove it on sight. If the account is using your name or photo to look like you, that is impersonation. If the same person is running several accounts to pile on, that is coordinated harassment or ban evasion, and it is worth reporting the accounts together rather than one at a time so a reviewer sees the pattern. Review sites have their own narrower angle: many will remove a review if you can show the reviewer was never a customer, or that it came from a competitor or someone with a personal conflict.</p>
+
+        <p>Our posts on <a href="/blog/what-to-do-if-someone-doxxed-you/">what to do if someone doxxed you</a> and <a href="/blog/someone-is-impersonating-me-on-social-media/">someone impersonating you on social media</a> go into the specific reporting flows for those two categories, which are often the strongest lever available.</p>
+
+        <h2>Dealing with search results</h2>
+
+        <p>Often the real damage is not the post but the fact that it ranks when someone searches your name. Removing the source page removes it from search eventually, but if the page stays up, Google&rsquo;s removal options are limited to specific categories such as personal contact information, non-consensual explicit imagery, and content on sites that charge for removal. A false accusation on its own generally does not qualify. If the source is a data broker or people-search listing feeding the problem, our guide on <a href="/blog/remove-personal-info-from-people-search-sites/">removing your information from people-search sites</a> is the more direct route.</p>
+
+        <p>The slower but more reliable approach is to give search engines better material about you to rank: a professional profile you control, a personal site, an active presence somewhere reputable. It is not satisfying, and it takes months rather than days, but for a name search it tends to do more than any takedown request.</p>
+
+        <h2>When you need to know who is behind it</h2>
+
+        <p>At some point most people arrive at the same question, which is who is doing this. Sometimes you already suspect, and suspecting is not the same as being able to show it. This matters because almost every meaningful next step, whether that is a cease-and-desist letter, a restraining order, an HR complaint, or a civil claim, requires a named person rather than a handle.</p>
+
+        <p>Some of that work you can do yourself. Reverse image searches on any photo the account uses, checking whether the handle appears on other sites, noticing writing habits and time-of-day patterns, and looking at who the account follows and interacted with before it started targeting you. The rest lives in records only the platform holds, such as the registration email, the IP addresses used to log in, and the phone number tied to the account. Those come out through legal process, not through asking. Our guide on <a href="/blog/how-to-find-a-scammers-identity/">how to find someone&rsquo;s identity behind an anonymous account</a> explains where that line falls and what a subpoena can realistically reach.</p>
+
+        <h2>Where a lawyer fits</h2>
+
+        <p>We are investigators, not attorneys, and defamation law varies a great deal by state and country. Still, it is worth knowing what a lawyer can do that nothing else can. A defamation claim can support a subpoena to the platform to unmask an anonymous poster, and in many places a demand letter from counsel to a named person ends the behavior on its own, because the calculation changes once anonymity is gone. Consultations are often free, and going in with your documentation already organized makes that conversation much shorter and cheaper.</p>
+
+        <p>If the posts include threats of violence, if they reference your home or your children, or if the pattern feels like it is escalating, treat that as a safety matter rather than a reputation matter and report it to local police with your evidence folder in hand.</p>
+
+        <h2>The part worth holding on to</h2>
+
+        <p>False claims online feel enormous from the inside and are usually much smaller from the outside. Most people who see the post will scroll past it. The ones who matter, the people who know you and the ones who will actually make decisions about you, respond to a calm, documented account of what happened far better than to a public fight.</p>
+
+        <p>You do not have to solve this today. Save the evidence, report what breaks the rules, and get a name if you need one. That is the whole path, and it works in that order.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
