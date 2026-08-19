@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Someone filed a tax return in your name: what to do | GCCI</title>
+  <meta name="description" content="Your e-filed return was rejected as a duplicate, or an IRS letter arrived. How to report tax identity theft, file Form 14039, and protect your refund." />
+  <link rel="canonical" href="https://gcci.io/blog/someone-filed-a-tax-return-in-my-name/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Someone filed a tax return in your name: what to do" />
+  <meta property="og:description" content="Your e-filed return was rejected as a duplicate, or an IRS letter arrived. How to report tax identity theft, file Form 14039, and protect your refund." />
+  <meta property="og:url" content="https://gcci.io/blog/someone-filed-a-tax-return-in-my-name/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Someone filed a tax return in your name: what to do" />
+  <meta name="twitter:description" content="Your e-filed return was rejected as a duplicate, or an IRS letter arrived. How to report tax identity theft, file Form 14039, and protect your refund." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Someone filed a tax return in your name: what to do","description":"Your e-filed return was rejected as a duplicate, or an IRS letter arrived. How to report tax identity theft, file Form 14039, and protect your refund.","datePublished":"2026-08-19","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/someone-filed-a-tax-return-in-my-name/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/someone-filed-a-tax-return-in-my-name/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 19, 2026 &middot; Identity theft</div>
+        <h1>Someone filed a tax return in your name</h1>
+
+        <p>Most people find out one of two ways. You try to e-file and the return bounces back rejected, because the IRS already has a return on file for your Social Security number. Or a letter arrives asking you to verify your identity for a return you never sent, or telling you that you owe tax on wages from an employer you have never worked for. Either way, somebody used your Social Security number to file, and if there was a refund, they collected it.</p>
+
+        <p>This is one of the more fixable kinds of identity theft, and the IRS has a dedicated process for it. The catch is that the process is slow, so the useful thing is to start it properly rather than quickly. Here is the order that works.</p>
+
+        <h2>First, work out which situation you are in</h2>
+
+        <p>If your return was rejected as a duplicate, or you got a notice about a return you did not file, that is tax-related identity theft and the steps below apply. If instead you received a letter asking you to verify your identity <em>before</em> the IRS will process a return, the fraudulent filing may have been caught in advance, and following the verification instructions in that letter is all you need to do. And if the notice says you owe tax on income from an employer you have never heard of, someone is working under your Social Security number, which is a related but separate problem worth flagging to the IRS in the same report.</p>
+
+        <p>One thing to be careful about: only respond to a letter that arrived by mail, using contact details you look up yourself on IRS.gov. The IRS does not open these conversations by phone, text, or email, and scammers follow tax-fraud victims closely. Our post on <a href="/blog/is-this-irs-back-taxes-call-a-scam/">the IRS back taxes call</a> covers what that follow-up sounds like.</p>
+
+        <h2>Report it with Form 14039</h2>
+
+        <p>Form 14039, the Identity Theft Affidavit, is how you tell the IRS that a return filed under your number was not yours. The IRS now prefers you submit it online through its digital form portal, which is faster and gives you a confirmation; fax and mail remain available if you would rather not file online. Filing it does two things at once: it reports the theft and it opens a case with the unit that untangles your account.</p>
+
+        <p>Fill it in for the tax year affected, and keep your own copy along with the confirmation. If your legitimate return still needs to be filed, print it on paper, attach Form 14039 to the back of it, and mail both together to the IRS address for the state you live in. Do not keep retrying the electronic filing; it will keep rejecting, and paper is the intended route once a fraudulent return is sitting in the system.</p>
+
+        <p>It is also worth filing a report at <a href="https://www.identitytheft.gov/" target="_blank" rel="noopener">IdentityTheft.gov</a>, the FTC&rsquo;s site, which generates a recovery plan and an identity theft report you can use with banks and credit bureaus. And if your state has an income tax, report it to that state&rsquo;s revenue department separately, because a federal report does not reach them.</p>
+
+        <h2>Expect it to take a while, and plan around that</h2>
+
+        <p>This is the part nobody warns people about. Untangling a tax identity theft case has recently averaged well over a year at the IRS, and a refund you are owed can be held up for the duration. It is not a sign that your report went into a void. It is the queue.</p>
+
+        <p>So plan for the wait rather than fighting it. Keep every letter in one folder in date order. Note the date you filed the affidavit and the confirmation number. If you get no movement and the delay is causing real financial hardship, the <a href="https://www.taxpayeradvocate.irs.gov/" target="_blank" rel="noopener">Taxpayer Advocate Service</a> is an independent office inside the IRS that exists for exactly this, and it is free. Your congressional representative&rsquo;s casework office can also nudge a stalled IRS case, which surprises people but works more often than you would expect.</p>
+
+        <h2>Get an IP PIN so it cannot happen again</h2>
+
+        <p>An Identity Protection PIN is a six-digit number that must appear on your return for the IRS to accept it. Confirmed identity theft victims are enrolled automatically and issued a new one each year, but the program is now open to anyone who wants it, and it is the single most effective thing you can do to stop a repeat. If you have been hit once, your details are on a list somewhere, and next filing season is a predictable date.</p>
+
+        <p>Set up your IRS online account and request the PIN there. Write down where you keep it, because a lost IP PIN means another paper return.</p>
+
+        <h2>Assume the Social Security number is out, and act accordingly</h2>
+
+        <p>Someone had your name, date of birth, and Social Security number. Tax fraud is rarely the only thing done with that combination, so treat this as a signal to check the rest. Freeze your credit at all three bureaus, which is free and stops new accounts being opened in your name, and look at whether anything has already been opened, which our guide on <a href="/blog/someone-opened-accounts-in-my-name/">accounts opened in your name</a> walks through. If the details most likely came from a company that lost them, our post on <a href="/blog/got-a-data-breach-notification-letter/">data breach notification letters</a> covers what the exposure usually means in practice.</p>
+
+        <p>Also check your Social Security earnings record at ssa.gov once a year. If someone is working under your number, that record is where it shows up, and catching it early keeps it from affecting your benefits later.</p>
+
+        <h2>What this is, and what it isn&rsquo;t</h2>
+
+        <p>A stolen refund is not a debt you have to pay and not a mark against you. The IRS treats it as fraud committed against you, and the process, slow as it is, is designed to put your account back the way it should be. Your job is to file the affidavit, file your real return on paper, get an IP PIN before the next season, and lock down the credit side. Then it becomes waiting rather than worrying, which is a much easier thing to carry.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
