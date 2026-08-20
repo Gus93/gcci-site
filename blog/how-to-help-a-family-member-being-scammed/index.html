@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to help a family member being scammed | GCCI</title>
+  <meta name="description" content="You can see the scam and they can't. How to help a family member being scammed without pushing them away, and the steps that actually protect them." />
+  <link rel="canonical" href="https://gcci.io/blog/how-to-help-a-family-member-being-scammed/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="How to help a family member being scammed" />
+  <meta property="og:description" content="You can see the scam and they can't. How to help a family member being scammed without pushing them away, and the steps that actually protect them." />
+  <meta property="og:url" content="https://gcci.io/blog/how-to-help-a-family-member-being-scammed/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to help a family member being scammed" />
+  <meta name="twitter:description" content="You can see the scam and they can't. How to help a family member being scammed without pushing them away, and the steps that actually protect them." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to help a family member being scammed","description":"You can see the scam and they can't. How to help a family member being scammed without pushing them away, and the steps that actually protect them.","datePublished":"2026-08-20","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/how-to-help-a-family-member-being-scammed/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/how-to-help-a-family-member-being-scammed/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 20, 2026 &middot; Guide</div>
+        <h1>How to help a family member being scammed</h1>
+
+        <p>You can see it clearly. Your mother is sending money to a man she has never met in person. Your father is taking calls from someone who says they are protecting his savings. Your brother has money in a trading platform whose profits look too good to be real. You have told them, maybe more than once, and it did not land. They defended the other person. They got annoyed. Now they have stopped mentioning it around you, which is worse, because the conversation has moved somewhere you cannot see.</p>
+
+        <p>This is one of the hardest positions in the whole subject, and it is not a sign that you failed to explain it well. Scammers build these relationships specifically to survive contact with the family. Knowing that changes what you do next.</p>
+
+        <h2>Why the person you love is defending a stranger</h2>
+
+        <p>Long-running scams are not single lies. They are relationships, built over weeks or months of daily contact, and the scammer has usually spent that time preparing your family member for you. Somewhere in those conversations, the other person explained that relatives would not understand, that people would call it a scam out of jealousy or ignorance, that this had to stay private. So when you arrive with concerns, you do not sound like a rescuer. You sound like the thing they were warned about.</p>
+
+        <p>On top of that sits shame. By the time family notices, your relative often has a private suspicion of their own, and admitting it out loud means admitting how much is gone. Digging in feels easier than that. If you have read our explanation of <a href="/blog/how-do-pig-butchering-scams-work/">how pig butchering scams actually work</a>, you will recognize the pattern: the emotional bond is the mechanism, and the money is what it is for.</p>
+
+        <h2>Change how you open the conversation</h2>
+
+        <p>Arguing about whether it is a scam is a fight you cannot win, because it asks your relative to agree they were fooled. Ask questions instead. How did you two meet? What does the platform say your balance is? Has anyone asked you to keep this from me, and why do you think that is? These are not traps, and they are not accusations. They give your family member room to hear their own answers, which tends to do more than any warning you deliver.</p>
+
+        <p>The FTC's guidance on this is worth taking seriously: lead with kindness, let them tell the story, and stay in contact even when the conversation goes badly. Criticism ends the disclosure. Once your relative stops telling you things, you lose the only view you had.</p>
+
+        <p>It also helps to move the target. Instead of asking them to accept that the person is fake, ask them to test one small, concrete thing. Try a withdrawal, not a deposit. Ask for a live video call at a time you choose. Look up the company's registration together. A request to pay a fee or tax before a withdrawal can go through is, on its own, the whole answer.</p>
+
+        <h2>Know the pitch that is about to arrive</h2>
+
+        <p>If your relative is in the middle of an active scam, there are a few moves you can expect, and naming them in advance is useful. Someone may call claiming to be from their bank, a federal agency, or a fraud department, warning that their accounts are compromised and that the money must be moved somewhere safe. That is the <a href="/blog/phantom-hacker-scam-what-to-do/">phantom hacker scam</a>, and it often targets people who have already lost money once. No real bank or agency ever asks anyone to move funds to protect them, or to convert savings into gift cards, crypto, or gold.</p>
+
+        <p>The other predictable arrival is help. After a loss, a stranger appears offering to recover the money for an upfront fee. Our piece on <a href="/blog/crypto-recovery-service-legit-or-scam/">telling a real recovery process from a recovery scam</a> covers this, and the short version is that anyone who contacts your relative first and wants payment before they start is running the second scam.</p>
+
+        <h2>Protect what you can while they decide</h2>
+
+        <p>You may not be able to end the relationship on your timeline, but some steps do not need agreement. You can ask them to add you as a trusted contact at their bank, or ask the bank about holds and alerts on large or unusual transfers, since many institutions have staff trained specifically for suspected elder financial exploitation. You can suggest a credit freeze. You can quietly save what exists now: the profile, the messages, the payment receipts, the wallet addresses. Evidence is easiest to gather before anyone panics and starts deleting things, and our guide on <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> explains what is worth capturing.</p>
+
+        <p>If money has already gone out, filing reports does not require your relative to be ready to call it a scam. Reports can go to <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a> and to <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a>, and speed matters more than completeness. The <a href="https://ovc.ojp.gov/program/stop-elder-fraud/providing-help-restoring-hope" target="_blank" rel="noopener">National Elder Fraud Hotline</a> at 833-372-8311 is staffed by case managers who talk to families, not only to victims, and they can walk you through reporting and local options.</p>
+
+        <h2>When it is not only money</h2>
+
+        <p>Sometimes what looks like a scam is closer to control: a partner, caregiver, or relative with access to the accounts, isolating the person and managing their contact with everyone else. If that is the shape of it, the money is a symptom, and the right first call is Adult Protective Services in their county or the Eldercare Locator at 800-677-1116. Where an adult is being pressured or frightened rather than persuaded, safety planning comes before any confrontation.</p>
+
+        <h2>What actually works over time</h2>
+
+        <p>Most families do not get a single breakthrough conversation. What tends to work is patience with an open door: staying in touch, dropping the argument, keeping the practical protections in place, and being the person your relative comes to when the doubt finally surfaces. That moment usually does come, and it is much easier for them to walk toward someone who never said <em>I told you so</em>.</p>
+
+        <p>If you are not sure what you are looking at, or you want a second read on a platform, a profile, or a payment before you raise it with your family, you are welcome to ask. It is a reasonable thing to want help with.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
