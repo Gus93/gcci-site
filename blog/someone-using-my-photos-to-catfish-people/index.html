@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Someone is using my photos to catfish people | GCCI</title>
+  <meta name="description" content="Strangers say they have been talking to &ldquo;you&rdquo; online. How to get fake profiles using your photos taken down, and what to tell the people they fooled." />
+  <link rel="canonical" href="https://gcci.io/blog/someone-using-my-photos-to-catfish-people/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Someone is using my photos to catfish people" />
+  <meta property="og:description" content="Strangers say they have been talking to &ldquo;you&rdquo; online. How to get fake profiles using your photos taken down, and what to tell the people they fooled." />
+  <meta property="og:url" content="https://gcci.io/blog/someone-using-my-photos-to-catfish-people/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Someone is using my photos to catfish people" />
+  <meta name="twitter:description" content="Strangers say they have been talking to &ldquo;you&rdquo; online. How to get fake profiles using your photos taken down, and what to tell the people they fooled." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Someone is using my photos to catfish people","description":"Strangers say they have been talking to \"you\" online. How to get fake profiles using your photos taken down, and what to tell the people they fooled.","datePublished":"2026-08-21","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/someone-using-my-photos-to-catfish-people/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/someone-using-my-photos-to-catfish-people/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 21, 2026 &middot; Impersonation</div>
+        <h1>Someone is using your photos to catfish people</h1>
+
+        <p>A stranger messages you out of nowhere. Sometimes they are confused, sometimes they are furious, and sometimes they are heartbroken. They say they have been talking to you for months on a dating app, or on Instagram, or over WhatsApp. They may have sent money. They have your face, your gym selfies, your holiday pictures, and a name you have never used.</p>
+
+        <p>It is a disorienting thing to find out, partly because you are being blamed for something you had no part in, and partly because there is nothing about it that you agreed to. If someone is using your photos to catfish people, you did not cause it and you are not liable for what the person behind the account did. What you can do is narrow the space they are operating in, and give the people they contacted something solid to hold onto.</p>
+
+        <h2>Why your photos, and why you may never fully stop it</h2>
+
+        <p>Romance fraud runs on borrowed faces. The people running these accounts need a photo library that looks like a real, ordinary life, because a single glamorous headshot does not survive a video call request or a &ldquo;send me a picture of you right now.&rdquo; So they harvest whole sets of images from public profiles: someone with a few hundred photos across ten years is far more useful to them than a stock model. Military personnel, doctors, engineers, and small-business owners get targeted especially often, because those professions carry built-in credibility and a plausible reason to be far away and hard to reach.</p>
+
+        <p>Being honest with you about the ceiling here matters. Once your photos are in circulation they may be resold, re-uploaded, and reused by different operators for years. You can get individual accounts removed, and that is worth doing every time. What you cannot do is pull the images back out of circulation entirely. The goal is not perfect erasure, it is making your face expensive to use and easy to check.</p>
+
+        <h2>Find out how far it has spread</h2>
+
+        <p>Before you report anything, get a picture of the scale. Run a handful of your most-used photos through more than one reverse image search, since they index different corners of the web. Google Images and Bing Visual Search both accept an uploaded file, and specialist tools like PimEyes and TinEye will often surface results the big engines miss. Search your own name alongside terms like &ldquo;scam,&rdquo; &ldquo;fake profile,&rdquo; or &ldquo;dating&rdquo; too, because victims sometimes post warnings on forums with the name the account was using.</p>
+
+        <p>Write down every account you find: the platform, the display name, the profile URL or handle, and the date you saw it. Screenshot each one before you report it, because reported profiles vanish and the screenshot is the only version you will still have afterward. Our guide on <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> covers how to capture this in a way that holds up later if you ever need it to.</p>
+
+        <h2>Report the accounts, and use the right lever</h2>
+
+        <p>Every major platform has an impersonation report, and this is the one to use rather than a generic &ldquo;spam&rdquo; flag. On most services you can report a profile that is pretending to be you even if you do not have an account there yourself, using a web form and a photo of your ID. Dating apps in particular tend to act quickly on these, because a stolen-photo account is a direct liability for them.</p>
+
+        <p>There is a second lever most people do not know about. If you took the photo, you own the copyright in it, and a copyright takedown notice is often processed faster and more reliably than an impersonation report, because platforms have a legal obligation attached to it. Selfies are your own work by definition. If the photo was taken by a friend or a photographer, they hold the copyright, not you, so the notice has to come from them.</p>
+
+        <p>If the fake account is also being used to harass or threaten people, or if it is impersonating you by name rather than only using your images, our post on <a href="/blog/someone-is-impersonating-me-on-social-media/">what to do when someone is impersonating you on social media</a> goes deeper into the reporting routes and account lockdown steps.</p>
+
+        <h2>What to say to the people who were fooled</h2>
+
+        <p>Some of the strangers who reach out will be angry at you. It helps to remember that they have just learned the person they trusted does not exist, and your face is the only real thing they have to direct that at. A short, calm reply does more good than a long defence: confirm the account is not you, tell them you are reporting it, and point them somewhere useful. If they sent money, they need to act quickly, and our guide on <a href="/blog/sent-money-to-romance-scammer/">what to do if you sent money to a romance scammer</a> is the fastest thing you can hand them.</p>
+
+        <p>Do not try to investigate the operator yourself, and do not confront them. Engaging tends to get your photos moved to accounts you have not found yet, and it puts you on the radar of someone who already knows a great deal about you. If you want to understand what tracing the person behind the account actually involves, we wrote about <a href="/blog/how-to-find-a-scammers-identity/">how a scammer&rsquo;s identity is established</a> and where the real limits are.</p>
+
+        <h2>Reduce the supply, then stop checking daily</h2>
+
+        <p>Tighten what is publicly reachable going forward. Set old photo albums to friends-only rather than deleting them, since deletion does not touch copies already taken. Turn off public tagging where you can, and check whether your photos are exposed through an account you forgot about, an old profile, a club roster, or a work bio page. Reporting to the <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">FTC at ReportFraud.ftc.gov</a> and to <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a> puts your name on record as a misused identity, which is genuinely useful if a victim later reports the same account and investigators need to connect the two.</p>
+
+        <p>Then, deliberately, set this down. Plenty of people fall into checking reverse image search every morning, and it turns someone else&rsquo;s crime into a daily job. A check every few months is enough to catch a resurgence. If it does come back, you already know the routine, and you will get through it faster the second time.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
