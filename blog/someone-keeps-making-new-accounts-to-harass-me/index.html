@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>They keep making new accounts to harass you | GCCI</title>
+  <meta name="description" content="You block them and a new account appears the same day. How to document ban evasion, report it so it sticks, and what it takes to find who is behind it." />
+  <link rel="canonical" href="https://gcci.io/blog/someone-keeps-making-new-accounts-to-harass-me/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="They keep making new accounts to harass you" />
+  <meta property="og:description" content="You block them and a new account appears the same day. How to document ban evasion, report it so it sticks, and what it takes to find who is behind it." />
+  <meta property="og:url" content="https://gcci.io/blog/someone-keeps-making-new-accounts-to-harass-me/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="They keep making new accounts to harass you" />
+  <meta name="twitter:description" content="You block them and a new account appears the same day. How to document ban evasion, report it so it sticks, and what it takes to find who is behind it." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"They keep making new accounts to harass you","description":"You block them and a new account appears the same day. How to document ban evasion, report it so it sticks, and what it takes to find who is behind it.","datePublished":"2026-08-24","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/someone-keeps-making-new-accounts-to-harass-me/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/someone-keeps-making-new-accounts-to-harass-me/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">August 24, 2026 &middot; Online harassment</div>
+        <h1>They keep making new accounts to harass you</h1>
+
+        <p>You blocked the account. For a few hours it was quiet. Then a new one appeared &mdash; a slightly different handle, a fresh profile photo, the same voice in the messages. You blocked that one too, and by the weekend there were four. At some point blocking stopped feeling like a solution and started feeling like a game you are being made to play.</p>
+
+        <p>If someone keeps making new accounts to harass you, the thing to understand first is that you have not been doing it wrong. Blocking works exactly as designed against an ordinary nuisance. It was never built to stop a person who is willing to spend their evenings opening new accounts. That is a different problem, and it needs a different approach: less reacting, more building a record that makes the pattern undeniable to the people who can actually act on it.</p>
+
+        <h2>Blocking is still worth doing &mdash; just stop expecting it to end this</h2>
+
+        <p>Keep blocking. Each block is a timestamped signal to the platform that you did not consent to the contact, and that record matters later. But shift what you expect from it. The goal is no longer to make the harassment stop today; it is to make each new account short-lived and well-documented, so that the pattern of evasion becomes the evidence.</p>
+
+        <p>While you are at it, tighten the settings that make you easy to reach. Most platforms now let you restrict who can message you, comment, tag you, or reply to your posts to people you already follow. Turning those down is not hiding and it is not conceding anything. It narrows the surface they have to work with, which usually slows the cycle noticeably.</p>
+
+        <h2>Build one file, not a scatter of screenshots</h2>
+
+        <p>This is the step that changes outcomes, and it is worth doing properly before you send another report. Make a single folder and, for each account, capture the profile page including the full handle and the URL, the account creation date if it is shown, and screenshots of every message or post with the date and time visible. Where you can, also copy the profile link as text rather than only as an image, because the numeric account ID buried in some of those URLs survives even after the display name changes.</p>
+
+        <p>Keep a plain running log alongside it: date, account handle, what happened, when you blocked or reported it, and what the platform said back. It feels clerical while you are doing it and it is the single most useful thing you can hand to a platform, a lawyer, or an investigator later. Our guide on <a href="/blog/preserve-evidence/">how to preserve evidence in the first 24 hours</a> covers the capture technique in more detail, and the same method applies here even though this is a slow-burning situation rather than a sudden one.</p>
+
+        <p>One caution: do not delete the messages, and do not delete your own posts that they are responding to. It is a natural instinct to clear it all away, but it removes the context that makes the account look targeted rather than random.</p>
+
+        <h2>Report the pattern, not each account in isolation</h2>
+
+        <p>Most people report each new account on its own, and each report gets assessed on its own thin merits. A single message reading &ldquo;still here&rdquo; does not look like much to a reviewer who cannot see the eleven accounts before it. Reported as a set, it looks like exactly what it is.</p>
+
+        <p>Every major platform prohibits creating new accounts to get around a block or a suspension. It is usually called ban evasion or block evasion, and it is treated more seriously than a single rude message, because it demonstrates intent. So when you report, say so explicitly: state that this is the same person returning after being blocked, list the earlier accounts by handle and link, and reference your previous report numbers if you have them. If the platform offers a harassment or stalking category rather than generic spam, use it &mdash; those queues are handled differently.</p>
+
+        <p>Where a platform gives you the option to escalate or appeal an unhelpful decision, take it once, calmly, with the full list attached. Reviewers are not usually being obstinate; they are usually looking at one fragment of a picture you can see whole.</p>
+
+        <h2>Do not answer, even once</h2>
+
+        <p>Somewhere around the sixth account, the temptation to reply is genuinely hard to resist &mdash; to ask what they want, to tell them you have reported them, to say something final. Try not to. For a person doing this, your response is the entire point, and a single reply after weeks of silence teaches them that persistence eventually pays. It also gives them material to screenshot and reframe.</p>
+
+        <p>If reading each new message is costing you your sleep, it is reasonable to hand that job to someone else for a while. Ask a trusted friend to check the account and capture anything new, and only bring you what actually needs a decision. Delegating the watching is not avoidance. It is how people get through long harassment campaigns without it consuming everything else.</p>
+
+        <h2>When it crosses into something police can act on</h2>
+
+        <p>A great deal of online harassment is not a crime, and being told that by a police officer is deflating. Some of it clearly is, though, and the threshold is often lower than people assume. Threats of violence, sexual images of you shared or threatened, content involving a minor, contact that violates an existing protective order, publishing your home address or workplace, or a sustained course of conduct that puts you in genuine fear &mdash; these are the categories that tend to get taken seriously, and most US states have cyberstalking or electronic harassment statutes that cover repeated contact after it has been made unwelcome.</p>
+
+        <p>If you are going to report it, go in with the file rather than the story. A printed log with dates, handles, and screenshots gets a very different reception than a verbal account of months of accounts. If your address or private details have been posted, our guide on <a href="/blog/what-to-do-if-someone-doxxed-you/">what to do if someone doxxed you</a> covers the takedown routes and the safety steps worth taking first. If the accounts are mainly spreading false claims about you, <a href="/blog/someone-posting-lies-about-me-online/">someone posting lies about you online</a> deals with that side of it.</p>
+
+        <h2>What it takes to find out who is behind it</h2>
+
+        <p>Most people in this situation have a suspicion. An ex-partner, a former colleague, someone from a group they left. Sometimes that suspicion is right and sometimes it is a person who has nothing to do with it, which is exactly why it needs testing rather than acting on.</p>
+
+        <p>There is a real amount you can find yourself. Reverse-image searching the profile photos, checking whether a handle has been reused on other platforms, noticing what time of day the accounts are active, and watching for details in the messages that only a small number of people would know &mdash; these narrow the field honestly. Our post on <a href="/blog/how-to-find-a-scammers-identity/">how to find a scammer&rsquo;s identity</a> walks through what open sources can and cannot reach.</p>
+
+        <p>What they cannot reach is the part that usually settles it. The registration email, the phone number used to verify the account, the IP addresses at sign-up and at login, and the device identifiers that quietly link a dozen &ldquo;different&rdquo; accounts to one person all sit inside the platform&rsquo;s records. Those come out through legal process &mdash; a subpoena or court order, generally through a lawyer or a law enforcement investigation. That is a real path, and it works, but it is slower and more deliberate than most people expect, and it is worth knowing that going in rather than discovering it three months later.</p>
+
+        <p>The practical sequence is usually this: preserve everything now, because platforms do not keep logs forever and a preservation request has to reach them while the data still exists; get an independent assessment of what the evidence actually supports; then decide whether the legal route is proportionate to what is happening to you. Sometimes it plainly is. Sometimes the honest answer is that a hardened set of privacy settings and a well-documented platform escalation resolves it at a fraction of the cost, and a good investigator will tell you that.</p>
+
+        <h2>A note on how long this takes</h2>
+
+        <p>Campaigns like this often end the way they started, without ceremony. The person gets bored, or their circumstances change, or the accounts stop clearing the platform&rsquo;s automated checks. Others need the formal route. Either way, the two things that reliably shorten it are removing the reaction they are looking for and keeping a record good enough that someone with authority can see the whole shape of it at a glance.</p>
+
+        <p>You did not invite this and you are not obliged to solve it alone. If you are not sure whether what you have is enough to act on, that is a reasonable question to bring to someone before you spend money on anything &mdash; and it is a short conversation, not a commitment.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
