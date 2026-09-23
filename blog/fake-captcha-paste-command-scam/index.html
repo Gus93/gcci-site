@@ -102,7 +102,7 @@
       *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
     }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The fake CAPTCHA scam that hijacks your computer","description":"A pop-up CAPTCHA tells you to press Windows+R and paste a command to prove you're human. It's malware. Here's how to spot it and what to do if you ran it.","datePublished":"2026-06-27","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/fake-captcha-paste-command-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/fake-captcha-paste-command-scam/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The fake CAPTCHA scam that hijacks your computer","description":"A pop-up CAPTCHA tells you to press Windows+R and paste a command to prove you're human. It's malware. Here's how to spot it and what to do if you ran it.","datePublished":"2026-06-27","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/fake-captcha-paste-command-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/fake-captcha-paste-command-scam/"}}</script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -130,8 +130,9 @@
         <a class="back-link" href="/blog/">&larr; All posts</a>
                 <div class="post-meta">June 27, 2026 &middot; Malware alert</div>
         <h1>The fake CAPTCHA scam that hijacks your computer</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
 
-        <p>You are reading an article, watching something, or chasing a download, and a box pops up that looks like the security checks you see every day. The &ldquo;verify you are human&rdquo; kind. Except this one does not ask you to click pictures of buses. It tells you to press <strong>Windows + R</strong>, then <strong>Ctrl + V</strong>, then <strong>Enter</strong>. Follow those three steps and you are not proving anything. You are pasting a hidden command and running it yourself, and that command installs malware on your own computer.</p>
+        <p>It looks like the &ldquo;verify you are human&rdquo; box you clear a dozen times a week. Same styling, same reassuring checkmark. But this one does not ask you to pick out buses or crosswalks. It tells you to press <strong>Windows + R</strong>, then <strong>Ctrl + V</strong>, then <strong>Enter</strong>. Do those three things and you have not proven anything to anyone. You have pasted a command you cannot see into your computer and run it yourself, and that command installs malware.</p>
 
         <p>The FTC flagged this one in June 2026, and it is spreading fast for a simple reason: it is built to look exactly like a routine safety step, so the victim is the one who installs it. If you already did it, that is not carelessness. It is a well-made trick. What matters now is moving quickly.</p>
 
@@ -143,6 +144,10 @@
 
         <p>Disconnect from the internet right away by turning off Wi-Fi or unplugging the cable. The payload in these campaigns is usually an information stealer that scrapes saved passwords, browser cookies, and crypto wallet data, so the faster you cut it off, the less it can send out. Then, from a <em>different</em> device, change the passwords on your email, your bank, and any crypto or financial accounts, and switch on two-factor authentication. Run a full scan with your security software, and if you cannot be sure the machine is clean, treat it as compromised and have it reset or professionally checked. This is the same situation as <a href="/blog/gave-scammer-remote-access-to-computer/">giving a scammer remote access to your computer</a>, and the cleanup is the same.</p>
 
+        <!-- LISA: strongest spot for one real, anonymized case beat for this scam type -->
+
+        <p>Here is the part I want you to sit with, because it changes what you should be doing. An infostealer does not wait around. The instant that command ran, it bundled up your saved logins and cookies and sent them to a server, and that data is now out of your hands &mdash; often being sorted and sold within hours. Trying to identify who deployed it is a dead end for a single victim; these kits are rented, and the collection servers rotate. So don&rsquo;t spend your energy there. Spend it assuming everything the machine had access to is already exposed, and rotating credentials and revoking sessions faster than the stolen data can be used. Speed on your side is the only thing that outruns it.</p>
+
         <h2>Save what you saw, then report it</h2>
 
         <p>Before you close everything, screenshot the page and note which website you were on when it appeared. These prompts usually ride on hacked sites or sketchy streaming and download pages, and that detail helps later. Our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> covers how to capture it cleanly. Then report it at <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a> and <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a>. If passwords or financial details may have been taken, <a href="https://www.identitytheft.gov/" target="_blank" rel="noopener">IdentityTheft.gov</a> walks you through locking things down step by step.</p>
@@ -151,7 +156,7 @@
 
         <p>It flips the usual script. You have been trained to ignore &ldquo;click this link&rdquo; warnings, so an attacker stopped sending links. Instead it asks for a few keystrokes that feel like a normal security step, and that small change is enough to get past instincts that would otherwise catch it. The defense is just as simple. No real human-verification check ever uses Windows + R or asks you to paste a command. If one does, it is not a CAPTCHA. Close the tab.</p>
 
-        <p class="signature">&mdash; Gus</p>
+        <p class="signature">&mdash; Lisa, GCCI</p>
 
         <!-- RELATED-POSTS:START (auto-generated) -->
         <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
