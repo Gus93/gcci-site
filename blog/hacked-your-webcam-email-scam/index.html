@@ -102,7 +102,7 @@
       *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
     }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is that “I hacked your webcam” email real?","description":"That webcam-blackmail email demanding bitcoin is almost always a mass-sent bluff built from an old breached password. How to tell if you're actually being targeted &mdash; and how OSINT can find out who's behind it if you are.","datePublished":"2026-08-11","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/hacked-your-webcam-email-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/hacked-your-webcam-email-scam/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Is that “I hacked your webcam” email real?","description":"That webcam-blackmail email demanding bitcoin is almost always a mass-sent bluff built from an old breached password. How to tell if you're actually being targeted &mdash; and how OSINT can find out who's behind it if you are.","datePublished":"2026-08-11","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/hacked-your-webcam-email-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/hacked-your-webcam-email-scam/"}}</script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -132,9 +132,9 @@
         <h1>Is the &ldquo;I hacked your webcam&rdquo; email real &mdash; and can you trace who sent it?</h1>
         <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
 
-        <p>An email lands, and the subject line is a shock: it may even show one of your own passwords. The message claims that malware has been sitting on your device, that your camera recorded you while you visited an adult website, and that unless you send a few hundred or a few thousand dollars in bitcoin within a day or two, the video goes to your family, your contacts, and your coworkers. Your heart drops, and for a moment the whole thing feels real.</p>
+        <p>An email lands and the subject line is engineered to stop you cold &mdash; sometimes it even quotes a password you actually use. The message says malware has been living on your device, that your own camera filmed you on an adult site, and that unless a few hundred or a few thousand dollars in bitcoin reaches them within a day, the video goes to your family, your contacts, your coworkers. For a few seconds it lands as completely real.</p>
 
-        <p>Take a breath. In almost every case, this is a bluff. There is no video, no malware, and no one watching through your camera. It is a scripted extortion email sent to millions of addresses at once, and the entire thing is built to make you panic before you have time to think it through.</p>
+        <p>In almost every case, it&rsquo;s a bluff. No video, no malware, no one watching through your camera. It&rsquo;s a scripted extortion email blasted to millions of addresses at once, built to make you panic before you have time to think it through. I see these constantly, and the pattern never changes.</p>
 
         <h2>Why it feels so convincing</h2>
 
@@ -152,6 +152,12 @@
 
         <p>It also helps to check where your address has been exposed. A free service like <a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned</a> will tell you which breaches your email showed up in, so you can update those passwords too. Using a different password on every account, ideally through a password manager, means a leak at one company can never unlock the rest.</p>
 
+        <h2>Can you actually trace who sent it?</h2>
+
+        <p>Since the title of this piece asks, let me answer it as an investigator rather than dodge. For the mass-blast version, honest attribution is usually not worth chasing. The &ldquo;from&rdquo; address is forged, the email was relayed through throwaway infrastructure, and the only real thread is the bitcoin wallet. That wallet can sometimes be followed on the blockchain to an exchange, but these are high-volume operations pushing thousands of identical emails, and a single small payment rarely justifies the cost of tracing it to a person. Where wallet tracing genuinely earns its keep is the larger, targeted case &mdash; not this one. The good news is that with the mass version you don&rsquo;t need to identify anyone, because there&rsquo;s no real threat to neutralize.</p>
+
+        <!-- LISA: strongest spot for one real, anonymized sextortion-email or wallet-tracing beat -->
+
         <h2>If you already paid</h2>
 
         <p>If the email frightened you into sending bitcoin before you found this, you are not the first and you have not lost your footing. Stop there, keep every version of the message, and do not send more, no matter what a follow-up demand says. Crypto payments cannot be reversed like a card charge, but they can sometimes be traced, and the sooner it is reported the better the odds. Our guide on <a href="/blog/how-to-report-a-crypto-scam-and-recover-money/">how to report a crypto scam and what can still be traced</a> walks through where to send it, and our note on <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> covers what to capture before anything gets deleted.</p>
@@ -162,7 +168,7 @@
 
         <p>An email designed to make you panic is not evidence of anything except that your address is on a list, the same as millions of others. Slow down, close the one real gap by changing that password, and let the threat fall apart the way these always do.</p>
 
-        <p class="signature">&mdash; Gus</p>
+        <p class="signature">&mdash; Lisa, GCCI</p>
 
         <!-- RELATED-POSTS:START (auto-generated) -->
         <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
