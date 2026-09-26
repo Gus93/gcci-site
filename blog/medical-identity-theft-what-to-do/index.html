@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medical identity theft: what to do if it happens | GCCI</title>
+  <meta name="description" content="A bill came for care you never got, or your insurer says you hit a limit. How to spot medical identity theft, fix your records, and report it." />
+  <link rel="canonical" href="https://gcci.io/blog/medical-identity-theft-what-to-do/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Medical identity theft: what to do if it happens" />
+  <meta property="og:description" content="A bill came for care you never got, or your insurer says you hit a limit. How to spot medical identity theft, fix your records, and report it." />
+  <meta property="og:url" content="https://gcci.io/blog/medical-identity-theft-what-to-do/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Medical identity theft: what to do if it happens" />
+  <meta name="twitter:description" content="A bill came for care you never got, or your insurer says you hit a limit. How to spot medical identity theft, fix your records, and report it." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Medical identity theft: what to do if it happens","description":"A bill came for care you never got, or your insurer says you hit a limit. How to spot medical identity theft, fix your records, and report it.","datePublished":"2026-09-26","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/medical-identity-theft-what-to-do/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/medical-identity-theft-what-to-do/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">September 26, 2026 &middot; Identity theft</div>
+        <h1>Someone used your identity for medical care: what to do</h1>
+
+        <p>The envelope looked routine until you read it. An explanation of benefits for a knee MRI you never had. A bill from an emergency room in a city you haven&rsquo;t visited. A collection notice for an ambulance ride. Or your insurer tells you that you&rsquo;ve hit a benefit limit you couldn&rsquo;t possibly have reached. Somewhere, someone has been getting care under your name.</p>
+
+        <p>That is medical identity theft: someone using your name, insurance member ID, Medicare number, or Social Security number to see a doctor, fill prescriptions, or file claims. It is unsettling in a way other identity theft isn&rsquo;t, because it touches your health record, not just your money. The good news is that it can be untangled, and you have more rights here than most people realize.</p>
+
+        <h2>Why this one needs more care than a bad credit card</h2>
+
+        <p>When a thief runs up a credit card, the damage is financial and it stays on paper. When a thief is treated under your name, their details can end up in <em>your</em> medical file &mdash; a blood type, an allergy, a diagnosis, a medication you don&rsquo;t take. A future doctor could rely on that. That is why the goal is not only to stop paying for someone else&rsquo;s care, but to get your records corrected so they describe you again.</p>
+
+        <p>It helps to know how it usually happens. Insurance and Medicare numbers show up in data breaches, on stolen mail, in lost wallets, and through calls pretending to offer free medical equipment or genetic tests. Sometimes it is someone close to you who had access to your cards. None of that is a failing on your part. If a company recently told you your data was exposed, our guide to <a href="/blog/got-a-data-breach-notification-letter/">what to do after a data breach notification letter</a> covers the broader lockdown steps.</p>
+
+        <h2>Start with the paperwork you already have</h2>
+
+        <p>Gather every explanation of benefits, bill, and collection notice that doesn&rsquo;t fit. Then log in to your health plan&rsquo;s member portal (or call the number on the back of your card, not any number printed on the suspicious letter) and pull your full claims history. Look for providers you don&rsquo;t know, dates you were elsewhere, and prescriptions you never filled. If you are on Medicare, your Medicare Summary Notices and your account at Medicare.gov show the same history.</p>
+
+        <p>Write down each claim that isn&rsquo;t yours, with the provider name, date of service, and claim number. That list becomes the spine of everything that follows.</p>
+
+        <h2>Tell your insurer and ask for a new member number</h2>
+
+        <p>Call your health plan&rsquo;s fraud department, explain that claims on your account were not for you, and send them your list. Ask whether they can issue you a new member ID so the old one stops working. Medicare beneficiaries can report suspected fraud at 1-800-MEDICARE and, where a number has clearly been misused, ask about getting a new Medicare card number.</p>
+
+        <h2>Get your records, then ask for corrections</h2>
+
+        <p>Under HIPAA, you have the right to request copies of your medical and billing records from each provider and pharmacy that treated someone under your name. Put the request in writing and keep a copy. Some offices will hesitate, worried about releasing what they see as the thief&rsquo;s information; an FTC Identity Theft Report and a calm explanation usually helps.</p>
+
+        <p>Once you have the records, send each provider a written request to correct or amend the entries that aren&rsquo;t yours, and to notify anyone they shared that information with, such as labs or other insurers. Keep it simple: what is wrong, why, and what you want changed. Providers can&rsquo;t always delete entries outright, but they can flag them and add your statement so the next clinician knows.</p>
+
+        <h2>Report it and deal with any debt</h2>
+
+        <p>File a report at <a href="https://www.identitytheft.gov/" target="_blank" rel="noopener">IdentityTheft.gov</a>. It generates an FTC Identity Theft Report and a recovery plan, and that report is the document insurers, providers, and collectors respond to. A police report can help too, especially if you know or suspect who did it. The FTC&rsquo;s own <a href="https://consumer.ftc.gov/articles/what-know-about-medical-identity-theft" target="_blank" rel="noopener">guidance on medical identity theft</a> is a good checklist to keep open alongside this post.</p>
+
+        <p>Then pull your free credit reports at AnnualCreditReport.com. If medical collections you don&rsquo;t owe appear, dispute them with each bureau and with the collector in writing, including your FTC report. If the thief also used your Social Security number, a credit freeze is worth doing now; our guide to <a href="/blog/someone-opened-accounts-in-my-name/">what to do when someone opens accounts in your name</a> walks through freezes and disputes step by step.</p>
+
+        <h2>Keep watching quietly for a while</h2>
+
+        <p>Medical identity theft tends to surface slowly, because claims and bills trail the actual visit by weeks or months. For the next year, read every explanation of benefits when it arrives rather than filing it away, and glance at your claims history every couple of months. If the same person keeps using your identity across benefits, it can also show up with tax records; <a href="/blog/someone-filed-a-tax-return-in-my-name/">our tax identity theft guide</a> covers that side.</p>
+
+        <p>If you suspect someone specific, or the claims point to a pattern you can&rsquo;t make sense of, that is where an investigation can help connect the dots. But most people get through this with the steps above, some patience, and a folder of copies. You are not responsible for someone else&rsquo;s care, and you are allowed to insist your records say so.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
