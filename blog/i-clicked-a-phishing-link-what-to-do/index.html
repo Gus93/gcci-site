@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I clicked a phishing link: what to do next | GCCI</title>
+  <meta name="description" content="Clicked a suspicious link in a text or email? Here is what to do in the first hour, what to change, and when to worry, without panic." />
+  <link rel="canonical" href="https://gcci.io/blog/i-clicked-a-phishing-link-what-to-do/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="I clicked a phishing link: what to do next" />
+  <meta property="og:description" content="Clicked a suspicious link in a text or email? Here is what to do in the first hour, what to change, and when to worry, without panic." />
+  <meta property="og:url" content="https://gcci.io/blog/i-clicked-a-phishing-link-what-to-do/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="I clicked a phishing link: what to do next" />
+  <meta name="twitter:description" content="Clicked a suspicious link in a text or email? Here is what to do in the first hour, what to change, and when to worry, without panic." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"I clicked a phishing link: what to do next","description":"Clicked a suspicious link in a text or email? Here is what to do in the first hour, what to change, and when to worry, without panic.","datePublished":"2026-09-29","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/i-clicked-a-phishing-link-what-to-do/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/i-clicked-a-phishing-link-what-to-do/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">September 29, 2026 &middot; Phishing</div>
+        <h1>I clicked a phishing link: what to do next</h1>
+
+        <p>The text looked like a delivery notice, or the email looked like it came from your bank, and you tapped the link before the doubt caught up. Now the page looked slightly wrong, or asked for a password, or just went blank, and your stomach dropped. Almost everyone who uses a phone has done this at least once. The people who build these messages are professionals, and the good ones are hard to tell apart from the real thing at a glance.</p>
+
+        <p>The good news is that clicking a link, on its own, usually does much less damage than people fear. What matters is what happened after the click, and that is easy to sort out in a calm, orderly way. Here is how to do it.</p>
+
+        <h2>First, work out what the click actually did</h2>
+
+        <p>There are three different situations, and they call for different responses. In the first, you tapped the link, the page opened, and you closed it without typing anything or downloading anything. That is the mildest outcome. In the second, the page asked for something, such as a password, a card number, a code, or your Social Security number, and you entered it. That is the one to act on quickly. In the third, the link downloaded a file or prompted you to install something, and you opened it. That is a device problem as much as an account problem.</p>
+
+        <p>If you are not sure which one applies, treat it as the more serious one for the next hour. It costs very little to be careful, and you can relax the steps later.</p>
+
+        <h2>If you only opened the page</h2>
+
+        <p>Close the tab, and if you are on a phone, clear the browser history for that visit. Modern phones and browsers are fairly good at containing a plain page view, so there is usually nothing further to do. It is still worth running your phone or computer&rsquo;s built-in security scan, keeping your operating system up to date, and watching your accounts for anything unusual over the next few days. Do not reply to the message or tap anything else in it, including the &ldquo;unsubscribe&rdquo; or &ldquo;stop&rdquo; option, since that only tells the sender your number is active.</p>
+
+        <h2>If you typed something in</h2>
+
+        <p>Change the password for that account right away, from a different, trusted device if you can, and by going to the real site or app directly rather than using any link. If you reused that password anywhere else, change those too, starting with your email, since your email account can reset almost everything else. Turn on two-factor authentication where you have not already, preferably with an authenticator app instead of text messages.</p>
+
+        <p>If you entered a card number, call the number on the back of the card and ask them to freeze or replace it. If you entered a bank login, call the bank using a number from their official website or your card, and tell them what happened. If you gave a Social Security number or other identity details, consider a free fraud alert or credit freeze with the credit bureaus, which stops new accounts from being opened in your name. And if you read a one-time code to anyone, our post on <a href="/blog/gave-out-google-voice-verification-code/">what to do after reading back a verification code</a> covers what that gives a scammer access to.</p>
+
+        <h2>If something was downloaded or installed</h2>
+
+        <p>Disconnect the device from Wi-Fi, run a full scan with a reputable security tool, and remove anything you do not recognize. If the page told you to paste a command or install a &ldquo;fix,&rdquo; read our piece on <a href="/blog/fake-captcha-paste-command-scam/">the fake CAPTCHA scam that hijacks your computer</a>. If anyone was ever given remote access, or you think someone may be controlling the machine, see <a href="/blog/gave-scammer-remote-access-to-computer/">what to do if you gave a scammer remote access</a>. In either case, do your password changes from a different, clean device, since a compromised one can capture what you type.</p>
+
+        <h2>Keep a record, then report it</h2>
+
+        <p>Before you delete the message, take a screenshot of it and note the sender, the time, and the link, without tapping it again. Forward phishing emails to reportphishing@apwg.org and the impersonated company, and forward texts to 7726 (SPAM), which is free. You can also file a report at <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a>, and at <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a> if money or personal data was taken. Reports on their own may not lead to a personal response, and we are honest about that in <a href="/blog/reported-a-scam-and-no-one-responded/">what to do when you reported a scam and no one responded</a>, but they do feed the patterns that get sites taken down.</p>
+
+        <h2>Watch, but do not spiral</h2>
+
+        <p>For the next few weeks, glance at your bank and card statements, and be wary of follow-up calls that mention the incident. Scammers sometimes call back posing as the bank&rsquo;s &ldquo;fraud department&rdquo; to finish what the link started. If anyone contacts you unexpectedly about it, hang up and call the number on your card yourself.</p>
+
+        <p>You did the human thing, and you noticed and are dealing with it. That puts you ahead of most people. If you are not sure whether what you entered was enough to worry about, or something feels off and you would like a second pair of eyes, you are welcome to reach out and we will look at it with you, privately.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>

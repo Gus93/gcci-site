@@ -7,6 +7,14 @@
     <language>en-us</language>
     <atom:link href="https://gcci.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>I clicked a phishing link: what to do next</title>
+      <link>https://gcci.io/blog/i-clicked-a-phishing-link-what-to-do/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/i-clicked-a-phishing-link-what-to-do/</guid>
+      <pubDate>Tue, 29 Sep 2026 09:00:00 GMT</pubDate>
+      <description>Clicked a suspicious link in a text or email? Here is what to do in the first hour, what to change, and when to worry, without panic.</description>
+    </item>
+
+    <item>
       <title>What to do if you've been swatted</title>
       <link>https://gcci.io/blog/what-to-do-if-youve-been-swatted/</link>
       <guid isPermaLink="true">https://gcci.io/blog/what-to-do-if-youve-been-swatted/</guid>
