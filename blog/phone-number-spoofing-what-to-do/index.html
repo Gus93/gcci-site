@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phone number spoofing: what to do if scammers use yours | GCCI</title>
+  <meta name="description" content="People say your number called them, but you never did. How phone number spoofing works, and what to do when scammers use your number." />
+  <link rel="canonical" href="https://gcci.io/blog/phone-number-spoofing-what-to-do/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Phone number spoofing: what to do if scammers use yours" />
+  <meta property="og:description" content="People say your number called them, but you never did. How phone number spoofing works, and what to do when scammers use your number." />
+  <meta property="og:url" content="https://gcci.io/blog/phone-number-spoofing-what-to-do/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Phone number spoofing: what to do if scammers use yours" />
+  <meta name="twitter:description" content="People say your number called them, but you never did. How phone number spoofing works, and what to do when scammers use your number." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Phone number spoofing: what to do if scammers use yours","description":"People say your number called them, but you never did. How phone number spoofing works, and what to do when scammers use your number.","datePublished":"2026-10-01","author":{"@type":"Organization","name":"GCCI"},"publisher":{"@type":"Organization","name":"Gus & Co Cyber Investigations"},"url":"https://gcci.io/blog/phone-number-spoofing-what-to-do/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/phone-number-spoofing-what-to-do/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 1, 2026 &middot; Impersonation</div>
+        <h1>Phone number spoofing: what to do if scammers use yours</h1>
+
+        <p>The messages start the same way. A friend texts that you called them twice last night. A stranger leaves a voicemail asking why you keep phoning. Maybe a number you do not recognize calls back, angry, insisting your number rang them at 3 a.m. You know you did not make those calls, and now you are wondering whether your phone has been hacked. In most cases it has not. What you are likely seeing is called spoofing, and it is more common, and less personal, than it feels.</p>
+
+        <p>Take a breath. Nothing here means someone is inside your phone, and there are a few calm steps that will tell you where you stand.</p>
+
+        <h2>What spoofing actually is</h2>
+
+        <p>Caller ID is not verified the way most people assume. Scammers use software to make an outgoing call or text display any number they choose, and they often pick numbers that look local, or simply borrow a real one at random. Your number was probably chosen the same way a name is drawn from a hat. The people on the receiving end see your number, and when they call back, the call comes to you, not to the scammer. That is why it feels like you are being targeted when, in most cases, you are just a number that got used.</p>
+
+        <h2>Check that your own account is fine</h2>
+
+        <p>It is still worth ruling out the less common possibilities. Look at your phone&rsquo;s recent call and message history to confirm there are no outgoing calls you do not remember. Check your carrier account for anything unfamiliar, such as a changed password, a new authorized user, or call forwarding you did not set up. If your phone suddenly lost service at some point, that is a different problem and worth reading about in <a href="/blog/phone-has-no-service-sim-swap-scam/">what to do if your phone suddenly has no service</a>, since a SIM swap means someone actually took control of your number. If your history is clean and your service is normal, spoofing is the most likely explanation.</p>
+
+        <h2>What to do with the callbacks</h2>
+
+        <p>You do not owe anyone a long explanation, but a short, steady one helps. You can tell people that your number is being faked by scammers, that you did not call them, and that they should not call back or click anything in a message that appeared to come from you. A brief voicemail greeting saying the same thing can save you a lot of repeat conversations. If a stranger is hostile, you can simply say your number was spoofed and end the call. Blocking repeat callers is fine, and so is letting unknown numbers go to voicemail for a while.</p>
+
+        <p>If the fake calls or texts seem aimed at people you know, or are pretending to be you personally, it is worth warning those people directly. Our post on <a href="/blog/someone-is-impersonating-me-on-social-media/">someone impersonating you on social media</a> covers how to do that without panic.</p>
+
+        <h2>Report it</h2>
+
+        <p>You can report spoofing to the <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">FTC at ReportFraud.ftc.gov</a> and to the FCC through its consumer complaint portal. Your reports will not make the calls stop overnight, because the scammer is not using your phone, but they do feed the data regulators and carriers use to trace and block spoofing campaigns. It is also worth telling your carrier, since many offer call-filtering tools and can note the issue on your account. If you are unsure whether a report goes anywhere, our post on <a href="/blog/reported-a-scam-and-no-one-responded/">what to do when you reported a scam and no one responded</a> explains what to expect.</p>
+
+        <h2>Should you change your number?</h2>
+
+        <p>Usually not. The spoofing tends to fade on its own, often within days or weeks, as scammers move on to other numbers. Changing your number is a real cost, since banks, accounts, and contacts all depend on it, and a new number can be spoofed just as easily. It makes sense only if the volume of angry callbacks becomes unmanageable, and even then it is a last step, not a first one.</p>
+
+        <p>You did not do anything wrong, and nothing was taken from you. If something beyond the callbacks starts to feel off, such as account alerts or messages that seem to know too much about you, reach out and we can look at it together, privately.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13215216790">(321) 521-6790</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about.html" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy.html" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms.html" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
