@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fake Amazon Fraud Alert Call: What to Do If It Was a Scam | GCCI</title>
+  <meta name="description" content="A call about a suspicious Amazon charge turned into a "fraud department" transfer. How the scam works and what to do if you shared info or sent money." />
+  <link rel="canonical" href="https://gcci.io/blog/fake-amazon-fraud-alert-call-scam/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Fake Amazon Fraud Alert Call: What to Do If It Was a Scam" />
+  <meta property="og:description" content="A call about a suspicious Amazon charge turned into a "fraud department" transfer. How the scam works and what to do if you shared info or sent money." />
+  <meta property="og:url" content="https://gcci.io/blog/fake-amazon-fraud-alert-call-scam/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fake Amazon Fraud Alert Call: What to Do If It Was a Scam" />
+  <meta name="twitter:description" content="A call about a suspicious Amazon charge turned into a "fraud department" transfer. How the scam works and what to do if you shared info or sent money." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Fake Amazon Fraud Alert Call: What to Do If It Was a Scam","description":"A call about a suspicious Amazon charge turned into a "fraud department" transfer. How the scam works and what to do if you shared info or sent money.","datePublished":"2026-10-04","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/fake-amazon-fraud-alert-call-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/fake-amazon-fraud-alert-call-scam/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 4, 2026 &middot; Scam alert</div>
+        <h1>Fake Amazon Fraud Alert Call: What to Do If It Was a Scam</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>The call said there was a suspicious charge on your Amazon account, maybe an expensive laptop or a gift card order you never made. Before you could think, you were being transferred to the &ldquo;fraud department,&rdquo; and then to someone claiming to be from your bank or even the FTC. By the end, you may have given out a code, installed something, or moved money &ldquo;to keep it safe.&rdquo; Now it feels wrong. That reaction is worth trusting, and you are in good company: this is one of the most common impersonation scams there is, and the people running it are practiced at making it sound routine.</p>
+
+        <h2>How the scam usually unfolds</h2>
+
+        <p>It almost always starts with a call or text from a number that looks real, because caller ID is easy to fake. The first voice, or an automated recording, mentions an unexpected order or a charge you didn&rsquo;t make and asks you to press a key or call back to dispute it. The person who answers sounds helpful. Then the story grows: someone has opened accounts in your name, your Social Security number may be involved, and you could be in legal trouble if you don&rsquo;t act today. The FTC describes this same escalation, along with the hand-off to a second &ldquo;agent&rdquo; posing as your bank or a government office.</p>
+
+        <p>Two details give it away. You are told to keep the call secret, and you are told to move money, share a verification code, or let someone connect to your computer in order to be protected. Nobody legitimate asks for any of that.</p>
+
+        <h2>If you only talked to them</h2>
+
+        <p>If you hung up without giving anything out, you are fine. Don&rsquo;t call the number back. Open the Amazon app or type the website address yourself and look at your orders and account messages. If there is no suspicious order there, there never was one. It is also worth changing your Amazon password and turning on two-step verification, simply because they now know you answer calls.</p>
+
+        <h2>If you shared information or a code</h2>
+
+        <p>Change the password on any account you named or whose code you read aloud, starting with email, since that is the key to resetting everything else. If you gave out a Social Security number, a free look at your reports at AnnualCreditReport.com will show whether anything new has appeared, and our guide to <a href="/blog/how-to-freeze-your-credit-after-identity-theft/">freezing your credit</a> takes about twenty minutes and stops new accounts from being opened. If the caller asked you to read a text-message code, the account it belongs to may be in someone else&rsquo;s hands, so check it right away.</p>
+
+        <h2>If you let them onto your computer or phone</h2>
+
+        <p>Disconnect from the internet, remove any remote-access app they had you install, and then change your passwords from a different, clean device. Our post on <a href="/blog/gave-scammer-remote-access-to-computer/">what to do after giving a scammer remote access</a> covers the steps in order, including what to tell your bank.</p>
+
+        <h2>If you moved money</h2>
+
+        <p>Call your bank using the number on the back of your card, tell them plainly that you were tricked by an impersonator, and ask what can be done. Speed matters most with wires, peer-to-peer apps, gift cards, and crypto, so make that call before anything else. The &ldquo;transfer to protect your funds&rdquo; version of this scam is a close cousin of the <a href="/blog/phantom-hacker-scam-what-to-do/">phantom hacker scam</a>, and the same advice applies. Recovery is not guaranteed, and it is harder the longer it waits, but banks do act on prompt, clear reports.</p>
+
+        <h2>Report it</h2>
+
+        <p>File at <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a>, and if your identity was misused, at <a href="https://www.identitytheft.gov/" target="_blank" rel="noopener">IdentityTheft.gov</a>, which gives you a personal recovery plan. Money lost over the internet or by wire can also be reported at <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a>. Write down the phone numbers, names used, times, and anything you were told to do while it is still fresh; our piece on <a href="/blog/preserve-evidence/">preserving evidence</a> explains what is worth keeping. You can also report the number to Amazon through its scam-reporting page.</p>
+
+        <p>Expect a second wave. People who have been targeted once often get follow-up calls from &ldquo;recovery&rdquo; helpers who want a fee up front. Hang up on those too. A real refund comes from your bank, never from a stranger who contacted you first.</p>
+
+        <p>Getting caught by a well-rehearsed script says nothing about your intelligence. It says someone built the script to work on careful people. Checking, reporting, and telling a friend or relative about it is the right way to finish the job.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/phantom-hacker-scam-what-to-do/"><span class="rp-cat">Impersonation scam</span><span class="rp-title">What to do about the phantom hacker scam</span></a></li>
+            <li><a href="/blog/phone-number-spoofing-what-to-do/"><span class="rp-cat">Impersonation</span><span class="rp-title">Phone number spoofing: what to do if scammers use yours</span></a></li>
+            <li><a href="/blog/fake-customer-service-number-scam/"><span class="rp-cat">Impersonation scam</span><span class="rp-title">Did you call a fake customer service number?</span></a></li>
+            <li><a href="/blog/gave-scammer-remote-access-to-computer/"><span class="rp-cat">Scam alert</span><span class="rp-title">What to do if you gave a scammer remote access to your computer</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
