@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fake payment confirmation scam: what to do if you sold | GCCI</title>
+  <meta name="description" content="A buyer says they paid, but the money never arrived. How fake payment confirmations and overpayment tricks work, and what to do if you already shipped." />
+  <link rel="canonical" href="https://gcci.io/blog/fake-payment-confirmation-selling-online-scam/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Fake payment confirmation scam: what to do if you sold" />
+  <meta property="og:description" content="A buyer says they paid, but the money never arrived. How fake payment confirmations and overpayment tricks work, and what to do if you already shipped." />
+  <meta property="og:url" content="https://gcci.io/blog/fake-payment-confirmation-selling-online-scam/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fake payment confirmation scam: what to do if you sold" />
+  <meta name="twitter:description" content="A buyer says they paid, but the money never arrived. How fake payment confirmations and overpayment tricks work, and what to do if you already shipped." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Fake payment confirmation scam: what to do if you sold","description":"A buyer says they paid, but the money never arrived. How fake payment confirmations and overpayment tricks work, and what to do if you already shipped.","datePublished":"2026-10-05","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/fake-payment-confirmation-selling-online-scam/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/fake-payment-confirmation-selling-online-scam/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 5, 2026 &middot; Scam alert</div>
+        <h1>Sold something online and the &ldquo;payment confirmation&rdquo; was fake? Here&rsquo;s what to do</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>You listed something you no longer needed, a buyer said yes right away, and a screenshot or email arrived showing the payment had gone through. You shipped the item or handed it over. Then you checked your account and there was nothing there. Or the buyer sent too much by &ldquo;mistake&rdquo; and asked you to send the difference back, and now that money is gone too. If this is where you are, take a breath. This is a common, well-worn trick, and it works on careful people because the paperwork looks so convincing.</p>
+
+<p>Here is how it usually works, what to do in the next few hours, and what is realistic to expect afterward.</p>
+
+<h2>How the fake payment trick works</h2>
+
+<p>The core of it is simple: you are shown <em>proof</em> of a payment instead of the payment itself. A screenshot of a Zelle or Venmo transfer, a forwarded email that looks like it came from PayPal, or a text claiming &ldquo;funds are pending until you ship&rdquo; are all easy to fake and cost the scammer nothing. Real payment apps do not ask a seller to ship first so that money can be released, and a payment that has really arrived shows up in your own account, not in a message the buyer sends you.</p>
+
+<p>The overpayment version adds a second step. The buyer &ldquo;accidentally&rdquo; pays more than the asking price, by check or a payment that will later bounce or be reversed, and asks you to refund the extra. You send real money back, and the original payment disappears. It is the same idea as the one we describe in our guide on <a href="/blog/deposited-a-fake-check-scam/">what to do if you deposited a fake check</a>, just moved into a payment app.</p>
+
+<h2>What to do right now</h2>
+
+<p>Start by confirming the facts in your own account, using the bank or app directly, never a link from the buyer. If the money truly is not there, stop all contact about payment and do not send anything else, including a &ldquo;refund&rdquo; of an overpayment, shipping fees, or a fee to &ldquo;unlock&rdquo; the funds.</p>
+
+<p>If you have not shipped yet, you have lost nothing. Cancel the sale and keep the messages. If you have shipped, contact the carrier right away and ask whether the package can be stopped or redirected before delivery; this sometimes works, particularly with a tracking number that has not yet reached the buyer. If you handed the item over in person, write down everything you remember about the person, the vehicle, and where you met, while it is fresh.</p>
+
+<p>If you sent money back after an overpayment, call your bank or the app&rsquo;s support line immediately. Speed matters most with peer-to-peer apps, and our guide on <a href="/blog/zelle-sent-money-to-scammer/">what to do if you sent money by Zelle</a> walks through what to ask for, even though recovery is never guaranteed.</p>
+
+<h2>Save everything before it disappears</h2>
+
+<p>Scammers delete accounts and listings quickly. Before that happens, screenshot the buyer&rsquo;s profile, the listing, the whole conversation, the fake confirmation, and the shipping receipt and tracking page. Save any email in its original form rather than a forward, since the sender details are what an investigator or platform can actually use. Our short piece on <a href="/blog/preserve-evidence/">how to preserve evidence</a> covers the details, and it takes about ten minutes.</p>
+
+<h2>Report it</h2>
+
+<p>Report the buyer to the marketplace where you listed, which can remove the account and sometimes flag the listing for other sellers. File a report with the <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">FTC at ReportFraud.ftc.gov</a> and with the <a href="https://www.ic3.gov/" target="_blank" rel="noopener">FBI&rsquo;s IC3</a>, especially if you lost money or goods of real value. A local police report is also worth making when the item was expensive, because insurers and some platforms ask for a report number. Be realistic about the outcome: most of these cases do not end with the item or money returned. Reports still matter, because they are how accounts get shut down and patterns get noticed.</p>
+
+<h2>Next time you sell</h2>
+
+<p>A few habits close most of the door on this. Treat money as received only when it shows in your own account and has cleared, not when someone sends a screenshot. Be cautious with buyers who are in a hurry, offer more than you asked, or insist on a courier you did not choose. For local sales, meet somewhere public, and let the buyer pay in front of you while you watch the transfer land. If you are also buying on these platforms, our post on <a href="/blog/how-to-tell-facebook-marketplace-seller-scammer/">how to tell if a Marketplace seller is a scammer</a> covers the mirror image of this.</p>
+
+<p>Trusting a buyer was not a failure of judgment. The scam is built so that a normal, polite sale looks exactly like a fraudulent one until the money fails to show up. If you would like a second set of eyes on what you have, text or email us and we will tell you plainly what we see.</p>
+
+<p class="signature">&mdash; Gus</p>
+
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/deposited-a-fake-check-scam/"><span class="rp-cat">Scam alert</span><span class="rp-title">What to do if you deposited a fake check</span></a></li>
+            <li><a href="/blog/how-to-tell-facebook-marketplace-seller-scammer/"><span class="rp-cat">Scam alert</span><span class="rp-title">How to tell if a Facebook Marketplace seller is a scammer</span></a></li>
+            <li><a href="/blog/zelle-sent-money-to-scammer/"><span class="rp-cat">Scam alert</span><span class="rp-title">What to do if you sent money to a scammer on Zelle</span></a></li>
+            <li><a href="/blog/paypal-friends-and-family-sent-money-to-scammer/"><span class="rp-cat">Scam alert</span><span class="rp-title">Sent money on PayPal to a scammer? What to do</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
