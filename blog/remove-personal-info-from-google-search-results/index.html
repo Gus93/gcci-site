@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Remove personal info from Google search results | GCCI</title>
+  <meta name="description" content="Your address, phone number or private photos show up when someone searches your name. How to ask Google to remove them, and what that can and cannot do." />
+  <link rel="canonical" href="https://gcci.io/blog/remove-personal-info-from-google-search-results/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Remove personal info from Google search results" />
+  <meta property="og:description" content="Your address, phone number or private photos show up when someone searches your name. How to ask Google to remove them, and what that can and cannot do." />
+  <meta property="og:url" content="https://gcci.io/blog/remove-personal-info-from-google-search-results/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Remove personal info from Google search results" />
+  <meta name="twitter:description" content="Your address, phone number or private photos show up when someone searches your name. How to ask Google to remove them, and what that can and cannot do." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Remove personal info from Google search results","description":"Your address, phone number or private photos show up when someone searches your name. How to ask Google to remove them, and what that can and cannot do.","datePublished":"2026-10-12","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/remove-personal-info-from-google-search-results/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/remove-personal-info-from-google-search-results/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 12, 2026 &middot; Online harassment</div>
+        <h1>Remove personal info from Google search results</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>You search your own name and there it is: your home address on a page you have never heard of, a phone number you only gave a few people, or a photo that was never meant to be public. If someone is harassing you, or has already doxxed you, seeing that page ranked near the top of the results can feel like the problem keeps being handed to new people. It is a hard moment, and there is a practical step that can take the edge off it.</p>
+
+        <p>Google offers a way to ask that specific results be taken out of Search. It does not erase anything from the internet, and it will not fix everything, but done early it can shrink how many people stumble across the page. Here is how it works and what to expect.</p>
+
+        <h2>What Google will consider removing</h2>
+
+        <p>Google&rsquo;s &ldquo;Results about you&rdquo; tool is built for contact details such as your address, phone number, or email. Its removal policies also cover confidential government ID numbers like a Social Security number, bank account or credit card numbers, images of your signature or ID, private records such as medical records, and confidential usernames and passwords. Separate policies cover doxxing, meaning your information shared to harm you, and private sexual or explicit imagery. Google can remove a page when it holds your personal information alongside threats or calls for others to harass you, or when it gathers a large amount of your information with no legitimate purpose. Nude or sexual images of anyone under 18 can be reported by anyone.</p>
+
+        <h2>How to make the request</h2>
+
+        <p>Start by collecting the exact web addresses (URLs) of the pages you want gone, and save screenshots of them first, with the date visible. Once a page disappears from Search you will want proof it existed, and our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> covers how to do that without making things worse. Then use Google&rsquo;s removal request form, or the &ldquo;Results about you&rdquo; tool in your Google account, which can also notify you if new results with your contact details appear. Only the URLs you list are reviewed, so be thorough. If you would rather not do this yourself, a trusted person or a representative can submit it for you.</p>
+
+        <p>If the material is intimate images of you, <a href="https://stopncii.org/" target="_blank" rel="noopener">StopNCII.org</a> works alongside this by creating a digital fingerprint of the image on your own device so participating platforms can block it, without you uploading the photo itself. Our post on <a href="/blog/ex-posted-intimate-photos-of-me-online/">what to do when an ex posts intimate photos</a> goes through the full sequence.</p>
+
+        <h2>What this will and will not do</h2>
+
+        <p>A Google removal only affects Google Search. The page itself stays online until the site that hosts it takes it down, so it can still be reached through a direct link, social media, or other search engines. Google may also decide to keep a result up if it relates to a matter of public interest or news, and sometimes the outcome is partial, where the page stops appearing for searches of your name but not for everything. That is still useful, because most people looking for you will search your name.</p>
+
+        <p>For lasting change, go to the source as well. Contact the website owner or the hosting company, and if the page is on a social platform, use that platform&rsquo;s report flow for private information or harassment. If the page is a data broker listing, our guide to <a href="/blog/remove-personal-info-from-people-search-sites/">removing your info from people-search sites</a> is the more direct fix, since those listings are where addresses and phone numbers most often come from.</p>
+
+        <h2>If this is part of a harassment campaign</h2>
+
+        <p>Requests can take days and sometimes need a follow-up, and a determined harasser may repost the same information somewhere new. Keep a simple log of every URL you reported, the date, and the result, because it helps if you later involve the police, a platform, or an attorney. If your information has been posted along with threats, read <a href="/blog/what-to-do-if-someone-doxxed-you/">what to do if someone doxxed you</a> for the safety steps that matter more than the search results do, such as locking down accounts and telling people close to you.</p>
+
+        <p>Having your private details show up in search results is invasive, and wanting them gone is reasonable. You cannot control every corner of the internet, but you can often take away the easiest path to you, and that is worth doing.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/what-to-do-if-someone-doxxed-you/"><span class="rp-cat">Online harassment</span><span class="rp-title">What to do if someone doxxed you</span></a></li>
+            <li><a href="/blog/remove-personal-info-from-people-search-sites/"><span class="rp-cat">Privacy</span><span class="rp-title">How to remove your info from people-search sites</span></a></li>
+            <li><a href="/blog/ex-posted-intimate-photos-of-me-online/"><span class="rp-cat">Online harassment</span><span class="rp-title">My ex posted intimate photos of me: what to do</span></a></li>
+            <li><a href="/blog/preserve-evidence/"><span class="rp-cat">Evidence</span><span class="rp-title">How to Preserve Evidence in the First 24 Hours</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
