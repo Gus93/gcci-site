@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Found a Hidden Camera in a Rental? What to Do | GCCI</title>
+  <meta name="description" content="You found a camera in an Airbnb or hotel room. How to document it, report it, and protect yourself if footage of you may exist." />
+  <link rel="canonical" href="https://gcci.io/blog/found-hidden-camera-in-airbnb-or-rental/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Found a hidden camera in a rental? What to do" />
+  <meta property="og:description" content="You found a camera in an Airbnb or hotel room. How to document it, report it, and protect yourself if footage of you may exist." />
+  <meta property="og:url" content="https://gcci.io/blog/found-hidden-camera-in-airbnb-or-rental/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Found a hidden camera in a rental? What to do" />
+  <meta name="twitter:description" content="You found a camera in an Airbnb or hotel room. How to document it, report it, and protect yourself if footage of you may exist." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Found a hidden camera in a rental? What to do","description":"You found a camera in an Airbnb or hotel room. How to document it, report it, and protect yourself if footage of you may exist.","datePublished":"2026-10-22","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/found-hidden-camera-in-airbnb-or-rental/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/found-hidden-camera-in-airbnb-or-rental/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 22, 2026 &middot; Digital abuse</div>
+        <h1>Found a hidden camera in a rental? What to do</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>You were checking the room, unplugging a charger, or just wondering why a smoke detector sat in an odd spot, and something looked like a lens. Your stomach drops, and you start replaying everything you did in that room. Take a breath. Finding a camera is upsetting, but what you do in the next hour decides how much you can prove later, and you do not have to work it out alone.</p>
+
+        <p>Not everything that looks like a camera is one. Many hosts legitimately run a doorbell camera or a camera in a shared living area, and major rental platforms require that to be disclosed in the listing. Airbnb, for one, now prohibits cameras inside the home. A camera in a bedroom or bathroom, or one that was hidden inside another object, is a different matter, and that is what this post is about.</p>
+
+        <h2>Don&rsquo;t touch it yet</h2>
+
+        <p>The urge to rip it out of the wall is natural, and it is the first thing to resist. Unplugging or moving the device can change what it recorded and make it harder for police or the platform to treat it as evidence. Stand back and photograph the device where it sits, from a few angles, along with a wider shot showing which room it is in and what it is pointed at. Note the time and date, the address, and the name of the listing or hotel. If you can see a brand name, a model number, or a QR code on it, photograph that closely too, since it can later help identify who owns the device and which app it reports to.</p>
+
+        <p>If the camera looks like it is actively recording, such as a light on or a lens that follows you, it is reasonable to cover it with a towel while you gather yourself. Covering is not the same as removing it, and you can mention that to police later so nobody is surprised.</p>
+
+        <h2>Leave the room, then call the right people</h2>
+
+        <p>If you feel unsafe, leave first and make the calls from somewhere else, like your car or the lobby. Then report it in two places. Contact the police in the area where the rental is, since recording someone in a place where they expect privacy is a crime in most states, and ask them to come to the property so the device can be collected properly. Our guide on <a href="/blog/how-to-file-a-police-report-for-online-harassment/">filing a police report for online harassment</a> has tips on getting an officer to take a digital-privacy report seriously, which apply here too. Then report to the platform or hotel through its safety channel, not just by messaging the host. A host who placed a camera is not the right person to hand your evidence to.</p>
+
+        <h2>Keep your own record</h2>
+
+        <p>Write down what happened while it is fresh: when you arrived, which rooms you used, when you found the device, who you spoke to, and the report or case numbers you are given. Save the booking confirmation, the listing page, and any messages with the host before anything can be edited or deleted. Take screenshots of the listing, including the description and the house rules, and of the reviews, since a pattern of earlier guests raising the same concern can matter. Our post on <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> covers how to keep screenshots and messages in a way that holds up.</p>
+
+        <h2>What if footage of you exists?</h2>
+
+        <p>You may never know whether the camera was recording, or whether anything was saved or shared, and that uncertainty is one of the hardest parts. Some devices only stream live, some store footage on a card, and some upload to a cloud account the owner can reach from anywhere. Police can sometimes recover that data from the device. Please do not go searching the internet for the footage yourself, which can be painful and does not help your case.</p>
+
+        <p>If you do learn that images of you have been posted, act quickly. <a href="https://stopncii.org/" target="_blank" rel="noopener">StopNCII.org</a> lets adults create a digital fingerprint of intimate images on their own device so participating platforms can block them without the images ever being uploaded, and our guide on <a href="/blog/ex-posted-intimate-photos-of-me-online/">what to do when intimate photos are posted online</a> walks through takedowns and reporting. If someone later threatens to share footage unless you pay or send more, that is sextortion, and our post on <a href="/blog/scammer-threatening-to-share-private-photos/">what to do when a scammer threatens to share your photos</a> applies.</p>
+
+        <h2>Checking your next stay</h2>
+
+        <p>You should not have to inspect every room you sleep in, and most stays are fine. If you want a little extra peace of mind, a quick look is reasonable: scan for small lenses in smoke detectors, clocks, chargers, and vents, check for unfamiliar devices on the Wi-Fi network if you can see a device list, and read recent reviews with privacy in mind. None of this is foolproof, and if a search leaves you unsettled, it is perfectly fine to ask for a different room or leave.</p>
+
+        <p>What happened is not your fault, and reporting it protects the next guest as well. If you are unsure whether what you found is serious, or you want help working out where footage may have gone, text or email us and we can talk it through privately.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/is-someone-tracking-me-with-an-airtag/"><span class="rp-cat">Digital abuse</span><span class="rp-title">Is someone tracking you with a hidden AirTag?</span></a></li>
+            <li><a href="/blog/ex-posted-intimate-photos-of-me-online/"><span class="rp-cat">Image abuse</span><span class="rp-title">My ex posted intimate photos of me: what to do</span></a></li>
+            <li><a href="/blog/preserve-evidence/"><span class="rp-cat">How-to guide</span><span class="rp-title">How to Preserve Evidence in the First 24 Hours</span></a></li>
+            <li><a href="/blog/partner-monitoring-my-location-or-accounts-what-to-do/"><span class="rp-cat">Digital abuse</span><span class="rp-title">Is your partner monitoring your phone or accounts?</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
