@@ -7,6 +7,14 @@
     <language>en-us</language>
     <atom:link href="https://gcci.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Someone is sending emails that look like they came from you</title>
+      <link>https://gcci.io/blog/someone-spoofing-my-email-address-what-to-do/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/someone-spoofing-my-email-address-what-to-do/</guid>
+      <pubDate>Fri, 23 Oct 2026 09:00:00 GMT</pubDate>
+      <description>People are getting emails that look like they came from you. Learn how to tell spoofing from a hack, what to check, and how to respond.</description>
+    </item>
+
+    <item>
       <title>Found a hidden camera in a rental? What to do</title>
       <link>https://gcci.io/blog/found-hidden-camera-in-airbnb-or-rental/</link>
       <guid isPermaLink="true">https://gcci.io/blog/found-hidden-camera-in-airbnb-or-rental/</guid>

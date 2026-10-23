@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Someone Spoofing Your Email Address? What to Do | GCCI</title>
+  <meta name="description" content="People are getting emails that look like they came from you. Learn how to tell spoofing from a hack, what to check, and how to respond." />
+  <link rel="canonical" href="https://gcci.io/blog/someone-spoofing-my-email-address-what-to-do/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Someone is sending emails that look like they came from you" />
+  <meta property="og:description" content="People are getting emails that look like they came from you. Learn how to tell spoofing from a hack, what to check, and how to respond." />
+  <meta property="og:url" content="https://gcci.io/blog/someone-spoofing-my-email-address-what-to-do/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Someone is sending emails that look like they came from you" />
+  <meta name="twitter:description" content="People are getting emails that look like they came from you. Learn how to tell spoofing from a hack, what to check, and how to respond." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Someone is sending emails that look like they came from you","description":"People are getting emails that look like they came from you. Learn how to tell spoofing from a hack, what to check, and how to respond.","datePublished":"2026-10-23","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/someone-spoofing-my-email-address-what-to-do/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/someone-spoofing-my-email-address-what-to-do/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 23, 2026 &middot; Impersonation</div>
+        <h1>Someone is sending emails that look like they came from you</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>A friend texts to say they just got a strange email from you, with a link or a request for gift cards you never sent. Or a customer asks why you emailed them about an unpaid invoice. You check your Sent folder and there is nothing there. It is a very unsettling moment, and the first question is usually whether your account was hacked. Often, it was not.</p>
+
+        <p>What you are most likely seeing is email spoofing. Email was designed decades ago without a strong check on who a message really comes from, so a sender can type almost any name and address into the &ldquo;From&rdquo; line. A scammer does not need your password to make a message look like it came from you. They only need your address, which is easy to find. It is not a break-in, and it is not something you did wrong.</p>
+
+        <h2>Spoofed or hacked: how to tell</h2>
+
+        <p>The difference matters because the fixes are different. If your account itself was taken over, you will usually see signs inside it: messages in your Sent folder that you did not write, replies from people landing in your inbox, forwarding rules or filters you did not create, or sign-in alerts from places you have never been. If you see any of that, treat it as a takeover and start with our guide on <a href="/blog/email-account-hacked-what-to-do/">what to do if your email account was hacked</a>.</p>
+
+        <p>If your Sent folder is clean, there are no strange sign-in alerts, and your settings look normal, spoofing is the likelier explanation. A helpful test is to ask one recipient to forward you the message with its full headers, or to send a screenshot. Often the display name says your name, while the actual address behind it is a slightly different one, or the reply-to quietly points to a stranger. Looking closely at the real address, not the name, is how most spoofs give themselves away.</p>
+
+        <h2>Do a quick safety check anyway</h2>
+
+        <p>Even when it looks like spoofing, it costs little to be sure. Change your email password to a new, unique one, turn on two-step verification if it is not already on, and look through your forwarding rules, filters, and the list of devices and apps connected to the account. If your address appeared in a data breach, scammers may have it along with your contacts, which is part of why they can target people who know you. Nothing here needs to happen in a panic, and it can be done in a calm half hour.</p>
+
+        <h2>Warn the people who got it</h2>
+
+        <p>A short, calm message is enough. Tell your contacts that someone is sending emails pretending to be you, and that they should not click links, open attachments, or send money based on anything that looks off. Suggest they verify any unusual request by calling you on a number they already have. For a business, it also helps to put the same notice on your website or social page, because customers are the usual targets.</p>
+
+        <p>If someone already clicked or paid, they are the ones who need help next, and the steps in our post on <a href="/blog/i-clicked-a-phishing-link-what-to-do/">what to do after clicking a phishing link</a> apply to them.</p>
+
+        <h2>Make your domain harder to spoof</h2>
+
+        <p>If you use a custom address, such as one at your own business domain, there is a technical layer that helps. Three settings called SPF, DKIM, and DMARC tell receiving mail systems which servers are allowed to send as you and what to do with messages that fail the check. When they are set up with a reject or quarantine policy, many spoofed messages never reach anyone&rsquo;s inbox. Your email host or whoever manages your domain can set these up, and most big providers have step-by-step instructions. Free webmail addresses are protected by the provider, so there is little you can change yourself, and a spoofed message from a free account is mostly a matter of reporting it.</p>
+
+        <h2>Report it and keep the evidence</h2>
+
+        <p>Ask a few recipients to send you the original messages, including the full headers, and save them along with dates and the names of anyone who was targeted. Our guide to <a href="/blog/preserve-evidence/">preserving evidence in the first 24 hours</a> explains how to keep them in a way that holds up. Then report it. You can file with the FTC at <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a> and with the FBI&rsquo;s <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3</a>, especially if anyone lost money, and forward phishing messages to your provider&rsquo;s abuse address.</p>
+
+        <p>If the same person is also using your name or photos elsewhere, our post on <a href="/blog/someone-is-impersonating-me-on-social-media/">someone impersonating you on social media</a> covers that side. Be realistic about one thing: a spoofer is rarely traced, because the forged address is just a label. What you can do is protect yourself and the people around you, and that works.</p>
+
+        <p>If it keeps happening, or you want a second opinion on whether you were spoofed or hacked, text or email us and we can talk it through privately.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/email-account-hacked-what-to-do/"><span class="rp-cat">Account takeover</span><span class="rp-title">What to do if your email account was hacked</span></a></li>
+            <li><a href="/blog/someone-is-impersonating-me-on-social-media/"><span class="rp-cat">Impersonation</span><span class="rp-title">Someone is impersonating you on social media</span></a></li>
+            <li><a href="/blog/i-clicked-a-phishing-link-what-to-do/"><span class="rp-cat">Phishing</span><span class="rp-title">I clicked a phishing link: what to do next</span></a></li>
+            <li><a href="/blog/phone-number-spoofing-what-to-do/"><span class="rp-cat">Impersonation</span><span class="rp-title">Phone number spoofing: what to do if scammers use yours</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
