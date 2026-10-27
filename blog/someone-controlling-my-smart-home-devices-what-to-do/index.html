@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Someone Controlling Your Smart Home? What to Do | GCCI</title>
+  <meta name="description" content="Lights flickering, a thermostat changing, a camera you didn't set up. How to check smart home devices for misuse and regain control safely." />
+  <link rel="canonical" href="https://gcci.io/blog/someone-controlling-my-smart-home-devices-what-to-do/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Someone is controlling your smart home devices: what to do" />
+  <meta property="og:description" content="Lights flickering, a thermostat changing, a camera you didn't set up. How to check smart home devices for misuse and regain control safely." />
+  <meta property="og:url" content="https://gcci.io/blog/someone-controlling-my-smart-home-devices-what-to-do/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Someone is controlling your smart home devices: what to do" />
+  <meta name="twitter:description" content="Lights flickering, a thermostat changing, a camera you didn't set up. How to check smart home devices for misuse and regain control safely." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Someone is controlling your smart home devices: what to do","description":"Lights flickering, a thermostat changing, a camera you didn't set up. How to check smart home devices for misuse and regain control safely.","datePublished":"2026-10-27","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/someone-controlling-my-smart-home-devices-what-to-do/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/someone-controlling-my-smart-home-devices-what-to-do/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 27, 2026 &middot; Digital abuse</div>
+        <h1>Someone is controlling your smart home devices: what to do</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>The thermostat dropped ten degrees while you were at work. A speaker said something you did not ask it to. The porch light switches on at night, a camera you never installed shows up in an app, or the door lock seems to have a mind of its own. Any one of these can be a glitch, and most of the time that is what it is. But when it happens in the middle of a breakup, a custody dispute, or a relationship that already feels controlling, it is reasonable to wonder whether someone else still has a hand on your home.</p>
+
+        <p>That worry deserves a calm, careful look, not panic. Smart home gear is built to be shared and controlled remotely, which makes it easy to forget who still has access. Here is how to work out what is going on and how to take control back without making things harder for yourself.</p>
+
+        <h2>Why this happens more often than you would think</h2>
+
+        <p>Most of the time nobody &ldquo;hacked&rdquo; anything. Smart devices are usually set up under one person&rsquo;s account, and that person can still see and control everything after the relationship ends, the roommate moves out, or the house changes hands. An ex who bought the doorbell camera, the thermostat, or the speaker may still be the account owner. A family member may have been invited as a guest and never removed. Old shared passwords, a previous tenant&rsquo;s account, or a login reused across several services can do the same thing. It is quiet, it is easy to miss, and it is rarely technical. That is good news, because it usually means it can be fixed with settings rather than software.</p>
+
+        <h2>Before you change anything, write it down</h2>
+
+        <p>If you suspect a person is behind this, pause before you start removing users or resetting devices. A reset can wipe the logs that show who did what and when. Take screenshots of the device list, the list of people with access, any activity or event history, and notification emails, and note the date and time of each odd event in a simple log. If you are in a situation where someone could react badly to losing access, the order and timing matter too, so think about it before you act. Our guide on <a href="/blog/preserve-evidence/">how to preserve evidence in the first 24 hours</a> covers the basics.</p>
+
+        <h2>Check who has access</h2>
+
+        <p>Open the app for each device or hub, such as your doorbell, thermostat, lights, speakers, cameras, and locks, and look for the section on members, users, shared access, or linked accounts. Anyone listed there who should not be is the first thing to look at. Check the same screen in the main ecosystem you use, whether that is Google Home, Amazon Alexa, Apple Home, or a hub brand, since many devices can be controlled from there too. Also look for connected third-party services and voice assistant &ldquo;skills,&rdquo; and for devices you do not recognize. Camera and microphone devices matter most, so start there. If you are not the owner of the account a device sits under, that is itself the answer to your question.</p>
+
+        <h2>Take the account back</h2>
+
+        <p>Once your evidence is saved, remove anyone who should not have access, change the password on each account to a new one used nowhere else, turn on two-step verification, and sign out of all other sessions or devices if the app offers it. Do this from a phone or computer the other person has never touched, since a compromised device can undo the work. If the device is registered to someone else&rsquo;s account, you may need to remove it from that account or reset it and register it yourself. At that point a factory reset is the right move, because it cuts the old link, and you can set it up fresh. Your router deserves the same attention: change the Wi-Fi password, and change the router&rsquo;s own admin password too, since the default is often never touched. If you are unsure whether the phone you are using is safe, <a href="/blog/is-there-stalkerware-on-my-phone/">our guide to checking for stalkerware</a> is worth reading first.</p>
+
+        <h2>If it is part of a larger pattern of control</h2>
+
+        <p>When the devices are one piece of something bigger, such as a partner who seems to know where you have been or what you said in a room, take it seriously and put your safety first. Changing access can alert someone who has been monitoring you, so it can help to plan the timing, or talk it through with an advocate first. The <a href="https://www.thehotline.org/" target="_blank" rel="noopener">National Domestic Violence Hotline</a> (1-800-799-7233) can help with safety planning, and the <a href="https://www.techsafety.org/" target="_blank" rel="noopener">Safety Net project at NNEDV</a> has plain-language guidance on technology and abuse. Our posts on <a href="/blog/partner-monitoring-my-location-or-accounts-what-to-do/">a partner monitoring your location or accounts</a> and <a href="/blog/is-someone-tracking-me-with-an-airtag/">hidden trackers</a> cover related ground. If you feel in immediate danger, call 911 first.</p>
+
+        <h2>Reporting and next steps</h2>
+
+        <p>If someone used your devices to watch, harass, or threaten you, that is worth reporting. Take your log and screenshots to local police, and see our walk-through on <a href="/blog/how-to-file-a-police-report-for-online-harassment/">how to file a police report for online harassment</a> for what to bring. You can also report unauthorized access to <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a>, and a manufacturer&rsquo;s support team can often confirm from their side which account a device is linked to. If it turns out nobody is behind it and a device is simply misbehaving, that is a relief worth having, and updating the firmware and resetting it usually settles it.</p>
+
+        <p>You do not have to figure out who is on the other end of an odd smart home event all at once. Document first, then take the access back one account at a time. If you want a second set of eyes on what you are seeing, we are here.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/is-there-stalkerware-on-my-phone/"><span class="rp-cat">Digital abuse</span><span class="rp-title">How to tell if there is stalkerware on your phone</span></a></li>
+            <li><a href="/blog/partner-monitoring-my-location-or-accounts-what-to-do/"><span class="rp-cat">Digital abuse</span><span class="rp-title">Is your partner monitoring your phone or accounts?</span></a></li>
+            <li><a href="/blog/is-someone-tracking-me-with-an-airtag/"><span class="rp-cat">Digital abuse</span><span class="rp-title">Is someone tracking you with a hidden AirTag?</span></a></li>
+            <li><a href="/blog/how-to-file-a-police-report-for-online-harassment/"><span class="rp-cat">Online harassment</span><span class="rp-title">How to file a police report for online harassment</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
