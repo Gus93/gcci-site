@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gift card draining scam: what to do if it was empty | GCCI</title>
+  <meta name="description" content="Gift card empty right after you bought or gave it? How card draining works and what to do first, from calling the issuer to reporting it." />
+  <link rel="canonical" href="https://gcci.io/blog/gift-card-draining-scam-what-to-do/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Gift card draining scam: what to do if it was empty" />
+  <meta property="og:description" content="Gift card empty right after you bought or gave it? How card draining works and what to do first, from calling the issuer to reporting it." />
+  <meta property="og:url" content="https://gcci.io/blog/gift-card-draining-scam-what-to-do/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gift card draining scam: what to do if it was empty" />
+  <meta name="twitter:description" content="Gift card empty right after you bought or gave it? How card draining works and what to do first, from calling the issuer to reporting it." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Gift card draining scam: what to do if it was empty","description":"Gift card empty right after you bought or gave it? How card draining works and what to do first, from calling the issuer to reporting it.","datePublished":"2026-10-29","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/gift-card-draining-scam-what-to-do/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/gift-card-draining-scam-what-to-do/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">October 29, 2026 &middot; Scam alert</div>
+        <h1>Gift card draining scam: what to do if it was empty</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>You bought a gift card for someone, or someone gave one to you, and when it was time to use it the balance was zero. Or a few dollars. The cashier swipes it, the screen says &ldquo;insufficient funds,&rdquo; and you know you paid full price. It is a deflating moment, and often an embarrassing one if the card was a gift. Nothing about it means you did something careless. This is a known scheme, and it targets ordinary shoppers standing at ordinary racks.</p>
+        <p>This is different from a stranger on the phone telling you to buy cards and read the numbers aloud. Here, the card itself was tampered with before you ever touched it. Here is how it works, and what is worth doing in the first hour.</p>
+        <h2>How card draining works</h2>
+        <p>Someone takes cards off a store display, copies the card number and the hidden PIN or security code, and then reseals the packaging so it looks untouched. The card goes back on the rack. It is worthless to them until a shopper loads it with money, so they watch the balance, or use software that checks it automatically, and spend it the moment value appears. By the time you or the person you gave it to tries to use it, the funds are already gone.</p>
+        <p>Open-loop prepaid cards, the kind carrying a payment network logo and sold in blister packs, are the ones most often reported. But any card with a scratch-off or covered PIN can be targeted, and the tampering is often subtle: a flap that does not sit flat, a sticker over the PIN that looks slightly different, or a barcode that seems to have been replaced.</p>
+        <h2>What to do first</h2>
+        <p>Keep everything. The card, the packaging it came in, and above all the receipt. Do not throw the card away just because it is empty, since the number on it is how the issuer traces where the money went. Take clear photos of the front and back, the PIN area, and any signs the packaging was opened.</p>
+        <p>Then call the number on the back of the card, or the issuer&rsquo;s official site if the card is a store brand, and tell them the balance was spent before you could use it. Ask whether they can see where and when the funds were used, and whether they can freeze any remaining balance or issue a replacement. Policies vary, and some issuers will do more than others, so it helps to be calm, specific, and to ask for a case or reference number you can quote later.</p>
+        <p>Next, contact the store where the card was bought. Bring the receipt if you can. Stores differ in how they respond, but a report matters even when the answer is no, because it can lead them to pull the remaining cards from that display and check for other victims.</p>
+        <h2>Report it, even if the amount is small</h2>
+        <p>File a report with the <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">FTC at ReportFraud.ftc.gov</a>, and consider a short report to your local police as well, since a written record can help if the issuer asks for one. If you paid with a credit card, ask your card company whether the purchase can be disputed, noting that the product you paid for was not delivered as described. Chargeback rules vary by card and timing, so ask about it early rather than later.</p>
+        <p>Please do not expect a guaranteed refund. Some people get replacement cards and some do not. What reporting does reliably is add your case to the pattern regulators and issuers use to act on repeat locations.</p>
+        <h2>Lowering the odds next time</h2>
+        <p>A few habits help without making shopping a chore. Choose cards from behind the counter or from a display you can see the clerk watching, and check that the packaging is intact and the PIN area is not scratched, peeled, or resealed. Pay with a credit card where you can, since it keeps a dispute path open. Use the card soon after it is activated, because the longer a loaded balance sits there, the more time someone has to take it. If you are giving the card as a gift, tell the recipient to check the balance right away and keep the receipt.</p>
+        <p>It is also worth knowing the other half of this problem. If someone ever tells you to pay for something with gift cards and read them the numbers, that is a scam of a different kind, and our guides on <a href="/blog/apple-gift-card-scam-what-to-do/">what to do if you sent Apple gift cards to a scammer</a> and <a href="/blog/how-to-help-a-family-member-being-scammed/">how to help a family member being scammed</a> walk through it. And if the loss ever leads to a follow-up call from a stranger offering to recover your money for a fee, that is a second scam, covered in <a href="/blog/crypto-recovery-service-legit-or-scam/">how to tell a real recovery process from a recovery scam</a>.</p>
+        <p>Finding an empty card is frustrating, and it is reasonable to feel annoyed on behalf of whoever you bought it for. Documenting it, reporting it, and warning the people around you is a good use of the next hour, and it is all you need to do.</p>
+        <p class="signature">&mdash; Gus</p>
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/apple-gift-card-scam-what-to-do/"><span class="rp-cat">Scam alert</span><span class="rp-title">What to do if you sent Apple gift cards to a scammer</span></a></li>
+            <li><a href="/blog/how-to-help-a-family-member-being-scammed/"><span class="rp-cat">Scam alert</span><span class="rp-title">How to help a family member being scammed</span></a></li>
+            <li><a href="/blog/crypto-recovery-service-legit-or-scam/"><span class="rp-cat">Scam alert</span><span class="rp-title">Is that crypto recovery service legit, or another scam?</span></a></li>
+            <li><a href="/blog/paid-a-fake-invoice-scam-what-to-do/"><span class="rp-cat">Scam alert</span><span class="rp-title">Paid a fake invoice? What to do next</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
