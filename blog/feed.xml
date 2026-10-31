@@ -7,6 +7,14 @@
     <language>en-us</language>
     <atom:link href="https://gcci.io/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>Crypto address poisoning scam: what to do next</title>
+      <link>https://gcci.io/blog/crypto-address-poisoning-scam-what-to-do/</link>
+      <guid isPermaLink="true">https://gcci.io/blog/crypto-address-poisoning-scam-what-to-do/</guid>
+      <pubDate>Sat, 31 Oct 2026 09:00:00 GMT</pubDate>
+      <description>You copied a wallet address from your history and the crypto went to a lookalike. How address poisoning works, and what to do next.</description>
+    </item>
+
+    <item>
       <title>Reshipping scam: what to do if you forwarded packages</title>
       <link>https://gcci.io/blog/reshipping-job-scam-what-to-do/</link>
       <guid isPermaLink="true">https://gcci.io/blog/reshipping-job-scam-what-to-do/</guid>
