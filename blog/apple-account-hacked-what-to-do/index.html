@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apple Account hacked? What to do right now | GCCI</title>
+  <meta name="description" content="Locked out or seeing sign-ins you don't recognize? Here's how to secure a hacked Apple Account, recover access, and check for fallout." />
+  <link rel="canonical" href="https://gcci.io/blog/apple-account-hacked-what-to-do/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="GCCI" />
+  <meta property="og:title" content="Apple Account hacked? What to do right now" />
+  <meta property="og:description" content="Locked out or seeing sign-ins you don't recognize? Here's how to secure a hacked Apple Account, recover access, and check for fallout." />
+  <meta property="og:url" content="https://gcci.io/blog/apple-account-hacked-what-to-do/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://gcci.io/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content="https://gcci.io/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apple Account hacked? What to do right now" />
+  <meta name="twitter:description" content="Locked out or seeing sign-ins you don't recognize? Here's how to secure a hacked Apple Account, recover access, and check for fallout." />
+  <meta name="theme-color" content="#d6a14a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #111315;
+      --text: #f4f1eb;
+      --muted: #c9c2b8;
+      --quiet: #948b81;
+      --line: rgba(255,255,255,.11);
+      --accent: #d6a14a;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max: 760px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(214,161,74,.08), transparent 32rem),
+        var(--bg);
+      line-height: 1.75;
+      font-size: 18px;
+      padding-bottom: 96px;
+    }
+    a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    a:hover { color: #e0ae5c; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav-container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .skip-link { position:absolute; top:-120px; left:16px; background:var(--accent); color:#17130c; padding:10px 14px; border-radius:10px; z-index:1000; }
+    .skip-link:focus { top:16px; }
+
+    header { position:sticky; top:0; z-index:20; backdrop-filter:blur(14px); background:rgba(17,19,21,.78); border-bottom:1px solid var(--line); }
+    .nav { min-height:68px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .brand { display:inline-flex; align-items:center; gap:12px; text-decoration:none; font-weight:750; letter-spacing:.02em; color:var(--text); }
+    .brand-mark { width:36px; height:36px; border-radius:14px; display:grid; place-items:center; background:linear-gradient(135deg, rgba(214,161,74,.95), rgba(214,161,74,.45)); color:#18120b; font-weight:800; box-shadow:0 12px 30px rgba(214,161,74,.17); }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link, .quick-exit {
+      appearance:none; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); padding:10px 14px; text-decoration:none; font:inherit; font-size:14px; cursor:pointer;
+      transition: transform .12s, background .12s, border-color .12s, color .12s;
+    }
+    .nav-link:hover, .quick-exit:hover { color:var(--text); border-color:rgba(214,161,74,.45); background:rgba(214,161,74,.09); }
+    .quick-exit { color:#f3b8b8; border-color:rgba(226,100,100,.4); }
+    .quick-exit:hover { color:#fff; border-color:rgba(226,100,100,.7); background:rgba(226,100,100,.12); }
+
+    article { padding: 56px 0 0; }
+    .back-link { display:inline-block; color:var(--quiet); text-decoration:none; font-size:14px; margin-bottom:24px; }
+    .back-link:hover { color:var(--accent); }
+    .post-meta { color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:10px; }
+    h1 { margin:0 0 24px; font-size:clamp(32px,5vw,46px); line-height:1.1; letter-spacing:-.025em; font-weight:760; }
+    h2 { margin:38px 0 14px; font-size:24px; letter-spacing:-.015em; }
+    p { margin:0 0 18px; color:#ece6d8; }
+    ul { margin:0 0 22px; padding-left:24px; color:#ece6d8; }
+    ul li { margin-bottom:8px; }
+    .signature { color:var(--quiet); margin-top:36px; }
+
+    .post-footer-nav {
+      margin-top:48px; padding-top:24px; border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap;
+      color:var(--quiet); font-size:14px;
+    }
+    .post-footer-nav a { color:var(--accent); text-decoration:none; }
+    .post-footer-nav a:hover { color:#e0ae5c; }
+
+    footer { border-top:1px solid var(--line); padding:28px 0 40px; color:var(--quiet); font-size:14px; margin-top:64px; }
+    .footer-row { width: min(1120px, calc(100% - 40px)); margin: 0 auto; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    footer a { color:var(--muted); text-decoration:none; }
+    footer a:hover { color:var(--accent); }
+
+    @media (max-width: 680px) {
+      body { font-size:17px; }
+      .nav-link { display:none; }
+      h1 { font-size:clamp(28px,8vw,40px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Apple Account hacked? What to do right now","description":"Locked out or seeing sign-ins you don't recognize? Here's how to secure a hacked Apple Account, recover access, and check for fallout.","datePublished":"2026-11-06","author":{"@type":"Person","name":"Lisa Lauer","jobTitle":"Founder & Lead Investigator","worksFor":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"}},"publisher":{"@type":"Organization","name":"Gus & Co. Cyber Investigations"},"url":"https://gcci.io/blog/apple-account-hacked-what-to-do/","mainEntityOfPage":{"@type":"WebPage","@id":"https://gcci.io/blog/apple-account-hacked-what-to-do/"}}</script>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header aria-label="Site header">
+    <div class="nav-container nav">
+      <a class="brand" href="/" aria-label="GCCI home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GCCI</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/blog/">Blog</a>
+        <button class="quick-exit" type="button" title="Instantly hides this page" aria-label="Quick Exit">Quick Exit</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article>
+      <div class="container">
+        <a class="back-link" href="/blog/">&larr; All posts</a>
+        <div class="post-meta">November 6, 2026 &middot; Account takeover</div>
+        <h1>Apple Account hacked? What to do right now</h1>
+        <p class="byline" style="color:#948b81;font-size:14px;margin:-6px 0 22px">By <a href="/about">Lisa</a> &middot; Founder &amp; Lead Investigator</p>
+
+        <p>Maybe a notification said your Apple Account password was changed and you didn&rsquo;t do it. Maybe you are locked out of your iPhone, or you are seeing a sign-in from a city you have never visited, or a purchase you don&rsquo;t recognize. An Apple Account holds a lot at once: photos, messages, backups, saved cards in Apple Pay, and often the recovery path for other accounts. It makes sense that this feels urgent. It is also usually fixable, and the order you do things in matters more than speed.</p>
+
+        <p>Take a breath and work through the steps below. Nothing here requires technical skill.</p>
+
+        <h2>First, make sure the message itself is real</h2>
+
+        <p>Before you tap anything, check how you found out. A text or email saying &ldquo;your Apple Account has been locked, verify now&rdquo; is one of the most common phishing messages there is, and following its link can hand your login to the very person you are worried about. Don&rsquo;t use links or phone numbers from the message. Go directly to account.apple.com in your browser, or open Settings on your iPhone and tap your name. If you already entered your password on a page you reached from a message, our guide on <a href="/blog/i-clicked-a-phishing-link-what-to-do/">what to do after clicking a phishing link</a> covers the cleanup.</p>
+
+        <h2>If you can still sign in, secure the account now</h2>
+
+        <p>Change your password to something long and unique that you have never used anywhere else. Then, while you are signed in at account.apple.com, look at everything on the page: the name, the email addresses, the phone numbers, and the list of devices. Remove any device you don&rsquo;t recognize and any email address or phone number that isn&rsquo;t yours. Apple&rsquo;s own guidance also suggests confirming that you control every email address and phone number tied to the account, which means checking with your email provider and your mobile carrier, including whether someone has set up forwarding on your texts or mail.</p>
+
+        <p>Make sure two-factor authentication is on. If you want stronger protection against phishing, Apple supports hardware security keys, and on an iPhone, Stolen Device Protection adds a layer in case someone has your passcode as well. Then open iCloud, Messages, and Media &amp; Purchases on each of your devices and check for anything odd, such as a signed-in account you don&rsquo;t recognize.</p>
+
+        <h2>If you are locked out, start account recovery</h2>
+
+        <p>If the password no longer works and you can&rsquo;t reset it, go to iforgot.apple.com and begin account recovery. Recovery is intentionally slow. Apple builds in a waiting period before access is restored, specifically so that someone who has stolen your details can&rsquo;t simply talk their way in. That wait can feel awful when you are anxious, but it works in your favor. Start the request once, keep the device or number you used handy, and avoid starting repeated requests, which can reset the clock. If you set up a recovery contact or recovery key in the past, use it now.</p>
+
+        <h2>Check what the person did while they had access</h2>
+
+        <p>Look at your Apple receipts and the cards saved in Apple Pay and the App Store. If you see charges you didn&rsquo;t make, call your card issuer or bank, not a number from an email, and ask to dispute them and replace the card. Check whether Find My was switched on for a device you don&rsquo;t own, whether your photos or backups were downloaded, and whether any messages were sent from your account. If your account is tied to a phone number that was hijacked, you may be dealing with a SIM swap, and our post on <a href="/blog/phone-has-no-service-sim-swap-scam/">what to do when your phone suddenly has no service</a> explains what to ask your carrier.</p>
+
+        <p>Think, too, about where else that account opens doors. If your Apple Account email is also your main email, the person may be able to reset passwords elsewhere. Our guides on <a href="/blog/email-account-hacked-what-to-do/">recovering a hacked email account</a> and <a href="/blog/social-media-account-hacked-what-to-do/">a hacked social media account</a> are good next stops, and it is worth changing passwords on banking and shopping accounts from a device you trust.</p>
+
+        <h2>Report it and keep a record</h2>
+
+        <p>Write down what you noticed and when, and take screenshots of any alerts, receipts, or unfamiliar devices before you remove them. If money was taken, file a report at <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener">ReportFraud.ftc.gov</a>, and consider <a href="https://www.ic3.gov/" target="_blank" rel="noopener">IC3.gov</a> if the loss was significant or you believe you were specifically targeted. A short written timeline is also exactly what a bank or, if it comes to it, a police report will ask for.</p>
+
+        <h2>Watch for the follow-up</h2>
+
+        <p>Once an account is compromised, a second wave often follows: someone &ldquo;from Apple Support&rdquo; calling to help, or a stranger offering to unlock your account for a fee. Apple does not call you out of the blue to ask for codes or passwords, and no verification code should ever be read aloud to anyone. If you did read one out, see our post on <a href="/blog/gave-out-google-voice-verification-code/">what to do after sharing a verification code</a>, since the same logic applies here.</p>
+
+        <p>If someone you know is behind the access, such as a partner or family member who has your passcode, that is a different and more serious situation, and securing the account is only part of it. You are welcome to reach out to us and we can talk it through privately.</p>
+
+        <p>Getting hacked says nothing about how careful you are. These attacks are built by people who do this all day. Fixing the account, checking the fallout, and tightening the handful of settings above puts you in a much stronger position than before.</p>
+
+        <p class="signature">&mdash; Gus</p>
+
+        <!-- RELATED-POSTS:START (auto-generated) -->
+        <style>.related-posts{margin:44px 0 4px;padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}.related-posts h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted,#9a958c);margin:0 0 16px;font-weight:700}.related-posts ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}@media(min-width:640px){.related-posts ul{grid-template-columns:1fr 1fr}}.related-posts a{display:block;text-decoration:none;color:inherit;padding:13px 15px;border:1px solid rgba(255,255,255,.10);border-radius:11px;transition:border-color .15s}.related-posts a:hover{border-color:var(--accent,#d6a14a)}.related-posts .rp-cat{display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent,#d6a14a);margin-bottom:5px}.related-posts .rp-title{font-size:15px;line-height:1.35}</style>
+        <nav class="related-posts" aria-label="Related articles">
+          <h2>Related reading</h2>
+          <ul>
+            <li><a href="/blog/email-account-hacked-what-to-do/"><span class="rp-cat">Account takeover</span><span class="rp-title">What to do if your email account was hacked</span></a></li>
+            <li><a href="/blog/social-media-account-hacked-what-to-do/"><span class="rp-cat">Account takeover</span><span class="rp-title">What to do if your social media account was hacked</span></a></li>
+            <li><a href="/blog/phone-has-no-service-sim-swap-scam/"><span class="rp-cat">Account takeover</span><span class="rp-title">What to do if your phone suddenly has no service</span></a></li>
+            <li><a href="/blog/gave-out-google-voice-verification-code/"><span class="rp-cat">Account takeover</span><span class="rp-title">Did you read back a Google verification code?</span></a></li>
+          </ul>
+        </nav>
+        <!-- RELATED-POSTS:END -->
+
+        <div class="post-footer-nav">
+          <a href="/blog/">&larr; All posts</a>
+          <a href="/">Home &rarr;</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>GCCI | Cyber Crime Help</div>
+      <div>If you&rsquo;re unsure where to start, text <a href="sms:+13043703004">(304) 370-3004</a> or email <a href="mailto:Gus@gcci.io">Gus@gcci.io</a>.</div>
+      <div>Gus &amp; Co. Cyber Investigations is an independent initiative working alongside Rexxfield Technologies.</div>
+    </div>
+  <div style="width:min(1120px,calc(100% - 40px));margin:14px auto 0;text-align:center;color:var(--quiet);font-size:13px;"><a href="/about" style="color:var(--muted);text-decoration:none;">About</a> &middot; <a href="/privacy" style="color:var(--muted);text-decoration:none;">Privacy</a> &middot; <a href="/terms" style="color:var(--muted);text-decoration:none;">Terms</a></div>
+  </footer>
+
+  <script>
+    const QUICK_EXIT_URL = "https://www.google.com";
+    const exitNow = () => { window.location.replace(QUICK_EXIT_URL); };
+    document.querySelectorAll(".quick-exit").forEach(b => b.addEventListener("click", exitNow));
+    let escPresses = 0, escTimer;
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Escape") return;
+      escPresses += 1;
+      clearTimeout(escTimer);
+      if (escPresses >= 2) exitNow();
+      escTimer = setTimeout(() => { escPresses = 0; }, 900);
+    });
+  </script>
+</body>
+</html>
