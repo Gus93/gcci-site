@@ -12,3 +12,4 @@ Source for [gcci.io](https://gcci.io). Plain HTML/CSS, no build step. Hosted on 
 ## Adding a blog post
 
 Create a new folder under `blog/` (e.g., `blog/2026-05-01-some-topic/`) with an `index.html` inside it that follows the same template as `blog/welcome/index.html`. Then add a card linking to it in `blog/index.html` at the top of the post list.
+
